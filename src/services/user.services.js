@@ -5,7 +5,9 @@ const saltRounds = 10
 exports.getAllUser = async () => {
     let result;
     try {
-        result = await User.findAll();
+        result = await User.findAll({
+            include : 'role'
+        });
     } catch (error) {
         throw new Error(error.message);
     }
@@ -16,11 +18,11 @@ exports.createUser = async (user) => {
     let result;
     try {
         let isAlreadyExist = await User.findOne({
-            where : {userName : user.userName}
+            where : {email : user.email}
         });
         
         if(isAlreadyExist == null){
-            user.userPassword = await bcrypt.hashSync(user.userPassword, saltRounds);
+            user.password = await bcrypt.hashSync(user.password, saltRounds);
             return result = await User.create(user);
         }else {
             throw new Error('User has been exists')
@@ -36,11 +38,10 @@ exports.deleteUser = async (user) => {
     try {
         result = await User.destroy({
             where : {
-                userId : user.userId
+                id : user.id
             }
         });
         
-        console.log(result);
         return result
     } catch (error) {
         throw new Error(error.message);

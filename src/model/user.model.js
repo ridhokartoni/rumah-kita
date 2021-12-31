@@ -3,25 +3,47 @@ const {DataTypes} = require('sequelize');
 
 
 const User = connection.define('user', {
-  userId : {
-      type : DataTypes.INTEGER,
-      autoIncrement : true,
-      primaryKey : true,
-      allowNull : false
-  },
+    id: {
+        type: DataTypes.INTEGER,
+        autoIncrement: true,
+        primaryKey: true,
+        allowNull: false
+    },
 
-  userName : {
-      type : DataTypes.STRING,
-  },
+    name: {
+        type: DataTypes.STRING(40),
+        allowNull: false
+    },
 
-  userPassword : {
-      type : DataTypes.STRING,
-  }
+    email: {
+        type: DataTypes.STRING(30),
+        allowNull: false
+    },
+    password: {
+        type: DataTypes.STRING(30),
+        allowNull: false
+    },
+
+    gender: {
+        type: DataTypes.STRING(10),
+    },
+
+    avatar: {
+        type : DataTypes.STRING(30)
+    },
+
+    roleId : {
+        type : DataTypes.INTEGER,
+        allowNull : false,
+        references : {
+            model : 'role',
+            key : 'id'
+        }
+    }
+
 }, {
-    freezeTableName : true
+    freezeTableName: true
 });
 
 
 module.exports = User;
-
-

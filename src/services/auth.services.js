@@ -6,19 +6,19 @@ exports.login = async (user) => {
     
     const UserLogin = await UserModel.findOne({
         where : {
-            userName : user.userName
+            email : user.email
         }
     });
     
     if(UserLogin !== null){
-        const isPasswordMatched = await bcrypt.compareSync(user.userPassword, UserLogin.userPassword);
+        const isPasswordMatched = await bcrypt.compareSync(user.password, UserLogin.password);
         if(isPasswordMatched == true){
             const token = jwt.sign({
                userId : UserLogin.userId
             }, process.env.SECRET_KEY, {expiresIn: '7d'});
 
             return {
-                userName : UserLogin.userName,
+                email : UserLogin.email,
                 token : token
             }
         }

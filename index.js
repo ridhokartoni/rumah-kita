@@ -3,15 +3,15 @@ const app = express();
 const port = process.env.PORT || '3000';
 const connection = require('./src/databases/connection');
 const dotenv = require('dotenv');
+const dbRelation = require('./src/databases/relations')
 const routes = require('./src/routes/index.route');
-
-
 
 function runApp() {
     dotenv.config();
    console.log( process.env.DB_PORT)
     app.use((req, res, next) => {
         res.setHeader('Access-Control-Allow-Origin', '*');
+        dbRelation();
         next();
     });
 
