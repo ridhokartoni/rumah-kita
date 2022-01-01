@@ -13,11 +13,11 @@ const authentication =  (req, res, next) => {
             } else {
                 const userAuth = await User.findOne({
                     where: {
-                        userId: decode.userId
+                        id: decode.id
                     }
                 })
 
-                if (! userAuth) {
+                if (!userAuth) {
                     res.status(403).send({statusCode: 403, errorMessage: 'The token that you defined is incorrect format'})
                 } else {
                     next();
