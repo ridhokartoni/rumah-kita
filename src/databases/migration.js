@@ -3,6 +3,7 @@ const Role = require('../model/role.model');
 const Category = require('../model/category.model');
 const article = require('../model/article.model');
 const articlesaved = require('../model/articlesaved.model');
+const comment = require('../model/comment.model');
 
 
 //Run this function to migration about table structure in our databases
@@ -28,6 +29,11 @@ async function migration() {
             alter: true
         });
 
+        const commentSync = await comment.sync({
+            force: false,
+            alter: true
+        });
+
         const userSync = await User.sync({
             force: false,
             alter: true
@@ -37,6 +43,7 @@ async function migration() {
         console.log(categorySync);
         console.log(articleSync);
         console.log(articlesavedSync);
+        console.log(commentSync);
         console.log(userSync);
 
         const createCategory = await Category.create({
@@ -47,25 +54,42 @@ async function migration() {
 
 
         const createArticle = await article.create({
-            title: "Sepak Bola",
-            linkOrigin: "http//askdamsdkasm",
-            content: "asdnasasd asda sdas asd asd asd ad",
-            thumbnailPicture: "image.ajsdi",
-            categoryId: 1
-        });
+                title: "Sepak Bola",
+                linkOrigin: "http//askdamsdkasm",
+                content: "asdnasasd asda sdas asd asd asd ad",
+                thumbnailPicture: "image.ajsdi",
+                categoryId: 1
+            }).then(function () {
+                console.log('Create Article Saved Success');
+                return
+            })
+            .catch(function (err) {
+                console.log('Create Article Saved Failed', err)
+            });
 
-        console.log('Create Article Success')
 
         const createArticlesaved = await articlesaved.create({
-            articleId : 1,
-            userId: 1
-        }).then(function () {
-            console.log('Create Artcle Saved Success');
-            return
-          })
-          .catch(function (err) {
-            console.log('Create Artcle Saved Failed', err)
-          });
+                articleId: 1,
+                userId: 1
+            }).then(function () {
+                console.log('Create Article Saved Success');
+                return
+            })
+            .catch(function (err) {
+                console.log('Create Article Saved Failed', err)
+            });
+
+        const createComment = await comment.create({
+                articleId: 1,
+                userId: 1,
+                comment: "asdjkasndjkan sdnasd nasdklnaskldn"
+            }).then(function () {
+                console.log('Create Artcle Saved Success');
+                return
+            })
+            .catch(function (err) {
+                console.log('Create Artcle Saved Failed', err)
+            });
 
         const createRole = await Role.bulkCreate([{
                 name: "user"
