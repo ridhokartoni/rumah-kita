@@ -1,6 +1,8 @@
 const User = require('../model/user.model');
 const Role = require('../model/role.model');
 
+
+//Run this function to migration about table structure in our databases
 async function migration(){
     try {
         const roleSync = await Role.sync({
