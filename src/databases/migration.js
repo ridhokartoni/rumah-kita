@@ -1,11 +1,17 @@
 const User = require('../model/user.model');
 const Role = require('../model/role.model');
+const Category = require('../model/category.model');
 
 
 //Run this function to migration about table structure in our databases
 async function migration(){
     try {
         const roleSync = await Role.sync({
+            force: false,
+            alter : true,
+        });
+
+        const categorySync = await Category.sync({
             force: false,
             alter : true,
         });
@@ -18,6 +24,13 @@ async function migration(){
         console.log(roleSync);
         console.log(userSync);
 
+        const createCategory = await Category.create({
+            name : "Mental Issues"
+        });
+
+        console.log('Create Category Success')
+
+
         const createRole = await Role.bulkCreate([
             {
                 name : "user"
@@ -26,6 +39,9 @@ async function migration(){
                 name : "admin"
             }
         ]);
+
+        console.log('Create Role Success')
+
 
         const createUser = await User.create({
             name : "Teguh",
@@ -36,8 +52,10 @@ async function migration(){
             roleId : 1
         });
 
-        console.log(createRole)
-        console.log(createUser)
+        console.log('Create User Success')
+
+
+        
     } catch (error) {
         console.log(error);
     }
