@@ -17,8 +17,10 @@ const User = connection.define('user', {
 
     email: {
         type: DataTypes.STRING(30),
-        allowNull: false
+        allowNull: false,
+        unique : true
     },
+    
     password: {
         type: DataTypes.STRING(30),
         allowNull: false

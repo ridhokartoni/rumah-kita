@@ -1,39 +1,50 @@
 const User = require('../model/user.model');
 const Role = require('../model/role.model');
 
+async function migration(){
+    try {
+        const roleSync = await Role.sync({
+            force: false,
+            alter : true,
+        });
+    
+        const userSync = await User.sync({
+            force: false,
+            alter: true
+        });
+    
+        console.log(roleSync);
+        console.log(userSync);
 
+        const createRole = await Role.bulkCreate([
+            {
+                name : "user"
+            }, 
+            {
+                name : "admin"
+            }
+        ]);
 
-Role.sync({force : false, alter: true}).then(() => {
-    console.log("Syncronize Table Role success");
-}).catch((err) => {
-    console.log(err);
-})
+        const createUser = await User.create({
+            name : "Teguh",
+            email : "tripr@gmail.com",
+            password : "Teguh121@!",
+            gender : "Pria",
+            avatar : "/3.svg",
+            roleId : 1
+        });
 
-User.sync({force: false, alter: true}).then(() => {
-    console.log("Table User Has Been Created");
-}).catch((err) => {
-    console.log(err);
-})
-
-Role.bulkCreate([
-    {
-        name : "user"
-    }, 
-    {
-        name : "admin"
+        console.log(createRole)
+        console.log(createUser)
+    } catch (error) {
+        console.log(error);
     }
-]).then((result) => {
-    console.log(result);
-}).catch((err) => console.log(err));
+}
 
-User.create({
-    name : "Teguh",
-    email : "tripr@gmail.com",
-    password : "Teguh121@!",
-    gender : "Pria",
-    avatar : "/3.svg",
-    roleId : 1
-}).then((result) => {
-    console.log(result)
-}).catch((err) => console.log(err))
+
+migration();
+
+
+
+
 
