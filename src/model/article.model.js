@@ -34,6 +34,7 @@ const article = connection.define('article', {
 
     categoryId: {
         type: DataTypes.INTEGER,
+        allowNull: false,
         references: {
             model: 'Category',
             key: 'id'

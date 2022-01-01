@@ -1,7 +1,8 @@
 const User = require('../model/user.model');
 const Role = require('../model/role.model');
 const Category = require('../model/category.model');
-const article = require('../model/article.model')
+const article = require('../model/article.model');
+const articlesaved = require('../model/articlesaved.model');
 
 
 //Run this function to migration about table structure in our databases
@@ -20,7 +21,12 @@ async function migration() {
         const articleSync = await article.sync({
             force: false,
             alter: true
-        })
+        });
+
+        const articlesavedSync = await articlesaved.sync({
+            force: false,
+            alter: true
+        });
 
         const userSync = await User.sync({
             force: false,
@@ -30,6 +36,7 @@ async function migration() {
         console.log(roleSync);
         console.log(categorySync);
         console.log(articleSync);
+        console.log(articlesavedSync);
         console.log(userSync);
 
         const createCategory = await Category.create({
@@ -43,11 +50,22 @@ async function migration() {
             title: "Sepak Bola",
             linkOrigin: "http//askdamsdkasm",
             content: "asdnasasd asda sdas asd asd asd ad",
-            thumbnailPicture: "image.ajsdi"
+            thumbnailPicture: "image.ajsdi",
+            categoryId: 1
         });
 
         console.log('Create Article Success')
 
+        const createArticlesaved = await articlesaved.create({
+            articleId : 1,
+            userId: 1
+        }).then(function () {
+            console.log('Create Artcle Saved Success');
+            return
+          })
+          .catch(function (err) {
+            console.log('Create Artcle Saved Failed', err)
+          });
 
         const createRole = await Role.bulkCreate([{
                 name: "user"
