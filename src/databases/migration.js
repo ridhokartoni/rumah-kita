@@ -59,37 +59,25 @@ async function migration() {
                 content: "asdnasasd asda sdas asd asd asd ad",
                 thumbnailPicture: "image.ajsdi",
                 categoryId: 1
-            }).then(function () {
-                console.log('Create Article Saved Success');
-                return
-            })
-            .catch(function (err) {
-                console.log('Create Article Saved Failed', err)
             });
+
+            console.log('Create Article Success')
 
 
         const createArticlesaved = await articlesaved.create({
                 articleId: 1,
                 userId: 1
-            }).then(function () {
-                console.log('Create Article Saved Success');
-                return
-            })
-            .catch(function (err) {
-                console.log('Create Article Saved Failed', err)
             });
+
+            console.log('Create Article Saved Success')
 
         const createComment = await comment.create({
                 articleId: 1,
                 userId: 1,
                 comment: "asdjkasndjkan sdnasd nasdklnaskldn"
-            }).then(function () {
-                console.log('Create Artcle Saved Success');
-                return
-            })
-            .catch(function (err) {
-                console.log('Create Artcle Saved Failed', err)
             });
+
+            console.log('Create Comment Success')
 
         const createRole = await Role.bulkCreate([{
                 name: "user"
