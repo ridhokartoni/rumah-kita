@@ -8,7 +8,7 @@ id INT AI NN
 articleId foreign key references article(id)
 userId foreign key references user(id)
 */
-const articlesaved = connection.define('articlesaved', {
+const lovedArticle = connection.define('lovedArticle', {
     id: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
@@ -36,4 +36,4 @@ const articlesaved = connection.define('articlesaved', {
     freezeTableName: true
 });
 
-module.exports = articlesaved
+module.exports = lovedArticle

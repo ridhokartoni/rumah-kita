@@ -2,7 +2,7 @@ const User = require('../model/user.model');
 const Role = require('../model/role.model');
 const Category = require('../model/category.model');
 const article = require('../model/article.model');
-const articlesaved = require('../model/articlesaved.model');
+const lovedArticles = require('../model/lovedArticles.model');
 const comment = require('../model/comment.model');
 
 
@@ -12,6 +12,11 @@ async function migration() {
         const roleSync = await Role.sync({
             force: false,
             alter: true,
+        });
+
+        const userSync = await User.sync({
+            force: false,
+            alter: true
         });
 
         const categorySync = await Category.sync({
@@ -24,7 +29,7 @@ async function migration() {
             alter: true
         });
 
-        const articlesavedSync = await articlesaved.sync({
+        const lovedArticlesSync = await lovedArticles.sync({
             force: false,
             alter: true
         });
@@ -34,61 +39,22 @@ async function migration() {
             alter: true
         });
 
-        const userSync = await User.sync({
-            force: false,
-            alter: true
-        });
 
-        console.log(roleSync);
-        console.log(categorySync);
-        console.log(articleSync);
-        console.log(articlesavedSync);
-        console.log(commentSync);
-        console.log(userSync);
+        const createRole = await Role.bulkCreate([{
+            name: "user"
+        },
+        {
+            name: "admin"
+        }
+        ]);
+
+        console.log('Create Role Success')
 
         const createCategory = await Category.create({
             name: "Mental Issues"
         });
 
-        console.log('Create Category Success')
-
-
-        const createArticle = await article.create({
-                title: "Sepak Bola",
-                linkOrigin: "http//askdamsdkasm",
-                content: "asdnasasd asda sdas asd asd asd ad",
-                thumbnailPicture: "image.ajsdi",
-                categoryId: 1
-            });
-
-            console.log('Create Article Success')
-
-
-        const createArticlesaved = await articlesaved.create({
-                articleId: 1,
-                userId: 1
-            });
-
-            console.log('Create Article Saved Success')
-
-        const createComment = await comment.create({
-                articleId: 1,
-                userId: 1,
-                comment: "asdjkasndjkan sdnasd nasdklnaskldn"
-            });
-
-            console.log('Create Comment Success')
-
-        const createRole = await Role.bulkCreate([{
-                name: "user"
-            },
-            {
-                name: "admin"
-            }
-        ]);
-
-        console.log('Create Role Success')
-
+        console.log('Create Category Success');
 
         const createUser = await User.create({
             name: "Teguh",
@@ -100,6 +66,38 @@ async function migration() {
         });
 
         console.log('Create User Success')
+
+
+        const createArticle = await article.create({
+            title: "Sepak Bola",
+            linkOrigin: "http//askdamsdkasm",
+            content: "asdnasasd asda sdas asd asd asd ad",
+            thumbnailPicture: "image.ajsdi",
+            categoryId: 1
+        });
+
+        console.log('Create Article Success')
+
+
+        const createlovedArticles = await lovedArticles.create({
+            articleId: 1,
+            userId: 1
+        });
+
+        console.log('Create Article Saved Success')
+
+        const createComment = await comment.create({
+            articleId: 1,
+            userId: 1,
+            comment: "asdjkasndjkan sdnasd nasdklnaskldn"
+        });
+
+        console.log('Create Comment Success')
+
+
+
+
+
 
 
 
