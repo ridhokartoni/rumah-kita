@@ -8,7 +8,7 @@ const roleAdminRouter = require('./admin/role.admin.route');
 
 router.use('/user', UserRouter);
 router.use('/auth', AuthRouter);
-router.use('/admin/artcile', articleAdminRouter);
+router.use('/admin/article', articleAdminRouter);
 router.use('/admin/category', categoryAdminRouter);
 router.use('/admin/user', userAdminRouter);
 router.use('/admin/role', roleAdminRouter);

@@ -4,7 +4,7 @@ exports.getAllUser = async function (page) {
     try {
         let result = await user.findAll({
             limit : 10,
-            offside : (page - 1) * 10,
+            offside : (page - 1) * 10
         });
         return result;
     } catch (err) {
@@ -12,9 +12,9 @@ exports.getAllUser = async function (page) {
     }
 }
 
-exports.createUser = async function (user) {
+exports.createUser = async function (userr) {
     try {
-        let result = await user.create(user);
+        let result = await user.create(userr);
         return result;
     } catch (err) {
         throw new Error(err.message)

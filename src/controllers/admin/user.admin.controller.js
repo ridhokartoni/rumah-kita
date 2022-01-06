@@ -4,7 +4,7 @@ exports.gertAllUser = async function (req,res){
     try {
         if(req.params.page){
             let result = await userAdminServices.getAllUser(req.params.page);
-            res.render('../../views/pages/tables.ejs');
+            // res.render('../../views/pages/tables.ejs');
         }
     } catch (err) {
         res.status(500).send({

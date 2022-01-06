@@ -4,7 +4,7 @@ exports.gertAllCategory = async function (req,res){
     try {
         if(req.params.page){
             let result = await categoryAdminServices.getAllCategory(req.params.page);
-            res.render('../../views/pages/tables.ejs');
+            // res.render('../../views/pages/tables.ejs');
         }
     } catch (err) {
         res.status(500).send({

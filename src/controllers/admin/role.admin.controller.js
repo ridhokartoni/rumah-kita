@@ -4,7 +4,7 @@ exports.gertAllRole = async function (req,res){
     try {
         if(req.params.page){
             let result = await roleAdminServices.getAllRole(req.params.page);
-            res.render('../../views/pages/tables.ejs');
+            // res.render('../../views/pages/tables.ejs');
         }
     } catch (err) {
         res.status(500).send({
@@ -14,7 +14,7 @@ exports.gertAllRole = async function (req,res){
     }
 }
 
-exports.createUser = async function (req,res) {
+exports.createRole = async function (req,res) {
     try {
         let result = await roleAdminServices.createRole(req.body);
         res.send(result);

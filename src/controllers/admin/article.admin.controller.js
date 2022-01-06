@@ -3,8 +3,8 @@ const articleAdminServices = require('../../services/admin/article.admin.service
 exports.gertAllArticle = async function (req,res){
     try {
         if(req.params.page){
-            let result = await articleAdminServices.getAllArticlce(req.params.page);
-            res.render('../../views/pages/tables.ejs');
+            let result = await articleAdminServices.getAllArticle(req.params.page);
+            // res.render('../../views/pages/tables.ejs');
         }
     } catch (err) {
         res.status(500).send({
