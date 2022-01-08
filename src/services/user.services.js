@@ -1,6 +1,10 @@
 const User = require('../model/user.model');
 const bcrypt = require('bcrypt');
-const saltRounds = 10
+const saltRounds = 10;
+const jwt = require('jsonwebtoken')
+const sendEmail = require('../utilities/sendEmail');
+
+
 
 exports.getAllUser = async () => {
     let result;
@@ -43,6 +47,30 @@ exports.deleteUser = async (user) => {
         });
         
         return result
+    } catch (error) {
+        throw new Error(error.message);
+    }
+    
+}
+
+exports.forgotPassword = async(email) => {
+    try {
+        const userForgot = await User.findOne({
+            where : {
+                email : email
+            }
+        });
+    
+        if(userForgot){
+            const tokenForgotPassword = jwt.sign({
+                id : userForgot.id,
+            }, process.env.SECRET_KEY, {expiresIn: '2h'})
+            
+            let result = await sendEmail(userForgot, tokenForgotPassword);
+            return result;
+        }else{
+            throw new Error('User tidak ditemukan')
+        }
     } catch (error) {
         throw new Error(error.message);
     }

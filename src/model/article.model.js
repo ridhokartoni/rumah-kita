@@ -32,6 +32,10 @@ const article = connection.define('article', {
         allowNull: false
     },
 
+    viewers :{ 
+        type : DataTypes.INTEGER,
+    },
+
     categoryId: {
         type: DataTypes.INTEGER,
         allowNull: false,

@@ -1,22 +1,24 @@
-const article = require('../../model/article.model');
+const Article = require('../../model/article.model');
 
-exports.getAllArticle = async function (page) {
+
+exports.getAllArticle = async (page) => {
     try {
-        let result = await article.findAll({
+        let result = await Article.findAll({
             limit : 10,
-            offside : (page - 1) * 10
+            offset: (page - 1) * 10,
         });
         
-    } catch (err) {
-        throw new Error(err.message)
+        return result;
+    } catch (error) {
+        throw new Error(error.message)
     }
 }
 
-exports.createArticle = async function (articlee) {
+exports.createArticle = async (article) => {
     try {
-        let result = await article.create(articlee);
+        let result = await Article.create(article);
         return result;
-    } catch (err) {
-        throw new Error(err.message)
+    } catch (error) {
+        throw new Error(error.message)
     }
 }

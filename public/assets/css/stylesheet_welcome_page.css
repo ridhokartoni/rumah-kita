@@ -71,9 +71,26 @@ body {
     border-radius: 16px;
 }
 
-.tombol:hover {
+.background-membaca{
+    background-color: #7b62c1;
+}
+
+.background-masuk{
+    background-color: #ff817d;
+}
+
+.background-membaca:hover {
     cursor: pointer;
-    filter: brightness(80%);
+    background-color: #381b89;
+}
+
+.background-masuk:hover {
+    cursor: pointer;
+    background-color: #bb6461;
+}
+
+.tanpa-dekorasi{
+    text-decoration: none;
 }
 
 .text-inside-tombol {
@@ -89,3 +106,4 @@ body {
     text-align: center;
     color: #fff;
 }
+
