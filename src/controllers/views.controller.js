@@ -25,7 +25,7 @@ exports.login = async(req,res) => {
 
 exports.forgotpassword = async (req,res) => {
     if(req.params.success){
-        req.render('../views/pages/forgotpassword/succes_forgot_password.ejs', {
+        res.render('../views/pages/forgotpassword/success_forgot_password.ejs', {
             appLink : process.env.APP_LINK
         })
     }else {
@@ -35,4 +35,7 @@ exports.forgotpassword = async (req,res) => {
     }
     
 }
+
+
+
 
