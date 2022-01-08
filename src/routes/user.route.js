@@ -4,8 +4,9 @@ const authentication = require('../middleware/authenticationToken');
 
 // router.use(authentication);
 router.get('/', UserController.getUsers);
-router.delete('/', UserController.deleteUsers);
-router.post('/', UserController.createUsers);
+router.delete('/delete', UserController.deleteUsers);
+router.post('/create', UserController.createUsers);
+router.post('/forgotpassword', UserController.forgotPassword);
 
 
 
