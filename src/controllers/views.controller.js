@@ -19,6 +19,10 @@ exports.welcome = async (req,res) => {
     res.render('../views/pages/welcome_page.ejs', {appLink: process.env.APP_LINK});
 }
 
+exports.login = async(req,res) => {
+    res.render('../views/pages/login_page.ejs', {appLink: process.env.appLink});
+}
+
 exports.forgotpassword = async (req,res) => {
     if(req.params.success){
         req.render('../views/pages/forgotpassword/succes_forgot_password.ejs', {
