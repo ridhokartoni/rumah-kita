@@ -1,8 +1,8 @@
-const category = require('../../model/category.model');
+const Category = require('../../model/category.model');
 
 exports.getAllCategory = async function (page) {
     try {
-        let result = await category.findAll({
+        let result = await Category.findAll({
             limit : 10,
             offside : (page - 1) * 10
         });
@@ -12,9 +12,9 @@ exports.getAllCategory = async function (page) {
     }
 }
 
-exports.createCategory = async function (categoryy) {
+exports.createCategory = async function (category) {
     try {
-        let result = await category.create(categoryy);
+        let result = await Category.create(category);
         return result;
     } catch (err) {
         throw new Error(err.message)

@@ -20,3 +20,21 @@ exports.createUser = async function (userr) {
         throw new Error(err.message)
     }
 }
+
+exports.updateUser = async function (userRequest) {
+    try {
+        let result = await user.update(userRequest, {
+            where: {
+                id : userRequest.id
+            }
+        })
+        if(result[0] == 0){
+            throw new Error('User tidak ditemukan/User tidak dapat diupdate')
+        }else {
+            return {message : "Berhasil mengupdate user"}
+        }
+
+    } catch (err) {
+        throw new Error(err.message);
+    }
+}

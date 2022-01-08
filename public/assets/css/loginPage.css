@@ -116,7 +116,7 @@ button {
 }
 
 .lock {
-    background-image: url(lock.png);
+    background-image: url(../images/lock.png);
     background-repeat: no-repeat;
     margin-top: 3%;
     margin-left: 2%;
@@ -125,7 +125,7 @@ button {
 }
 
 .email {
-    background-image: url(mail.png);
+    background-image: url(../images/mail.png);
     background-repeat: no-repeat;
     margin-top: 15px;
     margin-left: 2%;

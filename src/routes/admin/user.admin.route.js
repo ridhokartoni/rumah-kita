@@ -3,5 +3,6 @@ const userAdminController = require('../../controllers/admin/user.admin.controll
 
 router.get('/:page', userAdminController.gertAllUser);
 router.post('/create', userAdminController.createUser);
+router.put('/update', userAdminController.updateUser);
 
 module.exports = router;

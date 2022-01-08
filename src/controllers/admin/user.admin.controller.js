@@ -25,3 +25,16 @@ exports.createUser = async function (req,res) {
         })
     }
 }
+
+exports.updateUser = async function (req,res) {
+    try {
+        let result = await userAdminServices.updateUser(req.body);
+        res.send(result)
+    } catch (err) {
+        res.status(500).send({
+            statusCode : 500,
+            errorMessage : err.message
+        })
+        
+    }
+}
