@@ -27,9 +27,9 @@
 
 h4.category {
   font-family: 'Source Sans Pro', sans-serif;
-  font-weight: 600;
-  line-height: 1.12;
-  letter-spacing: 1.2px;
+  font-weight: bold;
+  line-height: 1.23;
+  letter-spacing: 0.54px;
 }
 
 p.date-category {
