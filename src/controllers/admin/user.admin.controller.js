@@ -1,6 +1,6 @@
 const userAdminServices = require('../../services/admin/user.admin.services')
 
-exports.gertAllUser = async function (req,res){
+exports.getAllUser = async function (req,res){
     try {
         if(req.params.page){
             let result = await userAdminServices.getAllUser(req.params.page);
@@ -12,7 +12,7 @@ exports.gertAllUser = async function (req,res){
             errorMessage : err.message
         })
     }
-}
+};
 
 exports.createUser = async function (req,res) {
     try {
@@ -24,4 +24,28 @@ exports.createUser = async function (req,res) {
             errorMessage : err.message
         })
     }
-}
+};
+
+exports.updateUser = async function (req,res) {
+    try {
+        let result = await userAdminServices.updateUser(req.body);
+        res.send(result);
+    } catch (err) {
+        res.status(500).send({
+            statusCode : 500,
+            errorMessage : err.message
+        })
+    }
+};
+
+exports.deleteUser = async function (req,res) {
+    try {
+        let result = await userAdminServices.deleteUser(req.body);
+        res.send(result);
+    } catch (err) {
+        res.status(500).send({
+            statusCode : 500,
+            errorMessage : err.message
+        })
+    }
+};
