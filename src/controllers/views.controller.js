@@ -130,7 +130,7 @@ exports.mentalissues = async (req, res) => {
     res.render('../views/pages/categories/mental_issues.ejs', {
         data: data
     });
-}
+} 
 
 exports.lifestyle = async (req, res) => {
     let data = {
