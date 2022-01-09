@@ -1,6 +1,6 @@
-const ArticleAdminServices = require('../../services/admin/article.admin.services');
+const articleAdminServices = require('../../services/admin/article.admin.services');
 
-exports.getAllArticles = async (req,res) =>{
+exports.getAllArticle = async function (req,res){
     try {
         if(req.params.page){
             let result = await ArticleAdminServices.getAllArticle(req.params.page);
@@ -12,7 +12,7 @@ exports.getAllArticles = async (req,res) =>{
             errorMessage : error.message,
         })
     }
-}
+};
 
 
 exports.createArticle = async (req, res) =>{
@@ -25,4 +25,28 @@ exports.createArticle = async (req, res) =>{
             errorMessage : error.message,
         })
     }
-}
+};
+
+exports.updateArticle = async function (req,res) {
+    try {
+        let result = await articleAdminServices.updateArticle(req.body);
+        res.send(result);
+    } catch (err) {
+        res.status(500).send({
+            statusCode : 500,
+            errorMessage : err.message
+        })
+    }
+};
+
+exports.deleteArticle = async function (req,res) {
+    try {
+        let result = await articleAdminServices.deleteArticle(req.body);
+        res.send(result);
+    } catch (err) {
+        res.status(500).send({
+            statusCode : 500,
+            errorMessage : err.message
+        })
+    }
+};
