@@ -7,10 +7,10 @@
 
 <body>
     <header>
-        <% if(data==false) { %>
-            <%- include('../partials/headers/unregistered_header'); %>
+        <% if(isLogged == false) { %>
+            <%- include('../partials/headers/unregistered_header', {category: category}); %>
                 <% } else { %>
-                    <%- include('../partials/headers/registered_header'); %>
+                    <%- include('../partials/headers/registered_header') %>
                         <% } %>
     </header>
 
@@ -107,7 +107,8 @@
                                         </div>
                                         <div class="bd-highlight">
                                             <button type="button" class="d-flex btn">
-                                                <small class="other">Lihat Lainnya</small>
+                                                <sm
+                                                all class="other">Lihat Lainnya</small>
                                                 <div class="ms-2">
                                                     <i class="fas fa-chevron-right"></i>
                                                 </div>

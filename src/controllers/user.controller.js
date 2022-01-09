@@ -47,3 +47,19 @@ exports.deleteUsers = async (req,res) => {
         })
     }
 }
+
+exports.forgotPassword = async (req,res) =>{
+    try {
+        if(req.query.email){
+            let result = await UserServices.forgotPassword(req.query.email);
+            res.send(result);
+        }else{
+            throw new Error('Ngga ada emailnya cok!')
+        }
+    } catch (error) {
+        res.status(500).send({
+            errorStatus : 500,
+            errorMessage : error.message
+        })
+    }
+}
