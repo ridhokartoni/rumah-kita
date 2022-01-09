@@ -1,11 +1,15 @@
 const router = require('express').Router();
 const UserRouter = require('./user.route');
 const AuthRouter = require('./auth.route');
+
 const articleAdminRouter = require('./admin/article.admin.route');
 const categoryAdminRouter = require('./admin/category.admin.route');
 const userAdminRouter = require('./admin/user.admin.route');
 const roleAdminRouter = require('./admin/role.admin.route');
+const ViewsRouter = require('./views.route');
 
+
+router.use(ViewsRouter)
 router.use('/user', UserRouter);
 router.use('/auth', AuthRouter);
 router.use('/admin/article', articleAdminRouter);
@@ -17,5 +21,5 @@ router.use((req,res) => {
         message: `There is no route for ${req.url}`
     })
 })
-
+//user akses {host}/auth/
 module.exports = router;

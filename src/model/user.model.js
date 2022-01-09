@@ -22,7 +22,7 @@ const User = connection.define('user', {
     },
     
     password: {
-        type: DataTypes.STRING(30),
+        type: DataTypes.STRING(255),
         allowNull: false
     },
 
@@ -31,7 +31,8 @@ const User = connection.define('user', {
     },
 
     avatar: {
-        type : DataTypes.STRING(30)
+        type : DataTypes.STRING(30),
+        defaultValue: "1.svg"
     },
 
     roleId : {

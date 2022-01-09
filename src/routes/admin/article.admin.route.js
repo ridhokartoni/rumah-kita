@@ -1,5 +1,5 @@
-const router =require('express').Router();
-const articleAdminController = require('../../controllers/admin/article.admin.controller');
+const router = require('express').Router();
+const ArticleAdminController = require('../../controllers/admin/article.admin.controller');
 
 router.get('/:page', articleAdminController.getAllArticle);
 router.post('/create', articleAdminController.createArticle);
