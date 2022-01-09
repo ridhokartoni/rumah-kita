@@ -7,11 +7,7 @@
 
 <body>
     <header>
-        <% if(data==false) { %>
-            <%- include('../../partials/headers/unregistered_header'); %>
-                <% } else { %>
-                    <%- include('../../partials/headers/registered_header'); %>
-                        <% } %>
+        <%- include('../../partials/header'); %>
     </header>
 
     <section>
@@ -25,10 +21,10 @@
                             <div class="container-fluid greetings text-white p-5 pb-4">
                                 <div class="row pe-5 pb-3 ps-4">
                                     <div class="col-6 d-flex flex-column mt-3">
-                                        <% if(data==false) { %>
+                                        <% if(data.isLogged==false) { %>
                                             <h2>Selamat pagi,<br>Sayang</h2>
                                             <% } else { %>
-                                                <h2>Selamat pagi,<br>Alma</h2>
+                                                <h2>Selamat pagi,<br><%= data.user.name %></h2>
                                                 <% } %>
                                                     <p class="me-3"><small>“Kamu tidak harus mengendalikan pikiranmu.
                                                             Anda hanya
@@ -110,7 +106,7 @@
                             <div class="date">
                                 <div class="d-flex justify-content-center py-2">
                                     <h6>
-                                        <%= date %>
+                                        <%= data.dateNow %>
                                     </h6>
                                 </div>
                             </div>
@@ -123,172 +119,44 @@
 
                     <section>
                         <% for(let i=0; i<5; i++) { %>
-                            <div class="container-fluid pt-3 px-0">
-                                <div class="d-flex">
-                                    <div class="box-heliotrope"></div>
-                                    <h6 class="side-text ms-3">
-                                        4 Hari Lalu
-                                    </h6>
-                                </div>
-                            </div>
-                            <div class="card bg-transparent border-0 mb-3 ms-3">
-                                <div
-                                    class="card-body d-flex flex-column justify-content-between min-height-100 ps-2 py-2 pe-3">
-                                    <div class="side-content">
-                                        <a href="#">
-                                            <h5 class="card-title title-content side">Kamu Berhak
-                                                Bahagia! 10 Cara
-                                                Menjaga
-                                                Kesehatan Mental</h5>
-                                        </a>
+                            <% if(i%2==0) { %>
+                                <div class="container-fluid pt-3 px-0">
+                                    <div class="d-flex">
+                                        <div class="box-heliotrope"></div>
+                                        <h6 class="side-text ms-3">
+                                            4 Hari Lalu
+                                        </h6>
                                     </div>
-                                    <p class="card-text side text-start"><small>Senin, 20 Des
-                                            2021 16:30 WIB
-                                        </small></p>
                                 </div>
-                            </div>
+                                <% } else { %>
+                                    <div class="container-fluid pt-3 px-0">
+                                        <div class="d-flex">
+                                            <div class="box-congo-pink"></div>
+                                            <h6 class="side-text ms-3">
+                                                4 Hari Lalu
+                                            </h6>
+                                        </div>
+                                    </div>
+                                    <% } %>
+                                        <div class="card bg-transparent border-0 mb-3 ms-3">
+                                            <div
+                                                class="card-body d-flex flex-column justify-content-between min-height-100 ps-2 py-2 pe-3">
+                                                <div class="side-content">
+                                                    <a href="#">
+                                                        <h5 class="card-title title-content side">Kamu Berhak
+                                                            Bahagia! 10 Cara
+                                                            Menjaga
+                                                            Kesehatan Mental</h5>
+                                                    </a>
+                                                </div>
+                                                <p class="card-text side text-start"><small>Senin, 20 Des
+                                                        2021 16:30 WIB
+                                                    </small></p>
+                                            </div>
+                                        </div>
 
-                            <div class="dropdown-divider mx-4"></div>
-                            <% } %>
-                    </section>
-
-                    <section>
-                        <div class="container-fluid pt-3 px-0">
-                            <div class="d-flex">
-                                <div class="box-heliotrope"></div>
-                                <h6 class="side-text ms-3">
-                                    4 Hari Lalu
-                                </h6>
-                            </div>
-                        </div>
-                        <div class="card bg-transparent border-0 mb-3 ms-3">
-                            <div
-                                class="card-body d-flex flex-column justify-content-between min-height-100 ps-2 py-2 pe-3">
-                                <div class="side-content">
-                                    <a href="#">
-                                        <h5 class="card-title title-content side">Kamu Berhak
-                                            Bahagia! 10 Cara
-                                            Menjaga
-                                            Kesehatan Mental</h5>
-                                    </a>
-                                </div>
-                                <p class="card-text side text-start"><small>Senin, 20 Des
-                                        2021 16:30 WIB
-                                    </small></p>
-                            </div>
-                        </div>
-                    </section>
-
-                    <div class="dropdown-divider mx-4"></div>
-
-                    <section>
-                        <div class="container-fluid pt-3 px-0">
-                            <div class="d-flex">
-                                <div class="box-congo-pink"></div>
-                                <h6 class="side-text ms-3">
-                                    5 Hari Lalu
-                                </h6>
-                            </div>
-                        </div>
-                        <div class="card bg-transparent border-0 mb-3 ms-3">
-                            <div
-                                class="card-body d-flex flex-column justify-content-between min-height-100 ps-2 py-2 pe-3">
-                                <div class="side-content">
-                                    <a href="#">
-                                        <h5 class="card-title title-content side">Kamu Berhak
-                                            Ada Istilah Kekuatan & Kesehatan Mental, Apa Bedanya?
-                                        </h5>
-                                    </a>
-                                </div>
-                                <p class="card-text side text-start"><small>Senin, 20 Des
-                                        2021 16:30 WIB
-                                    </small></p>
-                            </div>
-                        </div>
-                    </section>
-
-                    <div class="dropdown-divider mx-4"></div>
-
-                    <section>
-                        <div class="container-fluid pt-3 px-0">
-                            <div class="d-flex">
-                                <div class="box-heliotrope"></div>
-                                <h6 class="side-text ms-3">
-                                    5 Hari Lalu
-                                </h6>
-                            </div>
-                        </div>
-                        <div class="card bg-transparent border-0 mb-3 ms-3">
-                            <div
-                                class="card-body d-flex flex-column justify-content-between min-height-100 ps-2 py-2 pe-3">
-                                <div class="side-content">
-                                    <a href="#">
-                                        <h5 class="card-title title-content side">5 Makanan yang Baik dan Buruk
-                                            untuk
-                                            Kesehatan Mental</h5>
-                                    </a>
-                                </div>
-                                <p class="card-text side text-start"><small>Senin, 20 Des
-                                        2021 16:30 WIB
-                                    </small></p>
-                            </div>
-                        </div>
-                    </section>
-
-                    <div class="dropdown-divider mx-4"></div>
-
-                    <section>
-                        <div class="container-fluid pt-3 px-0">
-                            <div class="d-flex">
-                                <div class="box-congo-pink"></div>
-                                <h6 class="side-text ms-3">
-                                    5 Hari Lalu
-                                </h6>
-                            </div>
-                        </div>
-                        <div class="card bg-transparent border-0 mb-3 ms-3">
-                            <div
-                                class="card-body d-flex flex-column justify-content-between min-height-100 ps-2 py-2 pe-3">
-                                <div class="side-content">
-                                    <a href="#">
-                                        <h5 class="card-title title-content side">5 Makanan yang Baik dan Buruk
-                                            untuk
-                                            Kesehatan Mental</h5>
-                                    </a>
-                                </div>
-                                <p class="card-text side text-start"><small>Senin, 20 Des
-                                        2021 16:30 WIB
-                                    </small></p>
-                            </div>
-                        </div>
-                    </section>
-
-                    <div class="dropdown-divider mx-4"></div>
-
-                    <section>
-                        <div class="container-fluid pt-3 px-0">
-                            <div class="d-flex">
-                                <div class="box-heliotrope"></div>
-                                <h6 class="side-text ms-3">
-                                    5 Hari Lalu
-                                </h6>
-                            </div>
-                        </div>
-                        <div class="card bg-transparent border-0 mb-3 ms-3">
-                            <div
-                                class="card-body d-flex flex-column justify-content-between min-height-100 ps-2 py-2 pe-3">
-                                <div class="side-content">
-                                    <a href="#">
-                                        <h5 class="card-title title-content side">5 Makanan yang Baik dan Buruk
-                                            untuk
-                                            Kesehatan Mental</h5>
-                                    </a>
-                                </div>
-                                <p class="card-text side text-start"><small>Senin, 20 Des
-                                        2021 16:30 WIB
-                                    </small></p>
-                            </div>
-                        </div>
+                                        <div class="dropdown-divider mx-4"></div>
+                                        <% } %>
                     </section>
 
                     <section>

@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand p-2 mx-5" href="/">
+            <h5 class="d-none">Our Home</h5>
+            <img src="/assets/images/Logo.svg" alt="Our Home" width="80%" height="80%">
+        </a>
+        <div class="collapse navbar-collapse ms-5">
+            <ul class="navbar-nav me-auto mt-2">
+                <% if(data.isLogged==false) { %>
+                    <% for(let i=0; i<data.navItem.length-1; i++) { %>
+                        <li class="nav-item me-3">
+                            <a role="text" class="nav-link <%= data.navItem[i].isActive %>" aria-current="page"
+                                href="<%= data.navItem[i].url %>">
+                                <h6>
+                                    <%= data.navItem[i].name %>
+                                </h6>
+                            </a>
+                        </li>
+                        <% } %>
+                            <% } else { %>
+                                <% data.navItem.forEach(page=> { %>
+                                    <li class="nav-item me-3">
+                                        <a role="text" class="nav-link <%= page.isActive %>" aria-current="page"
+                                            href="<%= page.url %>">
+                                            <h6>
+                                                <%= page.name %>
+                                            </h6>
+                                        </a>
+                                    </li>
+                                    <% }) %>
+                                        <% } %>
+            </ul>
+        </div>
+        <div class="collapse navbar-collapse d-flex justify-content-end me-5">
+            <form>
+                <div class="custom-search">
+                    <input type="text" class="form-control custom-search-input border-0 px-4 py-2"
+                        placeholder="Cari berita lainnya">
+                    <button class="custom-search-bottom px-3" type="submit">
+                        <i class="fal fa-search"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</nav>
