@@ -2,7 +2,7 @@ const User = require('../model/user.model');
 const Role = require('../model/role.model');
 const Category = require('../model/category.model');
 const article = require('../model/article.model');
-const lovedArticles = require('../model/lovedArticles.model');
+const savedArticles = require('../model/savedArticles.model');
 const comment = require('../model/comment.model');
 
 
@@ -29,7 +29,7 @@ async function migration() {
             alter: true
         });
 
-        const lovedArticlesSync = await lovedArticles.sync({
+        const savedArticlesSync = await savedArticles.sync({
             force: false,
             alter: true
         });
@@ -73,13 +73,14 @@ async function migration() {
             linkOrigin: "http//askdamsdkasm",
             content: "asdnasasd asda sdas asd asd asd ad",
             thumbnailPicture: "image.ajsdi",
-            categoryId: 1
+            categoryId: 1,
+            userId : 1
         });
 
         console.log('Create Article Success')
 
 
-        const createlovedArticles = await lovedArticles.create({
+        const createsavedArticles = await savedArticles.create({
             articleId: 1,
             userId: 1
         });
@@ -94,12 +95,7 @@ async function migration() {
 
         console.log('Create Comment Success')
 
-
-
-
-
-
-
+        process.exit(1);
 
     } catch (error) {
         console.log(error);

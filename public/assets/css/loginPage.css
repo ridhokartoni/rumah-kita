@@ -50,9 +50,28 @@ button {
     width: 70%;
     margin-top: 4%;
     margin-left: 15%;
+   
+}
+
+.gradient-color{
+    background: linear-gradient(to right, white , #FFD215);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
 }
 
 .link {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+.link:hover {
+    cursor: pointer;
+}
+
+
+
+.want-signup{
     margin-left: 25%;
 }
 
@@ -97,7 +116,8 @@ button {
     background-color: transparent;
     border: none;
     color: grey;
-    margin-top: 0px;
+    margin-top: 0;
+    padding-top: 0;
 }
 
 .form-control {
@@ -112,7 +132,7 @@ button {
 }
 
 .lock {
-    background-image: url(lock.png);
+    background-image: url(../images/lock.png);
     background-repeat: no-repeat;
     margin-top: 3%;
     margin-left: 2%;
@@ -121,10 +141,17 @@ button {
 }
 
 .email {
-    background-image: url(mail.png);
+    background-image: url(../images/mail.png);
     background-repeat: no-repeat;
     margin-top: 15px;
     margin-left: 2%;
     background-size: 101%;
     background-position-y: 20%;
 }
+
+#forgot-pass {
+    color:black;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 12%;
+}
+

@@ -1,24 +1,12 @@
-var nodemailer = require('nodemailer');
+const article = require('./src/model/article.model')
 
-var transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: 'triprasetyat@gmail.com',
-    pass: 'qhfksumlovvbpkjg'
-  }
+const createArticle =  article.create({
+    title: "Sepak Bola",
+    linkOrigin: "http//askdamsdkasm",
+    content: "asdnasasd asda sdas asd asd asd ad",
+    thumbnailPicture: "image.ajsdi",
+    categoryId: 1,
+    userId : 1
 });
 
-var mailOptions = {
-  from: 'no-reply@ourhome.co.id',
-  to: 'teguh.triprasetya@sinarmasmining.com',
-  subject: 'Sending Email using Node.js',
-  text: 'That was easy!'
-};
-
-transporter.sendMail(mailOptions, function(error, info){
-  if (error) {
-    console.log(error);
-  } else {
-    console.log('Email sent: ' + info.response);
-  }
-});
+console.log('Create Article Success')
