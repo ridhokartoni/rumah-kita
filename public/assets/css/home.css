@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&family=Oswald&family=Poppins&family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&family=Oswald&family=Poppins&family=Source+Sans+Pro:wght@300;400;600;700&display=swap");
 
 /* Header */
 .navbar {
@@ -11,7 +11,7 @@
 }
 
 .nav-link h6 {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-weight: normal;
   color: #1b105b;
 }
@@ -45,7 +45,7 @@ input:focus {
 }
 
 .custom-search-input {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-weight: normal;
   color: #9a9a9a;
   min-width: 100%;
@@ -81,7 +81,7 @@ input:focus {
 }
 
 p.desc {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-weight: normal;
 }
 
@@ -103,12 +103,12 @@ a.link-light:hover {
 }
 
 .color-footer p small {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   letter-spacing: 0.3px;
 }
 
 .image-footer {
-  background-image: url('../images/footer_image.svg');
+  background-image: url("../images/footer_image.svg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -150,7 +150,7 @@ div.greetings {
       #ae4aec83 5%,
       rgba(174, 74, 236, 0) 98%
     ),
-    url('../images/greetings_image.jpg');
+    url("../images/greetings_image.jpg");
   background-repeat: no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -174,7 +174,7 @@ div.greetings {
 }
 
 .greetings .row .col-6 p {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-weight: 300;
 }
 
@@ -224,7 +224,7 @@ img.content {
 }
 
 .card-title.home {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-weight: bold;
   font-size: 14px;
   color: #1b105b;
@@ -232,7 +232,7 @@ img.content {
 
 .card-subtitle.home,
 h6.home {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-weight: normal;
   font-size: 12px;
   color: #1b105b;
@@ -242,7 +242,7 @@ h6.home {
   background-color: #ff817d;
   color: white;
   font-size: 14px;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-weight: 600;
   letter-spacing: 0.5px;
   outline: 0px !important;
@@ -268,7 +268,7 @@ button.button-congo-pink:focus {
 .button-pale-purple {
   background-color: #f4e3fe;
   color: black;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 12px;
   font-weight: bold;
 }
@@ -347,7 +347,7 @@ button.button-logout.cancel:focus {
 }
 
 .date .d-flex h6 {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 14px;
   font-weight: 600;
 }
@@ -382,7 +382,7 @@ small.other {
 }
 
 h4.main-text {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-weight: bold;
   font-size: 24px;
   margin-top: 0.2rem;
@@ -390,13 +390,13 @@ h4.main-text {
 }
 
 h5.title-content {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-weight: bold;
   letter-spacing: 0.6px;
 }
 
 small.main-content {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-weight: normal;
   color: #9a9a9a;
 }
@@ -439,13 +439,13 @@ div.sec-content {
 }
 
 p.sec-content {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-weight: bold;
   font-size: 13px;
 }
 
 small.sec-content {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-weight: normal;
   font-size: 8px;
   color: #9a9a9a;
@@ -473,7 +473,7 @@ small.sec-content {
 }
 
 h6.side-text {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 16px;
   font-weight: bold;
   margin-top: 0.1rem;
