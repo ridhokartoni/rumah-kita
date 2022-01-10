@@ -40,8 +40,17 @@ const article = connection.define('article', {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'Category',
+            model: 'category',
             key: 'id'
+        }
+    },
+
+    userId : {
+        type : DataTypes.INTEGER,
+        allowNull : false,
+        references : {
+            model : 'user',
+            key : 'id'
         }
     }
 }, {

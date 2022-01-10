@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="<%= appLink %>/public/css/loginPage.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Rumah Kita</title>
   </head>
   <body>
    
@@ -19,7 +19,7 @@
         <button class="btn1">
             <div class="input-group">
                 <div class="input-group-prepend"></div>
-                <div class="input-group-text"><i class="fas fa-chevron-left"></i></div>
+                <div class="input-group-text"><a href="/welcome"><i class="fas fa-chevron-left"></i></a></div>
                 <label>Selamat Datang!</label>
             </div>
         </button>
@@ -43,13 +43,13 @@
                 </div>
             </div>
 
-            <p class="sandi"><a href="#">Lupa Kata Sandi?</a> </p> 
+            <p class="sandi"><a class="link" href="/forgotpassword">Lupa Kata Sandi?</a> </p> 
 
             <button type="submit" class="btn">
-                <h6><b>Masuk</b></h6>
+                <h6 class="gradient-color">Masuk</h6>
             </button>
 
-                <p class="link">Belum Punya Akun?  <a href="#">Daftar Disini</a> </p> 
+                <p class="want-signup">Belum Punya Akun?  <a class="link" href="#">Daftar Disini</a> </p> 
 
         </form>
     </div>

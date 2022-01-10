@@ -2,7 +2,7 @@ const Category = require('../../model/category.model');
 
 exports.getAllCategory = async function (page) {
     try {
-        let result = await Category.findAll({
+        let result = await Category.findAndCountAll({
             limit : 10,
             offside : (page - 1) * 10
         });

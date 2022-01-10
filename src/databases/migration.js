@@ -73,7 +73,8 @@ async function migration() {
             linkOrigin: "http//askdamsdkasm",
             content: "asdnasasd asda sdas asd asd asd ad",
             thumbnailPicture: "image.ajsdi",
-            categoryId: 1
+            categoryId: 1,
+            userId : 1
         });
 
         console.log('Create Article Success')
@@ -93,6 +94,8 @@ async function migration() {
         });
 
         console.log('Create Comment Success')
+
+        process.exit(1);
 
     } catch (error) {
         console.log(error);

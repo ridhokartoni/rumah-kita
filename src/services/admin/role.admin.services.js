@@ -2,7 +2,7 @@ const Role = require('../../model/role.model');
 
 exports.getAllRole = async function (page) {
     try {
-        let result = await Role.findAll({
+        let result = await Role.findAndCountAll({
             limit : 10,
             offside : (page - 1) * 10
         });

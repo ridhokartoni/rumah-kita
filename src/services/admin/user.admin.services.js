@@ -2,9 +2,10 @@ const User = require('../../model/user.model');
 
 exports.getAllUser = async function (page) {
     try {
-        let result = await User.findAll({
+        let result = await User.findAndCountAll({
             limit : 10,
-            offside : (page - 1) * 10
+            offside : (page - 1) * 10,
+            include: ['role']
         });
         return result;
     } catch (err) {
