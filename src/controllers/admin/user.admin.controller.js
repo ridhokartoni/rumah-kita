@@ -4,7 +4,21 @@ exports.getAllUser = async function (req,res){
     try {
         if(req.params.page){
             let result = await userAdminServices.getAllUser(req.params.page);
-            // res.render('../../views/pages/tables.ejs');
+            res.render('../views/pages/admin/user.ejs', {
+                appLink : process.env.APP_LINK,
+                data : {
+                    users: result.rows,
+                    pagination : {
+                        page : req.params.page,
+                        beforePage : parseInt(req.params.page) - 1,
+                        nextPage : parseInt(req.params.page) + 1,
+                        totalPage : Math.ceil(result.count / 10),
+                        namePage : 'user'
+                    } 
+                }
+            });
+        }else {
+            res.redirect('/admin/user/1');
         }
     } catch (err) {
         res.status(500).send({

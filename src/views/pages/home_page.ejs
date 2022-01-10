@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <%- include('../partials/head'); %>
+    <%- include('../partials/head', {appLink: appLink}); %>
 </head>
 
 <body>
@@ -59,8 +59,8 @@
                                                     dapatkan
                                                     keuntungan lebih...</h6>
                                                 <div class="d-flex justify-content-center pt-3">
-                                                    <button type="button"
-                                                        class="btn rounded-pill button-congo-pink btn-sm p-0 px-4">Masuk/Daftar</button>
+                                                    <button  type="button"
+                                                        class="btn rounded-pill button-congo-pink btn-sm p-0 px-4"><a href="/login">Masuk/Daftar</a></button>
                                                 </div>
                                             </div>
                                         </div>
@@ -71,7 +71,7 @@
                                                         <div class="d-flex bd-highlight">
                                                             <div class="flex-shrink-0">
                                                                 <img class="rounded-pill"
-                                                                    src="/assets/images/dummy_content.jpeg" width="34px"
+                                                                    src="<%= appLink %>/public/images/dummy_content.jpeg" width="34px"
                                                                     height="34px" alt="...">
                                                             </div>
                                                             <div class="flex-shrink-1 ms-2" style="max-width: 81%;">
@@ -145,7 +145,7 @@
                                     </div>
                                     <div class="card content mb-4">
                                         <img class="article card-img-top img-fluid"
-                                            src="/assets/images/dummy_content.jpeg" alt="dummy">
+                                            src="<%= appLink %>/public/images/dummy_content.jpeg" alt="dummy">
                                         <div class="card-body">
                                             <div class="d-flex justify-content-end react">
                                                 <div class="d-flex react">
@@ -206,7 +206,7 @@
                                         <div class="d-flex flex-wrap">
                                             <% for(let i=0; i<9; i++) { %>
                                                 <div class="card sec-content border-0 p-3">
-                                                    <img src="/assets/images/dummy_content.jpeg"
+                                                    <img src="<%= appLink %>/public/images/dummy_content.jpeg"
                                                         class="sec-content card-img-top" alt="...">
                                                     <div class="sec-content pt-2">
                                                         <a href="#">
@@ -244,7 +244,7 @@
                                         <div class="d-flex flex-wrap">
                                             <% for(let i=0; i<6; i++) { %>
                                                 <div class="card sec-content border-0 p-3">
-                                                    <img src="/assets/images/dummy_content.jpeg"
+                                                    <img src="<%= appLink %>/public/images/dummy_content.jpeg"
                                                         class="sec-content card-img-top" alt="...">
                                                     <div class="sec-content pt-2">
                                                         <a href="#">
@@ -307,7 +307,7 @@
                             <div class="card side-card border-0 mb-3">
                                 <div class="row g-0 min-height-100">
                                     <div class="col-md-4 p-2">
-                                        <img src="/assets/images/dummy_content.jpeg"
+                                        <img src="<%= appLink %>/public/images/dummy_content.jpeg"
                                             class="img-fluid rounded min-height-100" alt="...">
                                     </div>
                                     <div class="col-md-8">
@@ -358,7 +358,7 @@
                             <div class="card side-card border-0 mb-3">
                                 <div class="row g-0 min-height-100">
                                     <div class="col-md-4 p-2">
-                                        <img src="/assets/images/dummy_content.jpeg"
+                                        <img src="<%= appLink %>/public/images/dummy_content.jpeg"
                                             class="img-fluid rounded min-height-100" alt="...">
                                     </div>
                                     <div class="col-md-8">
@@ -408,7 +408,7 @@
                             <div class="card side-card border-0 mb-3">
                                 <div class="row g-0 min-height-100">
                                     <div class="col-md-4 p-2">
-                                        <img src="/assets/images/dummy_content.jpeg"
+                                        <img src="<%= appLink %>/public/images/dummy_content.jpeg"
                                             class="img-fluid rounded min-height-100" alt="...">
                                     </div>
                                     <div class="col-md-8">
@@ -435,7 +435,7 @@
 
                     <section>
                         <div class="d-flex flex-column justify-content-end" style="height: 100vh;">
-                            <img src="/assets/images/GugGug.gif" alt="guggug">
+                            <img src="<%= appLink %>/public/images/GugGug.gif" alt="guggug">
                         </div>
                     </section>
                 </div>

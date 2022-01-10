@@ -37,7 +37,7 @@ exports.home = async (req, res) => {
                 url: '/saved'
             },
         ],
-        dateNow: formatterDate.currentDate,
+        dateNow: formatterDate.currentDate(),
         articles:
         {
             newest: [
@@ -64,7 +64,8 @@ exports.home = async (req, res) => {
         isLogged: false
     };
     res.render('../views/pages/home_page.ejs', {
-        data: data
+        data: data,
+        appLink : process.env.APP_LINK,
     });
 }
 
@@ -101,7 +102,7 @@ exports.mentalissues = async (req, res) => {
                 url: '/saved'
             },
         ],
-        dateNow: formatterDate.currentDate,
+        dateNow: formatterDate.currentDate(),
         articles:
         {
             specials: [
@@ -156,7 +157,7 @@ exports.lifestyle = async (req, res) => {
                 url: '/saved'
             },
         ],
-        dateNow: formatterDate.currentDate,
+        dateNow: formatterDate.currentDate(),
         articles:
         {
             specials: [
@@ -266,7 +267,7 @@ exports.saved = async (req, res) => {
                 url: '/saved'
             },
         ],
-        dateNow: currentDate,
+        dateNow: formatterDate.currentDate(),
         articles:
         {
             newest: [
@@ -277,10 +278,11 @@ exports.saved = async (req, res) => {
 
             ],
         },
-        isLogged: false
+        isLogged: true
     };
     res.render('../views/pages/saved_page.ejs', {
-        data: data
+        data: data,
+        appLink: process.env.APP_LINK
     });
 }
 

@@ -3,9 +3,10 @@ const Article = require('../../model/article.model');
 
 exports.getAllArticle = async (page) => {
     try {
-        let result = await Article.findAll({
+        let result = await Article.findAndCountAll({
             limit : 10,
             offset: (page - 1) * 10,
+            include : ['category', 'user']
         });
         
         return result;

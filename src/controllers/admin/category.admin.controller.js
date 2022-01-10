@@ -4,7 +4,21 @@ exports.getAllCategory = async function (req,res){
     try {
         if(req.params.page){
             let result = await categoryAdminServices.getAllCategory(req.params.page);
-            // res.render('../../views/pages/tables.ejs');
+            res.render('../views/pages/admin/category.ejs', {
+                appLink : process.env.appLink,
+                data : {
+                    categorys : result.rows,
+                    pagination : {
+                        page : req.params.page,
+                        beforePage : parseInt(req.params.page) - 1,
+                        nextPage : parseInt(req.params.page) + 1,
+                        totalPage : Math.ceil(result.count / 10),
+                        namePage : 'category'
+                    } 
+                }
+            });
+        }else{
+            res.redirect('/admin/category/1')
         }
     } catch (err) {
         res.status(500).send({
