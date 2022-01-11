@@ -120,7 +120,8 @@ exports.mentalissues = async (req, res) => {
         isLogged: false
     };
     res.render('../views/pages/categories/mental_issues.ejs', {
-        data: data
+        data: data,
+        appLink: process.env.APP_LINK
     });
 }
 
@@ -175,7 +176,8 @@ exports.lifestyle = async (req, res) => {
         isLogged: false
     };
     res.render('../views/pages/categories/gaya_hidup.ejs', {
-        data: data
+        data: data,
+        appLink: process.env.APP_LINK
     });
 }
 
@@ -230,7 +232,8 @@ exports.case = async (req, res) => {
         isLogged: false
     };
     res.render('../views/pages/categories/kasus.ejs', {
-        data: data
+        data: data,
+        appLink: process.env.APP_LINK
     });
 }
 
@@ -286,8 +289,64 @@ exports.saved = async (req, res) => {
     });
 }
 
-exports.welcome = async (req, res) => {
-    res.render('../views/pages/welcome_page.ejs', { appLink: process.env.APP_LINK });
+exports.details = async (req, res) => {
+    let data = {
+        user: {
+            name: 'Alma Lawson',
+            email: 'alma.lawson@example.com'
+        },
+        navItem: [
+            {
+                isActive: '',
+                name: 'Terkini',
+                url: '/'
+            },
+            {
+                isActive: '',
+                name: 'Mental Issues',
+                url: '/mentalissues'
+            },
+            {
+                isActive: '',
+                name: 'Gaya Hidup',
+                url: '/lifestyle'
+            },
+            {
+                isActive: '',
+                name: 'Kasus',
+                url: '/case'
+            },
+            {
+                isActive: '',
+                name: 'Tersimpan',
+                url: '/saved'
+            },
+        ],
+        dateNow: formatterDate.currentDate(),
+        articles:
+        {
+            articleDetails: {
+                img: '',
+                title: '',
+                createdAt: '',
+                place: '',
+                source: ''
+            },
+
+            newest: [
+
+            ],
+        },
+        isLogged: true
+    };
+    res.render('../views/pages/details_news_page.ejs', {
+        data: data,
+        appLink: process.env.APP_LINK
+    });
+}
+
+exports.welcome = async (req,res) => {
+    res.render('../views/pages/welcome_page.ejs', {appLink: process.env.APP_LINK});
 }
 
 exports.login = async (req, res) => {
