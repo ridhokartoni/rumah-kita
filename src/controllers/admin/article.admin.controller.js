@@ -1,8 +1,10 @@
 const ArticleAdminServices = require('../../services/admin/article.admin.services');
+const { getAllCategory } = require('../../services/admin/category.admin.services');
 
 exports.getAllArticle = async function (req,res){
     try {
         if(req.params.page){
+            let categories = await getAllCategory();
             let result = await ArticleAdminServices.getAllArticle(req.params.page);
             res.render('../views/pages/admin/articles.ejs', {
                 appLink : process.env.appLink,
@@ -15,7 +17,8 @@ exports.getAllArticle = async function (req,res){
                         totalPage : Math.ceil(result.count / 10),
                         namePage : 'article'
                     } 
-                }
+                },
+                category : categories.rows
             });
         }else{
             res.redirect('/admin/article/1')

@@ -1,9 +1,31 @@
+const mariadb = require('mariadb');
+
+const pool = mariadb.createPool({ 
+    host: process.env.DB_HOST, 
+    user: process.env.DB_USER, 
+    connectionLimit: 5,
+    port: process.env.DB_PORT,
+    password: process.env.DB_PASSWORD 
+});
+
+
+pool.getConnection().then( async conn => {
+    console.log("hahahah");
+    await conn.query(`CREATE DATABASE IF NOT EXISTS ${process.env.DB_NAME}`);
+    conn.destroy();
+}).catch((err) => console.log(err));
+
+
 const User = require('../model/user.model');
 const Role = require('../model/role.model');
 const Category = require('../model/category.model');
 const article = require('../model/article.model');
 const savedArticles = require('../model/savedArticles.model');
 const comment = require('../model/comment.model');
+const bcrypt = require('bcrypt');
+const password = bcrypt.hashSync('Teguh121@!', 10);
+const passwordAdmin = bcrypt.hashSync('admin123@', 10);
+
 
 
 //Run this function to migration about table structure in our databases
@@ -56,16 +78,25 @@ async function migration() {
 
         console.log('Create Category Success');
 
+
         const createUser = await User.create({
             name: "Teguh",
             email: "tripr@gmail.com",
-            password: "Teguh121@!",
+            password: password,
             gender: "Pria",
-            avatar: "/3.svg",
+            avatar: "3.svg",
             roleId: 1
         });
 
-        console.log('Create User Success')
+        const createUserAdmin = await User.create({
+            name: "admin",
+            email: "admin@ourhome.com",
+            password: passwordAdmin,
+            gender: "Pria",
+            roleId: 2
+        });
+
+        console.log('Create Admin Success')
 
 
         const createArticle = await article.create({

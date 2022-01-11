@@ -21,4 +21,4 @@ const Category = connection.define('category', {
 });
 
 
-module.exports = Category
+module.exports = Category;
