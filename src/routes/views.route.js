@@ -10,5 +10,7 @@ router.get('/article/:id', ViewsController.details)
 router.get('/welcome', ViewsController.welcome);
 router.get('/forgotpassword/:success?', ViewsController.forgotpassword);
 router.get('/login', ViewsController.login);
+router.get('/admin/login', ViewsController.adminLogin);
+
 
 module.exports = router;

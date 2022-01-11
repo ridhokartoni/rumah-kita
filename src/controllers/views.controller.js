@@ -1,8 +1,8 @@
 const formatterDate = require('../utilities/formatterDate');
 
 exports.home = async (req, res) => {
-    if(req.query.token){
-        
+    if (req.query.token) {
+
         res.render('../views/pages/home_page.ejs', {})
     }
     let data = {
@@ -65,7 +65,7 @@ exports.home = async (req, res) => {
     };
     res.render('../views/pages/home_page.ejs', {
         data: data,
-        appLink : process.env.APP_LINK,
+        appLink: process.env.APP_LINK,
     });
 }
 
@@ -349,22 +349,27 @@ exports.welcome = async (req,res) => {
     res.render('../views/pages/welcome_page.ejs', {appLink: process.env.APP_LINK});
 }
 
-exports.login = async(req,res) => {
-    res.render('../views/pages/login_page.ejs', {appLink: process.env.appLink});
+exports.login = async (req, res) => {
+    res.render('../views/pages/login_page.ejs', { appLink: process.env.appLink });
 }
 
-exports.forgotpassword = async (req,res) => {
-    if(req.params.success){
+exports.forgotpassword = async (req, res) => {
+    if (req.params.success) {
         res.render('../views/pages/forgotpassword/success_forgot_password.ejs', {
-            appLink : process.env.APP_LINK
+            appLink: process.env.APP_LINK
         })
-    }else {
+    } else {
         res.render('../views/pages/forgotpassword/forgot_password.ejs', {
-            appLink : process.env.APP_LINK
+            appLink: process.env.APP_LINK
         })
     }
-    
 }
+
+
+exports.adminLogin = async (req, res) => {
+    res.render('../views/pages/admin/login.ejs', {appLink: process.env.APP_LINK});
+}
+
 
 
 

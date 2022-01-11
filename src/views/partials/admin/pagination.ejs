@@ -1,6 +1,6 @@
-<nav aria-label="Page navigation example">
+<nav class="mt-4" aria-label="Page navigation example">
     <ul class="pagination">
-        <% if(data.page !=1) { %>
+        <% if(data.page != 1) { %>
             <li class="page-item"><a class="page-link" href="/admin/<%= data.namePage %>/<%= data.beforePage %>">Previous</a></li>
             <li class="page-item"><a class="page-link" href="/admin/<%= data.namePage %>/<%= data.beforePage %>">
                     <%= data.beforePage %>

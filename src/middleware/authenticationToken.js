@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
 const User = require('../model/user.model');
 
-const authentication =  (req, res, next) => {
+const authenticationAdmin =  (req, res, next) => {
     if (req.headers.authorization) {
         jwt.verify(req.headers.authorization, process.env.SECRET_KEY, async (err, decode) => {
             if (err) {
@@ -13,7 +13,8 @@ const authentication =  (req, res, next) => {
             } else {
                 const userAuth = await User.findOne({
                     where: {
-                        id: decode.id
+                        id: decode.id,
+                        roleId : decode.roleId
                     }
                 })
 
@@ -22,7 +23,6 @@ const authentication =  (req, res, next) => {
                 } else {
                     next();
                 }
-
             }
         });
     } else {
@@ -30,4 +30,4 @@ const authentication =  (req, res, next) => {
     }
 }
 
-module.exports = authentication;
+module.exports = authenticationAdmin;
