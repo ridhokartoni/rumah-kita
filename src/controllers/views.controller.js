@@ -214,7 +214,7 @@ exports.case = async (req, res) => {
                 url: '/saved'
             },
         ],
-        dateNow: formatterDate.currentDate,
+        dateNow: formatterDate.currentDate(),
         articles:
         {
             specials: [
