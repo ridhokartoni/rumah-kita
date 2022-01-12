@@ -17,7 +17,6 @@ const authenticationAdmin =  (req, res, next) => {
                         roleId : decode.roleId
                     }
                 })
-
                 if (!userAuth) {
                     res.status(403).send({statusCode: 403, errorMessage: 'The token that you defined is incorrect format'})
                 } else {

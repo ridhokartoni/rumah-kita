@@ -1,8 +1,10 @@
-const userAdminServices = require('../../services/admin/user.admin.services')
+const userAdminServices = require('../../services/admin/user.admin.services');
+const roleAdminServices = require('../../services/admin/role.admin.services');
 
 exports.getAllUser = async function (req,res){
     try {
         if(req.params.page){
+            let roles = await roleAdminServices.getAllRole();
             let result = await userAdminServices.getAllUser(req.params.page);
             res.render('../views/pages/admin/user.ejs', {
                 appLink : process.env.APP_LINK,
@@ -13,9 +15,10 @@ exports.getAllUser = async function (req,res){
                         beforePage : parseInt(req.params.page) - 1,
                         nextPage : parseInt(req.params.page) + 1,
                         totalPage : Math.ceil(result.count / 10),
-                        namePage : 'user'
+                        namePage : 'user',
                     } 
-                }
+                },
+                role : roles.rows
             });
         }else {
             res.redirect('/admin/user/1');

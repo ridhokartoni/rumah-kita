@@ -61,7 +61,7 @@ exports.home = async (req, res) => {
             ]
 
         },
-        isLogged: false
+        isLogged: true
     };
     res.render('../views/pages/home_page.ejs', {
         data: data,
@@ -214,7 +214,7 @@ exports.case = async (req, res) => {
                 url: '/saved'
             },
         ],
-        dateNow: formatterDate.currentDate,
+        dateNow: formatterDate.currentDate(),
         articles:
         {
             specials: [
