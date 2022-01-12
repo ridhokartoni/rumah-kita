@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <%- include('../partials/head', {appLink: appLink}); %>
+    <%- include('../partials/head'); %>
 </head>
 
 <body>
@@ -59,10 +59,16 @@
                                                     dapatkan
                                                     keuntungan lebih...</h6>
                                                 <div class="d-flex justify-content-center pt-3">
-                                                    <button  type="button"
-                                                        class="btn rounded-pill button-congo-pink btn-sm p-0 px-4"><a href="/login">Masuk/Daftar</a></button>
+                                                    <button type="button"
+                                                        class="btn rounded-pill button-congo-pink btn-sm p-0 px-4">Masuk/Daftar</button>
                                                 </div>
                                             </div>
+                                        </div>
+                                        <!-- Ads -->
+                                        <div class="d-flex flex-column justify-content-center ms-5 me-2">
+                                            <img src="<%= appLink %>/public/images/ad1.png" alt="ad1" class="img-fluid mt-4">
+                                            <img src="<%= appLink %>/public/images/ad2.png" alt="ad2" class="img-fluid mt-4">
+                                            <img src="<%= appLink %>/public/images/ad2.png" alt="ad2" class="img-fluid mt-4">
                                         </div>
                                         <% } else { %>
                                             <div class="card border-0 ms-5 me-2">
