@@ -51,10 +51,13 @@ button {
 .row {
   border-radius: 0px;
   padding-right: 10px;
-  padding-left: 10px;
-  margin-left: 12px;
+  margin-left: 22px;
   margin-right: 12px;
   margin-bottom: 25px;
+}
+
+.row > * {
+  padding-left: calc(var(--bs-gutter-x) * - (0.5));
 }
 
 .btn {
