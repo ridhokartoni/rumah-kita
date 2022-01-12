@@ -27,7 +27,7 @@ body {
 .flex-konten {
     width: 96%;
     padding-left: 2%;
-    margin: 0;
+    margin-top: 40px;
     flex-wrap: wrap;
     padding-left: 60px;
     padding-top: 180px;

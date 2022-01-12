@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-    <%- include('../partials/head'); %>
+    <%- include('../../partials/head'); %>
 </head>
 
 <body>
     <header>
-        <%- include('../partials/header'); %>
+        <%- include('../../partials/header'); %>
     </header>
 
     <section>
@@ -24,7 +24,9 @@
                                         <% if(data.isLogged==false) { %>
                                             <h2>Selamat pagi,<br>Sayang</h2>
                                             <% } else { %>
-                                                <h2>Selamat pagi,<br><%= data.user.name %></h2>
+                                                <h2>Selamat pagi,<br>
+                                                    <%= data.user.name %>
+                                                </h2>
                                                 <% } %>
                                                     <p class="me-3"><small>“Kamu tidak harus mengendalikan pikiranmu.
                                                             Anda hanya
@@ -56,8 +58,8 @@
                                     <div class="container-fluid p-0 mt-4">
                                         <% for(let i=0; i<6; i++) { %>
                                             <div class="d-flex">
-                                                <div class="vr me-2"
-                                                    style="border-left: 11px solid #d67eff; max-height: 30px"></div>
+                                                <div class="box-heliotrope me-2"
+                                                    style="min-width: 11px; max-height: 30px"></div>
                                                 <div class="card border-0 bg-transparent pb-5">
                                                     <div class="row g-0">
                                                         <div class="col-4">
@@ -171,7 +173,7 @@
     </section>
 
     <footer>
-        <%- include('../partials/footer'); %>
+        <%- include('../../partials/footer'); %>
     </footer>
 </body>
 
