@@ -60,11 +60,17 @@ button {
   background-color: #d67eff;
   display: table;
   top: 50%;
+  text-align: center;
+  padding-top: 10px;
   border-radius: 25px;
   padding-right: 25px;
   padding-left: 25px;
-  width: 80%;
-  margin: 0 auto;
+  width: 75%;
+  margin: auto;
+}
+
+.btn-form {
+  margin-top: 40px;
 }
 
 .gradient-color {
