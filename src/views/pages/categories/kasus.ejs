@@ -24,7 +24,9 @@
                                         <% if(data.isLogged==false) { %>
                                             <h2>Selamat pagi,<br>Sayang</h2>
                                             <% } else { %>
-                                                <h2>Selamat pagi,<br><%= data.user.name %></h2>
+                                                <h2>Selamat pagi,<br>
+                                                    <%= data.user.name %>
+                                                </h2>
                                                 <% } %>
                                                     <p class="me-3"><small>“Kamu tidak harus mengendalikan pikiranmu.
                                                             Anda hanya
@@ -62,6 +64,12 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <!-- Ads -->
+                                        <div class="d-flex flex-column justify-content-center ms-5 me-2">
+                                            <img src="<%= appLink %>/public/images/ad1.png" alt="ad1" class="img-fluid mt-4">
+                                            <img src="<%= appLink %>/public/images/ad2.png" alt="ad2" class="img-fluid mt-4">
+                                            <img src="<%= appLink %>/public/images/ad2.png" alt="ad2" class="img-fluid mt-4">
+                                        </div>
                                         <% } else { %>
                                             <div class="card border-0 ms-5 me-2">
                                                 <div class="card-body">
@@ -69,13 +77,16 @@
                                                         <div class="d-flex bd-highlight">
                                                             <div class="flex-shrink-0">
                                                                 <img class="rounded-pill"
-                                                                    src="/assets/images/dummy_content.jpeg" width="34px"
+                                                                    src="<%= appLink %>/public/images/dummy_content.jpeg" width="34px"
                                                                     height="34px" alt="...">
                                                             </div>
                                                             <div class="flex-shrink-1 ms-2" style="max-width: 81%;">
-                                                                <h5 class="card-title home p-0 m-0"><%= data.user.name %></h5>
+                                                                <h5 class="card-title home p-0 m-0">
+                                                                    <%= data.user.name %>
+                                                                </h5>
                                                                 <h6 class="home">
-                                                                    <%= data.user.email %></h6>
+                                                                    <%= data.user.email %>
+                                                                </h6>
                                                             </div>
                                                         </div>
                                                         <div class="dropdown-divider home-divider"></div>
@@ -122,7 +133,7 @@
                                 <section>
                                     <div class="card text-white border-0">
                                         <div class="img-stack">
-                                            <img class="card-img content" src="/assets/images/dummy_content.jpeg"
+                                            <img class="card-img content" src="<%= appLink %>/public/images/dummy_content.jpeg"
                                                 alt="dummy">
                                         </div>
                                         <div class="card-img-overlay ms-2 mt-3">
@@ -149,8 +160,125 @@
                                 </section>
 
                                 <% if(data.isLogged==false) { %>
-                                    <div class="mt-3">
+                                    <div class="mt-3 mb-4">
                                         <div class="dropdown-divider"></div>
+                                    </div>
+
+                                    <div class="card border-0">
+                                        <div class="row g-0 min-height-100">
+                                            <div class="col-md-4 p-2">
+                                                <img src="<%= appLink %>/public/images/dummy_content.jpeg"
+                                                    class="img-fluid rounded min-height-100" alt="...">
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="card-body d-flex flex-column min-height-100 ps-2 py-2 pe-3">
+                                                    <div class="me-3">
+                                                        <a href="#">
+                                                            <h5 class="card-title title-content mb-0">Kamu Berhak
+                                                                Bahagia!
+                                                                10
+                                                                Cara Menjaga Kesehatan Mental</h5>
+                                                        </a>
+                                                        <p class="card-text main m-0 mt-1 mb-2"><small>Jumat, 24 Des
+                                                                2021 15:00
+                                                                WIB</small></p>
+                                                        <p class="card-text sub"><span>Jakarta, CNN
+                                                                Indonesia</span> -- Hari
+                                                            kesehatan jiwa sedunia atau world mental health
+                                                            day
+                                                            dirayakan pada 10 Oktober setiap tahunnya. Tahun
+                                                            ini
+                                                            Organisasi Kesehatan Dunia (WHO) mengambil tema
+                                                            Mental health care for all: let's make it a
+                                                            reality.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex">
+                                            <% for(let i=0; i<3; i++) { %>
+                                                <div class="card sec-content border-0 p-2">
+                                                    <img src="<%= appLink %>/public/images/dummy_content.jpeg"
+                                                        class="sec-content card-img-top" alt="...">
+                                                    <div class="sec-content pt-2">
+                                                        <a href="#">
+                                                            <p class="sec-content m-0">3 Tips Meringankan
+                                                                Beban Masalah dari Pakar Undip</p>
+                                                        </a>
+                                                    </div>
+                                                    <small class="sec-content">
+                                                        Kamis, 16 Des 2021 09:45 WIB
+                                                    </small>
+                                                </div>
+                                                <% } %>
+                                        </div>
+                                    </div>
+
+                                    <!-- Ad -->
+                                    <img src="<%= appLink %>/public/images/ad3.png" alt="ad1" class="img-fluid my-4">
+
+                                    <div class="row mb-5">
+                                        <div class="col-6">
+                                            <% for(let i=0; i<5; i++) { %>
+                                                <% if(i%2==0) { %>
+                                                    <div class="container-fluid pt-3 px-0">
+                                                        <div class="d-flex">
+                                                            <div class="box-heliotrope"></div>
+                                                            <h6 class="side-text ms-3">
+                                                                4 Hari Lalu
+                                                            </h6>
+                                                        </div>
+                                                    </div>
+                                                    <% } else { %>
+                                                        <div class="container-fluid pt-3 px-0">
+                                                            <div class="d-flex">
+                                                                <div class="box-congo-pink"></div>
+                                                                <h6 class="side-text ms-3">
+                                                                    4 Hari Lalu
+                                                                </h6>
+                                                            </div>
+                                                        </div>
+                                                        <% } %>
+                                                            <div class="card bg-transparent border-0 ms-3">
+                                                                <div
+                                                                    class="card-body d-flex flex-column justify-content-between min-height-100 ps-2 py-2 pe-3">
+                                                                    <div class="side-content">
+                                                                        <a href="#">
+                                                                            <h5 class="card-title title-content side">
+                                                                                Kamu Berhak
+                                                                                Bahagia! 10 Cara
+                                                                                Menjaga
+                                                                                Kesehatan Mental</h5>
+                                                                        </a>
+                                                                    </div>
+                                                                    <p class="card-text side text-start"><small>Senin,
+                                                                            20 Des
+                                                                            2021 16:30 WIB
+                                                                        </small></p>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="dropdown-divider mx-4"></div>
+                                                            <% } %>
+                                        </div>
+                                        <div class="col-6">
+                                            <% for(let i=0; i<2; i++) { %>
+                                                <div class="d-flex flex-column mb-3">
+                                                    <img src="<%= appLink %>/public/images/dummy_content.jpeg"
+                                                        class="img-fluid min-height-100" alt="dummy">
+                                                    <a href="#">
+                                                        <h5 class="title-content category mt-3">
+                                                            Sehat Tak Cuma Fisik, Semua Juga Harus Sehat Baik Mental
+                                                            Maupun Fisik !
+                                                        </h5>
+                                                    </a>
+                                                    <p class="card-text side text-start"><small>Jum’at, 24 Des 2021
+                                                            15:00 WIB</small></p>
+                                                    <div class="dropdown-divider"></div>
+                                                </div>
+                                                <% } %>
+                                        </div>
                                     </div>
                                     <% } %>
                             </div>
@@ -159,9 +287,71 @@
                             <div class="ms-5">
                                 <div class="dropdown-divider"></div>
                             </div>
-                            <% } %>
 
-                                <!-- Buat Artikel Kategori Di Bawah -->
+                            <div class="row ms-5 mt-4">
+                                <div class="col-5">
+                                    <% for(let i=0; i<5; i++) { %>
+                                        <% if(i%2==0) { %>
+                                            <div class="container-fluid pt-3 px-0">
+                                                <div class="d-flex">
+                                                    <div class="box-heliotrope"></div>
+                                                    <h6 class="side-text ms-3">
+                                                        4 Hari Lalu
+                                                    </h6>
+                                                </div>
+                                            </div>
+                                            <% } else { %>
+                                                <div class="container-fluid pt-3 px-0">
+                                                    <div class="d-flex">
+                                                        <div class="box-congo-pink"></div>
+                                                        <h6 class="side-text ms-3">
+                                                            4 Hari Lalu
+                                                        </h6>
+                                                    </div>
+                                                </div>
+                                                <% } %>
+                                                    <div class="card bg-transparent border-0 ms-3">
+                                                        <div
+                                                            class="card-body d-flex flex-column justify-content-between min-height-100 ps-2 py-2 pe-3">
+                                                            <div class="side-content">
+                                                                <a href="#">
+                                                                    <h5 class="card-title title-content side">
+                                                                        Kamu Berhak
+                                                                        Bahagia! 10 Cara
+                                                                        Menjaga
+                                                                        Kesehatan Mental</h5>
+                                                                </a>
+                                                            </div>
+                                                            <p class="card-text side text-start"><small>Senin,
+                                                                    20 Des
+                                                                    2021 16:30 WIB
+                                                                </small></p>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="dropdown-divider mx-4"></div>
+                                                    <% } %>
+                                </div>
+                                <div class="col-7">
+                                    <% for(let i=0; i<3; i++) { %>
+                                        <div class="d-flex flex-column mb-3">
+                                            <img src="<%= appLink %>/public/images/dummy_content.jpeg"
+                                                class="img-fluid min-height-100" alt="dummy">
+                                            <a href="#">
+                                                <h5 class="title-content mt-3" style="font-size: 18px;">
+                                                    Sehat Tak Cuma Fisik, Semua Juga Harus Sehat Baik Mental
+                                                    Maupun Fisik !
+                                                </h5>
+                                            </a>
+                                            <p class="card-text text-start" style="font-size: 12px; color: #9a9a9a;">
+                                                <small>Jum’at, 24 Des 2021
+                                                    15:00 WIB</small></p>
+                                            <div class="dropdown-divider"></div>
+                                        </div>
+                                        <% } %>
+                                </div>
+                            </div>
+                            <% } %>
                     </div>
                 </div>
 
@@ -207,7 +397,7 @@
                             <div class="card side-card border-0 mb-3">
                                 <div class="row g-0 min-height-100">
                                     <div class="col-md-4 p-2">
-                                        <img src="/assets/images/dummy_content.jpeg"
+                                        <img src="<%= appLink %>/public/images/dummy_content.jpeg"
                                             class="img-fluid rounded min-height-100" alt="...">
                                     </div>
                                     <div class="col-md-8">
@@ -300,7 +490,7 @@
                             <div class="card side-card border-0 mb-3">
                                 <div class="row g-0 min-height-100">
                                     <div class="col-md-4 p-2">
-                                        <img src="/assets/images/dummy_content.jpeg"
+                                        <img src="<%= appLink %>/public/images/dummy_content.jpeg"
                                             class="img-fluid rounded min-height-100" alt="...">
                                     </div>
                                     <div class="col-md-8">
@@ -327,7 +517,7 @@
 
                     <section>
                         <div class="d-flex flex-column justify-content-end" style="height: 100vh;">
-                            <img src="/assets/images/GugGug.gif" alt="guggug">
+                            <img src="<%= appLink %>/public/images/GugGug.gif" alt="guggug">
                         </div>
                     </section>
                 </div>
