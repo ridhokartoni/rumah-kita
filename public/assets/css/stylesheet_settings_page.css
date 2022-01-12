@@ -289,6 +289,108 @@ header {
     margin-left: 250px;
 }
 
+/* Modal */
+#modal {
+    width: 496px;
+    height: 302px;
+    border-radius: 12px;
+    background-color: #fff;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: solid 1px #000;
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 470px;
+    height: 300px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.modal-content-head {
+    width: 322px;
+    height: 69px;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1.33;
+    color: #212429;
+    padding-top: 25px;
+    justify-content: center;
+    margin: 40px 0px 21px 41px;
+}
+
+.data-change-type {
+    width: 139px;
+    height: 18px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.33;
+    color: #212429;
+    margin: 0px 0px 10px 41px;
+}
+
+.data-change-box-wrapper {
+    display: flex;
+    width: 600px;
+    height: 45px;
+    margin: 0px 0px 0px 41px;
+}
+
+.data-change-box {
+    width: 350px;
+    height: 35px;
+    border-radius: 250px;
+    border: solid 1px #707070;
+    color: #1b105b;
+}
+
+.close-modal {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+#modal:target {
+    display: block;
+}
+
+.send-box-button {
+    width: 188px;
+    height: 45px;
+    text-align: center;
+    margin: 48.2px 0 23px 0;
+    padding: 5px;
+}
+
+.send-button {
+    border-radius: 125px;
+    background-color: #d67eff;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 0.9px;
+    text-align: center;
+    color: #fff;
+    padding: 4px 0;
+}
+
+.lock {
+    padding-left: 40px;
+    background: url(../images/lock.png) no-repeat 3% 49%;
+    background-size: 17px;
+}
+
 footer {
     display: flex;
     height: 300px;

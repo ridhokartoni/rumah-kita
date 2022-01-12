@@ -53,24 +53,41 @@
                     <div class="divider-line"></div>
                     <div class="data-type">Nama Lengkap</div>
                     <div class="data-box-wrapper">
-                        <input class="data-box" value="Alma Lawson">
+                        <input readonly class="data-box" value="Alma Lawson">
                         <a href="" class="edit-icon">
                             <img class="edit" src="../../../public/assets/images/Edit.png" alt="">
                         </a>
                     </div>
                     <div class="data-type">Email</div>
                     <div class="data-box-wrapper">
-                        <input class="data-box" value="alma.lawson@example.com">
+                        <input readonly class="data-box" value="alma.lawson@example.com" type="email">
                         <a href="" class="edit-icon">
                             <img class="edit" src="../../../public/assets/images/Edit.png" alt="">
                         </a>
                     </div>
                     <div class="data-type">Kata Sandi</div>
                     <div class="data-box-wrapper">
-                        <input class="data-box" value="*************">
-                        <a href="" class="edit-icon">
+                        <input readonly class="data-box" value="*************" type="password">
+                        <a href="#modal" class="edit-icon">
                             <img class="edit" src="../../../public/assets/images/Edit.png" alt="">
                         </a>
+                    </div>
+                    <div id="modal">
+                        <div class="modal-content">
+                            <p class="modal-content-head">Masukkan Kata Sandi Anda Sebelumnya</p>
+                            <p class="data-change-type">Kata Sandi Sebelumnya</p>
+                            <div class="data-change-box-wrapper">
+                                <input class="data-change-box lock" placeholder="Ketik di sini...">
+                            </div>
+                            <div class="flex-center">
+                                <div class="send-box-button">
+                                    <a href="" class="no-line">
+                                        <div class="send-button">Kirim</div>
+                                    </a>
+                                </div>
+                            </div>
+                            <a href="#a" class="close-modal no-line">X</a>
+                        </div>
                     </div>
                     <div class="save-button">
                         <a href="" class="no-line">
