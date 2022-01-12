@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&family=Oswald&family=Poppins&family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+
 h5.saved {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: bold;
@@ -20,4 +22,9 @@ small.saved {
 
 .card-text.saved span {
   font-weight: bold;
+}
+
+.dropdown-divider.comment-divider {
+  height: 1px;
+  background-color: #e2e2e2;
 }
