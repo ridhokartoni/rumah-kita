@@ -21,7 +21,14 @@ body {
   border-radius: 25px;
   padding-right: 25px;
   padding-left: 25px;
-  margin-left: 50%;
+  margin-right: 29%;
+}
+
+.container-fluid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 15px;
 }
 
 button {
@@ -41,15 +48,23 @@ button {
   margin-bottom: 25px;
 }
 
+.row {
+  border-radius: 0px;
+  padding-right: 10px;
+  padding-left: 10px;
+  margin: 0px;
+  margin-bottom: 25px;
+}
+
 .btn {
   background-color: #d67eff;
-  border: none;
+  display: table;
+  top: 50%;
   border-radius: 25px;
   padding-right: 25px;
   padding-left: 25px;
-  width: 70%;
-  margin-top: 4%;
-  margin-left: 15%;
+  width: 80%;
+  margin: 0 auto;
 }
 
 .gradient-color {
@@ -66,10 +81,6 @@ button {
 }
 .link:hover {
   cursor: pointer;
-}
-
-.want-signup {
-  margin-left: 25%;
 }
 
 .inputWithIcon input[type="email"] {
@@ -101,9 +112,17 @@ button {
   margin-bottom: 15px;
 }
 
+.col {
+  content: "";
+  display: inline-block;
+  height: 16px;
+  vertical-align: middle;
+}
+
 .say {
   margin-bottom: 25px;
   margin-left: 25px;
+  text-align: center;
 }
 
 .input-group-text {
@@ -112,6 +131,19 @@ button {
   color: grey;
   margin-top: 0;
   padding-top: 0;
+  text-align: center;
+  display: flex;
+  font-size: 22px;
+  align-items: center;
+}
+
+.nav-text {
+  vertical-align: 10px;
+  text-align: center;
+}
+
+.input-group-text p {
+  text-align: center;
 }
 
 .form-control {
