@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Source+Sans+Pro:wght@400;700&display=swap');
 
 body {
-    background:url('../images/Wallpaper\ login\ page\ dan\ register\ page.png')no-repeat center fixed;
+    background:url('../images/Wallpaper\ login\ page\ dan\ register\ page.png') no-repeat center fixed;
     -webkit-background-size:cover;
     -moz-background-size:cover;
     -o-background-size:cover;
@@ -50,9 +50,6 @@ button {
     width: 70%;
     margin-top: 4%;
     margin-left: 15%;
-    background: linear-gradient(to right, white , #FFD215);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
 .link {
@@ -116,7 +113,7 @@ button {
 }
 
 .lock {
-    background-image: url(lock.png);
+    background-image: url(../images/lock.png);
     background-repeat: no-repeat;
     margin-top: 3%;
     margin-left: 2%;
@@ -125,7 +122,7 @@ button {
 }
 
 .email {
-    background-image: url(mail.png);
+    background-image: url(../images/mail.png);
     background-repeat: no-repeat;
     margin-top: 15px;
     margin-left: 2%;
