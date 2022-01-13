@@ -11,6 +11,7 @@ router.get('/welcome', ViewsController.welcome);
 router.get('/forgotpassword/:success?', ViewsController.forgotpassword);
 router.get('/login', ViewsController.login);
 router.get('/admin/login', ViewsController.adminLogin);
+router.get('/register', ViewsController.registrasion)
 
 
 module.exports = router;
