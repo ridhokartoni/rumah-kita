@@ -14,13 +14,16 @@
                         <label for="exampleFormControlInput1">
                             Name
                         </label>
-                        <input type="text"  class="form-control" id="add-name" placeholder="">
+                        <input type="text"  class="form-control" id="name" placeholder="">
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="#">Add</a>
+                <div class="spinner-border text-primary" id="loading-add" role="status" hidden>
+                    <span class="sr-only">Loading...</span>
+                  </div>
+                <button class="btn btn-primary" id="buttonAdd" onclick="addData('<%= appLink %>')">Add</button>
             </div>
         </div>
     </div>

@@ -14,13 +14,21 @@ const authenticationAdmin =  (req, res, next) => {
                 const userAuth = await User.findOne({
                     where: {
                         id: decode.id,
-                        roleId : decode.roleId
-                    }
+                    },
+                    include : ['role']
                 })
                 if (!userAuth) {
                     res.status(403).send({statusCode: 403, errorMessage: 'The token that you defined is incorrect format'})
                 } else {
-                    next();
+                    if(userAuth.role.name !== 'admin'){
+                        res.status(403).send({
+                            statusCode : 403,
+                            errorMessage : 'The token that you provide is unauthorization to access the API'
+                        })
+                    }else {
+                        req.query.userId = decode.id
+                        next();
+                    }
                 }
             }
         });

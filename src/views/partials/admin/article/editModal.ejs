@@ -14,14 +14,14 @@
                         <label for="exampleFormControlInput1">
                             Judul
                         </label>
-                        <input type="text" value="<%= article.title %>" class="form-control" id="title" placeholder="">
+                        <input type="text" value="<%= article.title %>" class="form-control" id="title-<%=article.id %>" placeholder="">
                     </div>
 
                     <div class="form-group">
                         <label for="exampleFormControlInput1">
                             Sumber
                         </label>
-                        <input type="text" value="<%= article.linkOrigin %>" class="form-control" id="linkOrigin" placeholder="">
+                        <input type="text" value="<%= article.linkOrigin %>" class="form-control" id="linkOrigin-<%=article.id %>" placeholder="">
                     </div>
 
                     
@@ -29,7 +29,7 @@
                         <label for="exampleFormControlInput1">
                             Link Gambar Thumbnail
                         </label>
-                        <input type="text" class="form-control" id="add-thumbnail" placeholder="">
+                        <input readonly type="text" class="form-control" value="<%= article.thumbnailPicture %>" id="thumbnail" placeholder="">
                     </div>
 
 
@@ -41,7 +41,7 @@
 
                     <div class="form-group ">
                         <label">Kategori</label>
-                        <select id="inputCategory" class="form-control">
+                        <select id="category-<%=article.id %>" class="form-control">
                             <% for(let i = 0; i < category.length; i++) { %>
                                 <% if(category[i].id === article.categoryId){ %>
                                     <option value="<%= i+1 %>" selected><%= category[i].name %></option>
@@ -56,7 +56,10 @@
             </div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="#">Edit</a>
+                <button class="btn btn-primary" id="editButton-<%= article.id %>" onclick="editData('<%= article.id %>', '<%= appLink %>')">Edit</button>
+                <div class="spinner-border text-primary" role="status" id="loading-edit-<%= article.id %>" hidden>
+                    <span class="sr-only">Loading...</span>
+                </div>
             </div>
         </div>
     </div>
