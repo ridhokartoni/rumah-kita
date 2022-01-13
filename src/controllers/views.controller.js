@@ -1,10 +1,7 @@
 const formatterDate = require('../utilities/formatterDate');
 
 exports.home = async (req, res) => {
-    if (req.query.token) {
-
-        res.render('../views/pages/home_page.ejs', {})
-    }
+   
     let data = {
         user: {
             name: 'Alma Lawson',
@@ -61,7 +58,7 @@ exports.home = async (req, res) => {
             ]
 
         },
-        isLogged: false
+        isLogged: req.query.isLogged
     };
     res.render('../views/pages/home_page.ejs', {
         data: data,
@@ -214,7 +211,7 @@ exports.case = async (req, res) => {
                 url: '/saved'
             },
         ],
-        dateNow: formatterDate.currentDate,
+        dateNow: formatterDate.currentDate(),
         articles:
         {
             specials: [

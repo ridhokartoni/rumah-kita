@@ -17,12 +17,17 @@ body {
     display: flex;
     height: 10px;
     flex-wrap: wrap;
+    
+}
+
+.mt-10{
+   margin-top: 200px; 
 }
 
 .flex-konten {
     width: 96%;
     padding-left: 2%;
-    margin: 0;
+    margin-top: 40px;
     flex-wrap: wrap;
     padding-left: 60px;
     padding-top: 180px;

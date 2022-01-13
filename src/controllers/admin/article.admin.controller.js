@@ -34,7 +34,7 @@ exports.getAllArticle = async function (req,res){
 
 exports.createArticle = async (req, res) =>{
     try {
-        let result = await ArticleAdminServices.createArticle(req.body);
+        let result = await ArticleAdminServices.createArticle(req.body, req);
         res.send(result);
     } catch (error) {
         res.status(500).send({
