@@ -74,7 +74,6 @@ async function migration() {
 
         const createCategory = await Category.create({
             name: "Mental Issues",
-            path : "/mentalissues"
         });
 
         console.log('Create Category Success');

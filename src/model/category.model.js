@@ -15,11 +15,6 @@ const Category = connection.define('category', {
     name: {
         type: DataTypes.STRING(40),
         allowNull: false
-    },
-
-    path: {
-        type : DataTypes.STRING(40),
-        allowNull : false
     }
 }, {
     freezeTableName: true
