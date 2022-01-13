@@ -11,9 +11,9 @@ body {
 }
 
 .container {
-  width: 40%;
+  width: 38%;
   height: 30%;
-  margin-top: 5%;
+  margin-top: 3.5%;
   box-shadow: 0 3px 20px rgba(0, 0, 0, 0.3);
   padding: 40px;
   background-color: white;
@@ -21,7 +21,14 @@ body {
   border-radius: 25px;
   padding-right: 25px;
   padding-left: 25px;
-  margin-left: 50%;
+  margin-right: 29%;
+}
+
+.container-fluid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 15px;
 }
 
 button {
@@ -41,15 +48,33 @@ button {
   margin-bottom: 25px;
 }
 
+.row {
+  border-radius: 0px;
+  padding-right: 10px;
+  margin-left: 22px;
+  margin-right: 12px;
+  margin-bottom: 25px;
+}
+
+.row > * {
+  padding-left: calc(var(--bs-gutter-x) * - (0.5));
+}
+
 .btn {
   background-color: #d67eff;
-  border: none;
+  display: table;
+  top: 50%;
+  text-align: center;
+  padding-top: 10px;
   border-radius: 25px;
   padding-right: 25px;
   padding-left: 25px;
-  width: 70%;
-  margin-top: 4%;
-  margin-left: 15%;
+  width: 75%;
+  margin: auto;
+}
+
+.btn-form {
+  margin-top: 80px;
 }
 
 .gradient-color {
@@ -66,10 +91,6 @@ button {
 }
 .link:hover {
   cursor: pointer;
-}
-
-.want-signup {
-  margin-left: 25%;
 }
 
 .inputWithIcon input[type="email"] {
@@ -101,23 +122,97 @@ button {
   margin-bottom: 15px;
 }
 
+.col {
+  display: flex;
+  justify-content: space-between;
+  height: 16px;
+  vertical-align: middle;
+}
+
 .say {
-  margin-bottom: 25px;
-  margin-left: 25px;
+  color: grey;
+  position: relative;
+  margin-top: -10px;
+  padding-bottom: 25px;
+  width: 100%;
+  font-size: 16px;
+
+  font-family: Source Sans Pro;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  /* or 125% */
+  display: inline;
+  align-items: center;
+  text-align: center;
 }
 
 .input-group-text {
   background-color: transparent;
   border: none;
-  color: grey;
+  border-style: none;
+  color: black;
+  width: 100%;
   margin-top: 0;
   padding-top: 0;
+  text-align: center;
+  line-height: 24px;
+  display: flex;
+  font-size: 24px;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+
+.input-group-title {
+  margin-bottom: -10px;
+  font-weight: bold;
+  margin-top: -20px;
+  line-height: 32px;
+}
+
+.input-group-link {
+  display: flex;
+  text-decoration: none;
+}
+
+.nav-text {
+  vertical-align: 10px;
+  justify-self: center;
+}
+
+.input-group-text p {
+  text-align: center;
 }
 
 .form-control {
   border-radius: 25px;
   padding-right: 25px;
-  padding-left: 25px;
+  padding-left: 15px;
+  margin-left: -13px;
+  height: 40px;
+  align-items: center;
+}
+
+.form-control-button {
+  position: relative;
+  line-height: 1.5;
+  padding-left: -15px;
+  margin-left: 15px;
+}
+
+.noline {
+  border-style: none;
+  width: 70%;
+  margin-left: -10px;
+}
+
+.noline:disabled,
+.noline[readonly] {
+  background-color: white;
+  padding-right: 0px;
+  padding-left: 10px;
 }
 
 .sandi {
@@ -129,7 +224,7 @@ button {
   background-image: url(../images/lock.png);
   background-repeat: no-repeat;
   margin-top: 3%;
-  margin-left: 2%;
+  margin-left: -2px;
   background-size: 100%;
   background-position-y: 20%;
 }
@@ -138,7 +233,7 @@ button {
   background-image: url(../images/mail.png);
   background-repeat: no-repeat;
   margin-top: 15px;
-  margin-left: 2%;
+  margin-left: -2px;
   background-size: 101%;
   background-position-y: 20%;
 }
@@ -147,4 +242,9 @@ button {
   color: black;
   font-family: "Source Sans Pro", sans-serif;
   font-size: 12%;
+}
+
+.input-group-style {
+  flex-grow: 0.47;
+  justify-items: center;
 }
