@@ -13,6 +13,18 @@ exports.getUsers = async (req,res) => {
 }
 
 
+exports.resetPassword = async (req,res) =>{
+    try {
+        let result = await UserServices.resetPassword(req.body.password, req.query.userId);
+        res.send(result);
+    } catch (error) {
+        res.status(500).send({
+            errorStatus : 500,
+            errorMessage : error.message
+        })
+    }
+}
+
 exports.createUsers = async (req,res) =>{
     try {
         console.log(req.body);
@@ -48,13 +60,14 @@ exports.deleteUsers = async (req,res) => {
     }
 }
 
-exports.forgotPassword = async (req,res) =>{
+exports.forgotPassword = async (req,res) => {
     try {
         if(req.query.email){
             let result = await UserServices.forgotPassword(req.query.email);
             res.send(result);
+            return
         }else{
-            throw new Error('Ngga ada emailnya cok!')
+            throw new Error('Please provide the email');
         }
     } catch (error) {
         res.status(500).send({

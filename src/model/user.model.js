@@ -16,7 +16,7 @@ const User = connection.define('user', {
     },
 
     email: {
-        type: DataTypes.STRING(30),
+        type: DataTypes.STRING(100),
         allowNull: false,
         unique : true
     },

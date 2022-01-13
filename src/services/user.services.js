@@ -66,6 +66,23 @@ exports.updateUser = async (user) => {
     }
 }
 
+
+exports.resetPassword = async (password, id) => {
+    let result;
+    try {
+        password = bcrypt.hashSync(password, 10)
+        result = await User.update({
+            password : password
+        }, {
+            where : {
+                id : id
+            }
+        })
+    } catch (error) {
+        throw new error.message        
+    }
+}
+
 exports.forgotPassword = async(email) => {
     try {
         const userForgot = await User.findOne({
@@ -74,7 +91,7 @@ exports.forgotPassword = async(email) => {
             }
         });
     
-        if(userForgot){
+        if(userForgot !== null){
             const tokenForgotPassword = jwt.sign({
                 id : userForgot.id,
             }, process.env.SECRET_KEY, {expiresIn: '2h'})
@@ -82,10 +99,10 @@ exports.forgotPassword = async(email) => {
             let result = await sendEmail(userForgot, tokenForgotPassword);
             return result;
         }else{
+            console.log('asdasd');
             throw new Error('User tidak ditemukan')
         }
     } catch (error) {
         throw new Error(error.message);
-    }
-    
+    }   
 }

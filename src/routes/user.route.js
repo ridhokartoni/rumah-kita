@@ -1,12 +1,14 @@
 const router = require('express').Router();
 const UserController = require('../controllers/user.controller');
-const authentication = require('../middleware/authenticationToken');
+const authentication = require('../middleware/userAuthenticationToken');
 
-// router.use(authentication);
-router.get('/', UserController.getUsers);
-router.delete('/delete', UserController.deleteUsers);
-router.post('/create', UserController.createUsers);
+
 router.post('/forgotpassword', UserController.forgotPassword);
+router.get('/', UserController.getUsers);
+
+router.use(authentication);
+router.post('/create', UserController.createUsers);
+router.put('/resetpassword', UserController.resetPassword);
 
 
 
