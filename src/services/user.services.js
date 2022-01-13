@@ -53,6 +53,19 @@ exports.deleteUser = async (user) => {
     
 }
 
+exports.updateUser = async (user) => {
+    let result;
+    try {
+        result = await User.update({
+            where: {
+                id: user.id
+            }
+        })
+    } catch (error) {
+        
+    }
+}
+
 exports.forgotPassword = async(email) => {
     try {
         const userForgot = await User.findOne({

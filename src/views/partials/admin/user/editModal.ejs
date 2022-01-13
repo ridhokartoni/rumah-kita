@@ -1,0 +1,68 @@
+<!-- Logout Modal-->
+<div class="modal fade" id="editModal-<%= user.id %>" tabindex="-1" role="dialog" aria-labelledby="editModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Edit User</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">
+                            Name
+                        </label>
+                        <input type="text" value="<%= user.name %>" class="form-control" id="name-<%=user.id%>" placeholder="">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">
+                            Email
+                        </label>
+                        <input type="text" value="<%= user.email %>" class="form-control" id="email-<%=user.id%>"
+                            placeholder="">
+                    </div>
+
+                    <div class="form-group pb-4">
+                        <label for="exampleFormControlTextarea1">Masukkan Password Baru &nbsp;</label>
+                        <input type="password" class="form-control" value="" id="password-<%= user.id %>">
+                        <label>*kosongkan jika tidak ingin diubah</label>
+                    </div>
+
+                    <div class="form-group pb-4">
+                        <label for="exampleFormControlTextarea1">Gender</label>
+                        <input class="form-control" id="gender-<%= user.id %>" value="<%= user.gender %>">
+                    </div>
+
+                    <div class="form-group ">
+                        <label">Role</label>
+                            <select id="role-<%=user.id%>" class="form-control">
+                                <% for(let i=0; i < role.length; i++) { %>
+                                    <% if(role[i].id===user.roleId){ %>
+                                        <option value="<%= i+1 %>" selected>
+                                            <%= role[i].name %>
+                                        </option>
+
+                                        <% } else { %>
+                                            <option value="<%= i+1 %>">
+                                                <%= role[i].name %>
+                                            </option>
+                                            <% } %>
+                                                <% } %>
+                            </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                <button class="btn btn-primary" id="editButton-<%=user.id%>" onclick="editData('<%= user.id %>', '<%= appLink %>')">Edit</button>
+                <div class="spinner-border text-primary" id="loading-edit-<%= user.id %>" role="status" hidden>
+                    <span class="sr-only">Loading...</span>
+                  </div>
+            </div>
+        </div>
+    </div>
+</div>

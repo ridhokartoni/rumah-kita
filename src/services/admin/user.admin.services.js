@@ -1,4 +1,5 @@
 const User = require('../../model/user.model');
+const bcrypt = require('bcrypt');
 
 exports.getAllUser = async function (page) {
     try {
@@ -15,6 +16,7 @@ exports.getAllUser = async function (page) {
 
 exports.createUser = async function (user) {
     try {
+        user.password = bcrypt.hashSync(user.password, 10);
         let result = await User.create(user);
         return result;
     } catch (err) {
@@ -24,6 +26,11 @@ exports.createUser = async function (user) {
 
 exports.updateUser = async function (userRequest) {
     try {
+        
+        if(userRequest.password){
+            userRequest.password = bcrypt.hashSync(userRequest.password, 10);
+        }
+        
         let result = await User.update(userRequest, {
             where: {
                 id : userRequest.id

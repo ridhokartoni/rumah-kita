@@ -27,16 +27,16 @@
             <li class="nav-item">
                 <a class="nav-link " aria-current="page" href="/admin/article/1">
                     <i class="far fa-newspaper">
-                        
+
                     </i>
                     <span>Artikel</span>
-                </a>     
+                </a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="#">
-                <i class="fas fa-users"></i>
-                <span>Pengguna</span>
-            </a>
+                    <i class="fas fa-users"></i>
+                    <span>Pengguna</span>
+                </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/admin/category/1">
@@ -116,7 +116,8 @@
                             <h6 class="m-0 font-weight-bold text-primary">Data User</h6>
                         </div>
                         <div class="card-body">
-                            <button type="button" class="btn btn-primary mb-2">Tambah</button>
+                            <button type="button" data-toggle="modal" data-target="#addModal"
+                                class="btn btn-primary mb-2">Tambah</button>
                             <div class="table-responsive">
                                 <table class="table table-bordered text-center" id="" width="100%" cellspacing="0">
                                     <thead>
@@ -145,19 +146,26 @@
                                                 </td>
 
                                                 <td>
-                                                    <button type="button" class="btn btn-success">Edit</button>
+                                                    <button type="button" data-toggle="modal" data-target="#editModal-<%= user.id %>" class="btn btn-success">Edit</button>
                                                 </td>
                                                 <td>
-                                                    <button type="button" class="btn btn-danger">Delete</button>
+                                                    <div class="spinner-border text-primary" id="loading-delete-<%= user.id %>" role="status" hidden>
+                                                        <span class="sr-only">Loading...</span>
+                                                      </div>
+                                                    <button type="button" id="deleteButton-<%= user.id %>" onclick="deleteData('<%=user.id%>', '<%= appLink %>')" class="btn btn-danger">Delete</button>
                                                 </td>
                                             </tr>
+                                            <%- include('../../partials/admin/user/editModal.ejs', {role : role, user : user, appLink: appLink}) %>
+
                                             <% }) %>
+
+
                                     </tbody>
                                 </table>
                             </div>
 
-                           <%- include('../../partials/admin/pagination.ejs', {data : data.pagination}) %>
-                        
+                            <%- include('../../partials/admin/pagination.ejs', {data : data.pagination}) %>
+
                         </div>
                     </div>
 
@@ -189,41 +197,29 @@
     </a>
 
     <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="">Logout</a>
-                </div>
-            </div>
-        </div>
-    </div>
+    <%- include('../../partials/admin/logoutModal.ejs') %>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="<%= appLink %>/public/vendor/jquery/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
-        crossorigin="anonymous"></script>
+    <%- include('../../partials/admin/user/addModal.ejs', {role : role, appLink: appLink}) %>
 
-    <!-- Core plugin JavaScript-->
-    <script src="<%= appLink %>/public/vendor/jquery-easing/jquery.easing.min.js"></script>
 
-    <!-- Custom scripts for all pages-->
-    <script src="<%= appLink %>/public/js/sb-admin-2.min.js"></script>
-    <script src="<%= appLink %>/public/vendor/ejs/ejs.min.js"></script>
+        <!-- Bootstrap core JavaScript-->
+        <script src="<%= appLink %>/public/vendor/jquery/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script> -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+            crossorigin="anonymous"></script>
+
+        <!-- Core plugin JavaScript-->
+        <script src="<%= appLink %>/public/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+        <!-- Custom scripts for all pages-->
+        <script src="<%= appLink %>/public/js/sb-admin-2.min.js"></script>
+        <script src="<%= appLink %>/public/vendor/ejs/ejs.min.js"></script>
+        <script src="<%= appLink %>/public/js/admin/user.admin.js"></script>
+        <script src="<%= appLink %>/public/js/admin/index.js"></script>
 
 
 

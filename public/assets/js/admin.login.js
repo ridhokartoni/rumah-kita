@@ -8,7 +8,7 @@ function login(appLink){
         dataType: "json",
         data: {
           email: email.value,
-          password: password.value,
+          password: password.value
         },
         success: function(msg){            
             localStorage.setItem('tokenAdmin', msg.token);
