@@ -1,6 +1,6 @@
 let loginButton = document.getElementById('loginButton');
-let userEmail = document.getElementById('userEmail');
-let userPassword = document.getElementById('userPassword');
+let loginEmail = document.getElementById('loginEmail');
+let loginPassword = document.getElementById('loginPassword');
 
 loginButton.addEventListener('submit', () => {
     $.ajax({
@@ -8,8 +8,8 @@ loginButton.addEventListener('submit', () => {
         type: 'POST',
         dataType: 'json',
         data: {
-            email: userEmail.value,
-            password: userPassword.value
+            email: loginEmail.value,
+            password: loginPassword.value
         },
         success: (data) => {
             localStorage.setItem('userToken', data.token);

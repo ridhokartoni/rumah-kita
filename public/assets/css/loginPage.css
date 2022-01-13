@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Source+Sans+Pro:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Source+Sans+Pro:wght@400;700&display=swap');
 
 body {
   background: url('../images/Wallpaper\ login\ page\ dan\ register\ page.png')
@@ -21,6 +21,10 @@ body {
   padding-right: 25px;
   padding-left: 25px;
   margin-left: 50%;
+}
+
+.fa-chevron-left {
+  color: #212429;
 }
 
 button {

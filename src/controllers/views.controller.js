@@ -366,7 +366,6 @@ exports.forgotpassword = async (req, res) => {
     }
 }
 
-
 exports.adminLogin = async (req, res) => {
     res.render('../views/pages/admin/login.ejs', {appLink: process.env.APP_LINK});
 }
