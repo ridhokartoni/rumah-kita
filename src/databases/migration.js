@@ -73,7 +73,8 @@ async function migration() {
         console.log('Create Role Success')
 
         const createCategory = await Category.create({
-            name: "Mental Issues"
+            name: "Mental Issues",
+            path : "/mentalissues"
         });
 
         console.log('Create Category Success');

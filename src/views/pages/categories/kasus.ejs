@@ -22,9 +22,9 @@
                                 <div class="row pe-5 pb-3 ps-4">
                                     <div class="col-6 d-flex flex-column mt-3">
                                         <% if(data.isLogged==false) { %>
-                                            <h2>Selamat pagi,<br>Sayang</h2>
+                                            <h2>Selamat <%= data.timeNow %>,<br>Sayang</h2>
                                             <% } else { %>
-                                                <h2>Selamat pagi,<br>
+                                                <h2>Selamat <%= timeNow %>,<br>
                                                     <%= data.user.name %>
                                                 </h2>
                                                 <% } %>

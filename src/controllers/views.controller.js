@@ -1,40 +1,51 @@
 const formatterDate = require('../utilities/formatterDate');
 
+const navItems =  [
+    {
+        isActive: '',
+        name: 'Terkini',
+        url: '/home'
+    },
+    {
+        isActive: '',
+        name: 'Mental Issues',
+        url: '/category/mental issues'
+    },
+    {
+        isActive: '',
+        name: 'Gaya Hidup',
+        url: '/category/gaya hidup'
+    },
+    {
+        isActive: '',
+        name: 'Kasus',
+        url: '/category/kasus'
+    },
+    {
+        isActive: '',
+        name: 'Tersimpan',
+        url: '/saved'
+    },
+]
+
 exports.home = async (req, res) => {
-   
+    navItems.forEach((data) => {
+        if(data.name === 'Terkini'){
+            data.isActive = 'active'
+        }else{
+            data.isActive = ' '
+        }
+    })
+
     let data = {
         user: {
             name: 'Alma Lawson',
             email: 'alma.lawson@example.com'
         },
-        navItem: [
-            {
-                isActive: 'active',
-                name: 'Terkini',
-                url: '/'
-            },
-            {
-                isActive: '',
-                name: 'Mental Issues',
-                url: '/mentalissue'
-            },
-            {
-                isActive: '',
-                name: 'Gaya Hidup',
-                url: '/lifestyle'
-            },
-            {
-                isActive: '',
-                name: 'Kasus',
-                url: '/case'
-            },
-            {
-                isActive: '',
-                name: 'Tersimpan',
-                url: '/saved'
-            },
-        ],
+        
+        navItem: navItems,
         dateNow: formatterDate.currentDate(),
+        timeNow : formatterDate.formatterTime(),
         articles:
         {
             newest: [
@@ -66,208 +77,24 @@ exports.home = async (req, res) => {
     });
 }
 
-exports.mentalissues = async (req, res) => {
-    let data = {
-        user: {
-            name: 'Alma Lawson',
-            email: 'alma.lawson@example.com'
-        },
-        navItem: [
-            {
-                isActive: '',
-                name: 'Terkini',
-                url: '/'
-            },
-            {
-                isActive: 'active',
-                name: 'Mental Issues',
-                url: '/mentalissues'
-            },
-            {
-                isActive: '',
-                name: 'Gaya Hidup',
-                url: '/lifestyle'
-            },
-            {
-                isActive: '',
-                name: 'Kasus',
-                url: '/case'
-            },
-            {
-                isActive: '',
-                name: 'Tersimpan',
-                url: '/saved'
-            },
-        ],
-        dateNow: formatterDate.currentDate(),
-        articles:
-        {
-            specials: [
 
-            ],
-
-            cases: [
-
-            ],
-
-            mostPopular: [
-
-            ],
-        },
-        isLogged: false
-    };
-    res.render('../views/pages/categories/mental_issues.ejs', {
-        data: data,
-        appLink: process.env.APP_LINK
-    });
-}
-
-exports.lifestyle = async (req, res) => {
-    let data = {
-        user: {
-            name: 'Alma Lawson',
-            email: 'alma.lawson@example.com'
-        },
-        navItem: [
-            {
-                isActive: '',
-                name: 'Terkini',
-                url: '/'
-            },
-            {
-                isActive: '',
-                name: 'Mental Issues',
-                url: '/mentalissues'
-            },
-            {
-                isActive: 'active',
-                name: 'Gaya Hidup',
-                url: '/lifestyle'
-            },
-            {
-                isActive: '',
-                name: 'Kasus',
-                url: '/case'
-            },
-            {
-                isActive: '',
-                name: 'Tersimpan',
-                url: '/saved'
-            },
-        ],
-        dateNow: formatterDate.currentDate(),
-        articles:
-        {
-            specials: [
-
-            ],
-
-            cases: [
-
-            ],
-
-            mostPopular: [
-
-            ],
-        },
-        isLogged: false
-    };
-    res.render('../views/pages/categories/gaya_hidup.ejs', {
-        data: data,
-        appLink: process.env.APP_LINK
-    });
-}
-
-exports.case = async (req, res) => {
-    let data = {
-        user: {
-            name: 'Alma Lawson',
-            email: 'alma.lawson@example.com'
-        },
-        navItem: [
-            {
-                isActive: '',
-                name: 'Terkini',
-                url: '/'
-            },
-            {
-                isActive: '',
-                name: 'Mental Issues',
-                url: '/mentalissues'
-            },
-            {
-                isActive: '',
-                name: 'Gaya Hidup',
-                url: '/lifestyle'
-            },
-            {
-                isActive: 'active',
-                name: 'Kasus',
-                url: '/case'
-            },
-            {
-                isActive: '',
-                name: 'Tersimpan',
-                url: '/saved'
-            },
-        ],
-        dateNow: formatterDate.currentDate(),
-        articles:
-        {
-            specials: [
-
-            ],
-
-            cases: [
-
-            ],
-
-            mostPopular: [
-
-            ],
-        },
-        isLogged: false
-    };
-    res.render('../views/pages/categories/kasus.ejs', {
-        data: data,
-        appLink: process.env.APP_LINK
-    });
-}
 
 exports.saved = async (req, res) => {
+    navItems.forEach((data) => {
+        if(data.name === 'Tersimpan'){
+            data.isActive = 'active'
+        }else{
+            data.isActive = ' '
+        }
+    })
     let data = {
         user: {
             name: 'Alma Lawson',
             email: 'alma.lawson@example.com'
         },
-        navItem: [
-            {
-                isActive: '',
-                name: 'Terkini',
-                url: '/'
-            },
-            {
-                isActive: '',
-                name: 'Mental Issues',
-                url: '/mentalissues'
-            },
-            {
-                isActive: '',
-                name: 'Gaya Hidup',
-                url: '/lifestyle'
-            },
-            {
-                isActive: '',
-                name: 'Kasus',
-                url: '/case'
-            },
-            {
-                isActive: 'active',
-                name: 'Tersimpan',
-                url: '/saved'
-            },
-        ],
+        navItem: navItems,
         dateNow: formatterDate.currentDate(),
+        timeNow : formatterDate.formatterTime(),
         articles:
         {
             newest: [
@@ -292,34 +119,9 @@ exports.details = async (req, res) => {
             name: 'Alma Lawson',
             email: 'alma.lawson@example.com'
         },
-        navItem: [
-            {
-                isActive: '',
-                name: 'Terkini',
-                url: '/'
-            },
-            {
-                isActive: '',
-                name: 'Mental Issues',
-                url: '/mentalissues'
-            },
-            {
-                isActive: '',
-                name: 'Gaya Hidup',
-                url: '/lifestyle'
-            },
-            {
-                isActive: '',
-                name: 'Kasus',
-                url: '/case'
-            },
-            {
-                isActive: '',
-                name: 'Tersimpan',
-                url: '/saved'
-            },
-        ],
+        navItem: navItems,
         dateNow: formatterDate.currentDate(),
+        timeNow : formatterDate.formatterTime(),
         articles:
         {
             articleDetails: {
@@ -337,6 +139,44 @@ exports.details = async (req, res) => {
         isLogged: true
     };
     res.render('../views/pages/details_news_page.ejs', {
+        data: data,
+        appLink: process.env.APP_LINK
+    });
+}
+exports.category = async (req,res) => {
+    navItems.forEach((data) => {
+        if(data.name.toUpperCase() === req.params.nameCategory.toUpperCase()){
+            data.isActive = 'active'
+        }else{
+            data.isActive = ' '
+        }
+    })
+
+    let data = {
+        user: {
+            name: 'Alma Lawson',
+            email: 'alma.lawson@example.com'
+        },
+        navItem: navItems,
+        dateNow: formatterDate.currentDate(),
+        timeNow : formatterDate.formatterTime(),
+        articles:
+        {
+            specials: [
+
+            ],
+
+            cases: [
+
+            ],
+
+            mostPopular: [
+
+            ],
+        },
+        isLogged: req.query.isLogged
+    };
+    res.render('../views/pages/categories/kasus.ejs', {
         data: data,
         appLink: process.env.APP_LINK
     });
