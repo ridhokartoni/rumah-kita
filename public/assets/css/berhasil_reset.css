@@ -2,7 +2,7 @@
 
 body{
     margin: 0;
-    background-image: url('images/Wallpaper\ login\ page\ dan\ register\ page.png');
+    background-image: url('../images/Wallpaper\ login\ page\ dan\ register\ page.png');
     background-size:cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
