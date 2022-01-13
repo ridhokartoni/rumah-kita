@@ -1,8 +1,11 @@
 const router = require('express').Router();
-const ArticleAdminController = require('../../controllers/admin/article.admin.controller');
+const articleAdminController = require('../../controllers/admin/article.admin.controller');
+const authenticationAdmin = require('../../middleware/authenticationToken');
 
-
-router.get('/:page', ArticleAdminController.getAllArticles);
-router.post('/create', ArticleAdminController.createArticle);
+router.get('/:page?', articleAdminController.getAllArticle);
+router.use(authenticationAdmin);
+router.post('/create', articleAdminController.createArticle);
+router.put('/update', articleAdminController.updateArticle);
+router.delete('/delete', articleAdminController.deleteArticle);
 
 module.exports = router;

@@ -1,45 +1,44 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Source+Sans+Pro:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Source+Sans+Pro:wght@400;700&display=swap");
 
 body {
-    background:url('../images/Wallpaper\ login\ page\ dan\ register\ page.png') no-repeat center fixed;
-    -webkit-background-size:cover;
-    -moz-background-size:cover;
-    -o-background-size:cover;
-    background-size: cover;
-    font-family: 'Source Sans Pro', sans-serif;
+  background: url('../images/Wallpaper\ login\ page\ dan\ register\ page.png')
+    no-repeat center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 .container {
-    width: 40%;
-    height: 30%;
-    margin-top: 5%;
-    box-shadow: 0 3px 20px rgba(0,0,0,0.3);
-    padding: 40px;
-    background-color: white;
-    border: none;
-    border-radius: 25px;
-    padding-right: 25px;
-    padding-left: 25px;  
-    margin-left: 50%;
+  width: 40%;
+  height: 30%;
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.3);
+  padding: 40px;
+  background-color: white;
+  border: none;
+  border-radius: 25px;
+  padding-right: 25px;
+  padding-left: 25px;
+  margin-left: 50%;
 }
 
 button {
-    width: 50%;
-    margin-top: 10%; 
-    border: none;
-    border-radius: 25px;
-    padding-right: 25px; 
+  width: 50%;
+  margin-top: 10%;
+  border: none;
+  border-radius: 25px;
+  padding-right: 25px;
 }
 
 .form-group {
-    border: none;
-    border-radius: 25px;
-    padding-right: 25px;
-    padding-left: 25px; 
-    margin: 0px;
-    margin-bottom: 25px;
+  border: none;
+  border-radius: 25px;
+  padding-right: 25px;
+  padding-left: 25px;
+  margin: 0px;
+  margin-bottom: 25px;
 }
-
 
 .btn {
     background-color: #d67eff;
@@ -53,63 +52,69 @@ button {
 }
 
 .link {
-    margin-left: 25%;
-    color: black;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}
+.link:hover {
+  cursor: pointer;
 }
 
-.inputWithIcon input[type=email] {
-    padding-left: 45px;
+.want-signup {
+  margin-left: 25%;
 }
 
-.inputWithIcon input[type=password] {
-    padding-left: 45px;
+.inputWithIcon input[type='email'] {
+  padding-left: 45px;
+}
+
+.inputWithIcon input[type='password'] {
+  padding-left: 45px;
 }
 
 .inputWithIcon {
-    position: relative;
+  position: relative;
 }
 
 .inputWithIcon i {
-    position: absolute;
-    left:0;
-    top: 10px;
-    padding: 25px 12px;
-    color:black;
-    transition: .3s;
+  position: absolute;
+  left: 0;
+  top: 10px;
+  padding: 25px 12px;
+  color: black;
+  transition: 0.3s;
 }
 
-
 .btn1 {
-    background-color: transparent;
-    border: none;
-    color: grey;
-    margin-top: 0px;
-    margin-bottom: 15px;
+  background-color: transparent;
+  border: none;
+  color: grey;
+  margin-top: 0px;
+  margin-bottom: 15px;
 }
 
 .say {
-    margin-bottom: 25px;
-    margin-left: 25px;
+  margin-bottom: 25px;
+  margin-left: 25px;
 }
 
-
-
 .input-group-text {
-    background-color: transparent;
-    border: none;
-    color: grey;
-    margin-top: 0px;
+  background-color: transparent;
+  border: none;
+  color: grey;
+  margin-top: 0;
+  padding-top: 0;
 }
 
 .form-control {
-    border-radius: 25px;
-    padding-right: 25px;
-    padding-left: 25px;
+  border-radius: 25px;
+  padding-right: 25px;
+  padding-left: 25px;
 }
 
 .sandi {
-    margin-left: 6%;
-    margin-top: -5%;
+  margin-left: 6%;
+  margin-top: -5%;
 }
 
 .lock {
@@ -131,8 +136,7 @@ button {
 }
 
 #forgot-pass {
-    color:black;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 12%;
+  color: black;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 12%;
 }
-
