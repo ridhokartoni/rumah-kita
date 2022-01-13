@@ -350,6 +350,10 @@ exports.login = async (req, res) => {
     res.render('../views/pages/login_page.ejs', { appLink: process.env.appLink });
 }
 
+exports.registrasion = async (req, res) => {
+    res.render('../views/pages/register_berhasil.ejs', { appLink: process.env.appLink });
+}
+
 exports.forgotpassword = async (req, res) => {
     if (req.params.success) {
         res.render('../views/pages/forgotpassword/success_forgot_password.ejs', {
