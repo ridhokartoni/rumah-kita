@@ -145,7 +145,6 @@ exports.details = async (req, res) => {
         appLink: process.env.APP_LINK
     });
 }
-
 exports.category = async (req, res) => {
     navItems.forEach((data) => {
         if (data.name.toUpperCase() === req.params.nameCategory.toUpperCase()) {
@@ -227,7 +226,7 @@ exports.registration = async (req, res) => {
 }
 
 exports.forgotpassword = async (req, res) => {
-    if (req.params.success) {
+    if (req.params.success == 'success') {
         res.render('../views/pages/forgotpassword/success_forgot_password.ejs', {
             appLink: process.env.APP_LINK
         })
@@ -237,6 +236,20 @@ exports.forgotpassword = async (req, res) => {
         })
     }
 }
+
+exports.resetpassword = async (req, res) => {
+        res.render('../views/pages/forgotpassword/resetpassword.ejs', {
+            appLink: process.env.APP_LINK
+        })
+}
+
+exports.resetpasswordSuccess = async (req, res) => {
+    res.render('../views/pages/forgotpassword/berhasilReset.ejs', {
+        appLink: process.env.APP_LINK
+    })
+}
+
+
 
 exports.adminLogin = async (req, res) => {
     res.render('../views/pages/admin/login.ejs', { appLink: process.env.APP_LINK });
