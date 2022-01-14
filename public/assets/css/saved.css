@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&family=Oswald&family=Poppins&family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+
+h5.saved {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: bold;
+  letter-spacing: 0.54px;
+  line-height: 1.23;
+}
+
+small.saved {
+  color: #9a9a9a;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.3px;
+}
+
+.card-text.saved {
+  font-family: 'Times New Roman', serif;
+  font-weight: normal;
+  letter-spacing: 0.5px;
+}
+
+.card-text.saved span {
+  font-weight: bold;
+}
+
+.dropdown-divider.comment-divider {
+  height: 1px;
+  background-color: #e2e2e2;
+}

@@ -22,7 +22,7 @@
 
 .nav-link.active h6 {
   font-family: 'Source Sans Pro', sans-serif;
-  font-weight: 600;
+  font-weight: bold;
   color: #1b105b;
   text-decoration-line: underline;
 }
@@ -87,10 +87,19 @@ p.desc {
 
 h5.footer-title {
   font-family: 'Oswald', sans-serif;
+  line-height: 1.01;
 }
 
 a.link-light {
   font-family: 'Poppins', sans-serif;
+  text-decoration-line: none;
+  line-height: 1.01;
+}
+
+a.link-light:hover {
+  font-family: 'Poppins', sans-serif;
+  text-decoration-line: underline;
+  line-height: 1.01;
 }
 
 .color-footer p small {
@@ -105,10 +114,11 @@ a.link-light {
 }
 
 .footer-breadcrumb {
-  --bs-breadcrumb-divider: url(
-    &#34;data:image/svg+xml,
-    %3Csvgxmlns='http://www.w3.org/2000/svg'width='8'height='8'%3E%3Cpathd='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z'fill='currentColor'/%3E%3C/svg%3E&#34;
-  );
+  --bs-breadcrumb-divider: '';
+}
+
+.breadcrumb-item .fa-chevron-right {
+  color: white;
 }
 
 .color-footer {
@@ -116,12 +126,17 @@ a.link-light {
 }
 
 .dropdown-divider.footer-divider {
-  background-color: white;
+  background-color: #f9f0fe;
 }
 
 /* Content */
 body {
   background-color: #f9f0fe;
+}
+
+a {
+  color: unset;
+  text-decoration-line: none;
 }
 
 .dropdown-divider {
@@ -141,8 +156,7 @@ div.greetings {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  /* background-clip: border-box; */
-  background-position: center;
+  background-position: right;
   border-radius: 0px 0px 25px 25px;
   -moz-border-radius: 0px 0px 25px 25px;
   -webkit-border-radius: 0px 0px 25px 25px;
@@ -152,7 +166,7 @@ div.greetings {
 }
 
 .greetings .row .col-6 h2 {
-  font-family: 'Noto Serif', serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-weight: bold;
   font-size: 36px;
   letter-spacing: 1.08px;
@@ -161,6 +175,17 @@ div.greetings {
 .greetings .row .col-6 p {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 300;
+}
+
+.btn-music {
+  background-color: #d5e7ff;
+  color: black;
+  border-radius: 100px 100px 100px 100px;
+  -moz-border-radius: 100px 100px 100px 100px;
+  -webkit-border-radius: 100px 100px 100px 100px;
+  outline: 0px !important;
+  -webkit-appearance: none;
+  box-shadow: none !important;
 }
 
 img.content {
@@ -193,6 +218,10 @@ img.content {
   color: #fff;
 }
 
+.fa-chevron-right {
+  color: #545454;
+}
+
 .card-title.home {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: bold;
@@ -204,7 +233,7 @@ img.content {
 h6.home {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: normal;
-  font-size: 14px;
+  font-size: 12px;
   color: #1b105b;
 }
 
@@ -215,19 +244,96 @@ h6.home {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 600;
   letter-spacing: 0.5px;
+  outline: 0px !important;
+  -webkit-appearance: none;
+  box-shadow: none !important;
 }
 
-button.button-congo-pink:hover {
-  background-color: #DA615D;
+button.button-congo-pink:hover,
+button.button-congo-pink:active {
+  background-color: #da615d;
   color: white;
+  outline: 0px !important;
+  -webkit-appearance: none;
+  box-shadow: none !important;
 }
 
-.button-heliotrope {
+button.button-congo-pink:focus {
+  outline: 0px !important;
+  -webkit-appearance: none;
+  box-shadow: none !important;
+}
+
+.button-pale-purple {
   background-color: #f4e3fe;
   color: black;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 12px;
   font-weight: bold;
+}
+
+button.button-pale-purple:hover,
+button.button-pale-purple:active,
+button.button-pale-purple:focus {
+  background-color: #f4e3fe;
+  color: black;
+  outline: 0px !important;
+  -webkit-appearance: none;
+  box-shadow: none !important;
+}
+
+.button-logout {
+  background-color: #cacaca99;
+  color: white;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  border: 1px solid #b5b5b5;
+}
+
+button.button-logout.ok:hover,
+button.button-logout.ok:active {
+  background-color: #1877F299;
+  color: white;
+  border: 1px solid #1877F2;
+  outline: 0px !important;
+  -webkit-appearance: none;
+  box-shadow: none !important;
+}
+
+button.button-logout.ok:focus {
+  outline: 0px !important;
+  -webkit-appearance: none;
+  box-shadow: none !important;
+}
+
+button.button-logout.cancel:hover,
+button.button-logout.cancel:active {
+  background-color: #DA615DB2;
+  color: white;
+  border: 1px solid #DA615D;
+  outline: 0px !important;
+  -webkit-appearance: none;
+  box-shadow: none !important;
+}
+
+button.button-logout.cancel:focus {
+  outline: 0px !important;
+  -webkit-appearance: none;
+  box-shadow: none !important;
+}
+
+.collapse .card {
+  background-color: #f4e3fe;
+}
+
+.collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  -webkit-transition: 0.35s ease;
+  -o-transition: 0.35s ease;
+  transition: 0.35s ease;
 }
 
 .date {
@@ -269,7 +375,9 @@ button.button-congo-pink:hover {
 
 small.other {
   font-family: Arial, sans-serif;
+  font-size: 12px;
   color: #ba96d3;
+  margin-top: 0.2rem;
 }
 
 h4.main-text {
@@ -290,6 +398,18 @@ small.main-content {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: normal;
   color: #9a9a9a;
+}
+
+.react .fa-thumbs-up,
+.react .fa-eye,
+.react .fa-bookmark {
+  color: #d67eff;
+}
+
+.react small {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.45px;
 }
 
 img.article {
@@ -346,8 +466,8 @@ small.sec-content {
 
 .card-text.side {
   color: #9a9a9a;
-  font-size: 8px; 
-  bottom: 0px; 
+  font-size: 8px;
+  bottom: 0px;
   right: 0;
 }
 
@@ -366,14 +486,4 @@ div.side-content {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   text-overflow: ellipsis;
-}
-
-div.outer {
-  position: relative;
-}
-
-div.outer img {
-  position: absolute;
-  bottom: 0;
-  right: 0;
 }

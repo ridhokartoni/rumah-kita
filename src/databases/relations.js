@@ -2,7 +2,7 @@ const Role = require('../model/role.model');
 const User = require('../model/user.model');
 const Category = require('../model/category.model');
 const Comment = require('../model/comment.model');
-const Article = require('../model/user.model');
+const Article = require('../model/article.model');
 const savedArticle = require('../model/savedArticles.model');
 
 
@@ -12,6 +12,9 @@ function dbRelation(){
 
         User.hasMany(Article);
         Article.belongsTo(User);
+        
+        Category.hasMany(Article);
+        Article.belongsTo(Category);
 
         Article.hasMany(savedArticle);
         User.hasMany(savedArticle);

@@ -24,7 +24,11 @@ const article = connection.define('article', {
 
     content: {
         type: DataTypes.TEXT,
-        allowNull: false
+        allowNull: false,
+        get() {
+            let values = this.getDataValue('content');
+            return decodeURIComponent(values);
+        }
     },
 
     thumbnailPicture: {
@@ -40,12 +44,21 @@ const article = connection.define('article', {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'Category',
+            model: 'category',
             key: 'id'
+        }
+    },
+
+    userId : {
+        type : DataTypes.INTEGER,
+        allowNull : false,
+        references : {
+            model : 'user',
+            key : 'id'
         }
     }
 }, {
-    freezeTableName: true
-});
+    freezeTableName: true,
+}, );
 
 module.exports = article

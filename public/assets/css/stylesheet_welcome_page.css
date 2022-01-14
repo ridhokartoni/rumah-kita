@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Source+Sans+Pro:wght@400;700&display=swap');
 
 body {
-    background-image: url(../images/bg_Welcome_Page.svg);
+    background-image: url(../images/Wallpaper_Welcome_Page_PNG.png);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -17,12 +17,17 @@ body {
     display: flex;
     height: 10px;
     flex-wrap: wrap;
+    
+}
+
+.mt-10{
+   margin-top: 200px; 
 }
 
 .flex-konten {
     width: 96%;
     padding-left: 2%;
-    margin: 0;
+    margin-top: 40px;
     flex-wrap: wrap;
     padding-left: 60px;
     padding-top: 180px;

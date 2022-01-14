@@ -27,13 +27,13 @@
 
 h4.category {
   font-family: 'Source Sans Pro', sans-serif;
-  font-weight: 600;
-  line-height: 1.12;
-  letter-spacing: 1.2px;
+  font-weight: bold;
+  line-height: 1.23;
+  letter-spacing: 0.54px;
 }
 
 p.date-category {
-  font-size: 12px; 
+  font-size: 12px;
   color: #dfc1c1;
   font-family: 'Source Sans Pro', sans-serif;
   letter-spacing: 0.35px;
@@ -46,4 +46,25 @@ p.date-category {
   color: #1b105b;
   font-weight: bold;
   box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.card-text.main {
+  color: #9a9a9a;
+  font-size: 10px;
+  letter-spacing: 0.5px;
+}
+
+.card-text.sub {
+  font-size: 14px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: normal;
+  letter-spacing: 0.45px;
+}
+
+.card-text.sub span {
+  font-weight: bold;
+}
+
+.title-content.category {
+  font-size: 14px;
 }
