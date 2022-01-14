@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-    <%- include('../partials/head'); %>
+    <%- include('../partials/head.ejs'); %>
 </head>
 
 <body>
     <header>
-        <%- include('../partials/header'); %>
+        <%- include('../partials/header.ejs'); %>
     </header>
 
     <section>
@@ -25,7 +25,7 @@
                                         <% if(data.isLogged==false) { %>
                                             <h2>Selamat <%= data.timeNow %>,<br>Sayang</h2>
                                             <% } else { %>
-                                                <h2>Selamat <%= timeNow %>,<br>
+                                                <h2>Selamat <%= data.timeNow %>,<br>
                                                     <%= data.user.name %>
                                                 </h2>
                                                 <% } %>
@@ -38,7 +38,7 @@
                                 </div>
                                 <div class="ps-4">
                                     <audio loop id="music-src"
-                                        src="https://docs.google.com/uc?export=download&id=1QnfknOaI-MzGeqTaRqz3nD9IRFRorWM1"></audio>
+                                        src="https://docs.google.com/uc?export=download&id=13wpetfDjL1UTWlLOagzx8zScRraRpqdD"></audio>
                                     <input type="checkbox" class="btn-check" id="btn-check" autocomplete="off">
                                     <label class="btn btn-music" for="btn-check" id="music-icon"><i
                                             class="far fa-volume-mute"></i></label>
@@ -61,15 +61,18 @@
                                                     keuntungan lebih...</h6>
                                                 <div class="d-flex justify-content-center pt-3">
                                                     <button type="button"
-                                                        class="btn rounded-pill button-congo-pink btn-sm p-0 px-4">Masuk/Daftar</button>
+                                                        class="btn rounded-pill button-congo-pink btn-sm p-0 px-4" onclick="location.href='/login'">Masuk/Daftar</button>
                                                 </div>
                                             </div>
                                         </div>
                                         <!-- Ads -->
                                         <div class="d-flex flex-column justify-content-center ms-5 me-2">
-                                            <img src="<%= appLink %>/public/images/ad1.png" alt="ad1" class="img-fluid mt-4">
-                                            <img src="<%= appLink %>/public/images/ad2.png" alt="ad2" class="img-fluid mt-4">
-                                            <img src="<%= appLink %>/public/images/ad2.png" alt="ad2" class="img-fluid mt-4">
+                                            <img src="<%= appLink %>/public/images/ad1.png" alt="ad1"
+                                                class="img-fluid mt-4">
+                                            <img src="<%= appLink %>/public/images/ad2.png" alt="ad2"
+                                                class="img-fluid mt-4">
+                                            <img src="<%= appLink %>/public/images/ad2.png" alt="ad2"
+                                                class="img-fluid mt-4">
                                         </div>
                                         <% } else { %>
                                             <div class="card border-0 ms-5 me-2">
@@ -78,8 +81,8 @@
                                                         <div class="d-flex bd-highlight">
                                                             <div class="flex-shrink-0">
                                                                 <img class="rounded-pill"
-                                                                    src="<%= appLink %>/public/images/dummy_content.jpeg" width="34px"
-                                                                    height="34px" alt="...">
+                                                                    src="<%= appLink %>/public/images/dummy_content.jpeg"
+                                                                    width="34px" height="34px" alt="...">
                                                             </div>
                                                             <div class="flex-shrink-1 ms-2" style="max-width: 81%;">
                                                                 <h5 class="card-title home p-0 m-0">
@@ -116,7 +119,7 @@
                                                     <div class="card-body">
                                                         <h6 class="text-center">Anda Yakin Keluar?</h6>
                                                         <div class="d-flex justify-content-around">
-                                                            <button class="btn button-logout ok px-4">OK</button>
+                                                            <button id="logoutButton" type="submit" class="btn button-logout ok px-4">OK</button>
                                                             <button class="btn button-logout cancel px-4" type="button"
                                                                 data-bs-toggle="collapse"
                                                                 data-bs-target="#logoutCollapse" aria-expanded="false"
@@ -155,10 +158,6 @@
                                             src="<%= appLink %>/public/images/dummy_content.jpeg" alt="dummy">
                                         <div class="card-body">
                                             <div class="d-flex justify-content-end react">
-                                                <div class="d-flex react">
-                                                    <i class="fas fa-thumbs-up"></i>
-                                                    <small class="ms-1">1.1k</small>
-                                                </div>
                                                 <div class="d-flex react ms-2">
                                                     <i class="fas fa-eye"></i>
                                                     <small class="ms-1">1.8k</small>
@@ -452,7 +451,7 @@
     </section>
 
     <footer>
-        <%- include('../partials/footer'); %>
+        <%- include('../partials/footer.ejs'); %>
     </footer>
 </body>
 

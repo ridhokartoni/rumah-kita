@@ -77,8 +77,6 @@ exports.home = async (req, res) => {
     });
 }
 
-
-
 exports.saved = async (req, res) => {
     navItems.forEach((data) => {
         if (data.name === 'Tersimpan') {
@@ -105,12 +103,16 @@ exports.saved = async (req, res) => {
 
             ],
         },
-        isLogged: true
+        isLogged: req.query.isLogged
     };
-    res.render('../views/pages/saved_page.ejs', {
-        data: data,
-        appLink: process.env.APP_LINK
-    });
+    if (data.isLogged == true) {
+        res.render('../views/pages/saved_page.ejs', {
+            data: data,
+            appLink: process.env.APP_LINK
+        });
+    } else {
+        res.redirect('/home');
+    }
 }
 
 exports.details = async (req, res) => {
@@ -136,7 +138,7 @@ exports.details = async (req, res) => {
 
             ],
         },
-        isLogged: true
+        isLogged: req.query.isLogged
     };
     res.render('../views/pages/details_news_page.ejs', {
         data: data,
@@ -176,10 +178,31 @@ exports.category = async (req, res) => {
         },
         isLogged: req.query.isLogged
     };
-    res.render('../views/pages/categories/kasus.ejs', {
+    res.render('../views/pages/category_page.ejs', {
         data: data,
         appLink: process.env.APP_LINK
     });
+}
+
+exports.profile = async (req, res) => {
+    let data = {
+        user: {
+            name: 'Alma Lawson',
+            email: 'alma.lawson@example.com'
+        },
+        navItem: navItems,
+        dateNow: formatterDate.currentDate(),
+        timeNow: formatterDate.formatterTime(),
+        isLogged: req.query.isLogged
+    };
+    if (data.isLogged == true) {
+        res.render('../views/pages/settings_page.ejs', {
+            data: data,
+            appLink: process.env.APP_LINK
+        })
+    } else {
+        res.redirect('/home');
+    }
 }
 
 exports.welcome = async (req, res) => {
@@ -187,11 +210,19 @@ exports.welcome = async (req, res) => {
 }
 
 exports.login = async (req, res) => {
-    res.render('../views/pages/login_page.ejs', { appLink: process.env.appLink });
+    if (req.query.isLogged == true) {
+        res.redirect('/home');
+    } else {
+        res.render('../views/pages/login_page.ejs', { appLink: process.env.APP_LINK });
+    }
 }
 
-exports.registrasion = async (req, res) => {
-    res.render('../views/pages/register_berhasil.ejs', { appLink: process.env.appLink });
+exports.registration = async (req, res) => {
+    if (req.query.isLogged == true) {
+        res.redirect('/home');
+    } else {
+        res.render('../views/pages/register_berhasil.ejs', { appLink: process.env.APP_LINK });
+    }
 }
 
 exports.forgotpassword = async (req, res) => {

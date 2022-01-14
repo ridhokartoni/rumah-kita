@@ -2,7 +2,7 @@ const router = require('express').Router();
 const ViewsController = require('../controllers/views.controller');
 const authenticationUser = require('../middleware/viewsAuthenticationToken.');
 
-router.get('/', (req,res) => {
+router.get('/', (req, res) => {
     res.redirect('/home');
 })
 
@@ -18,6 +18,7 @@ router.get('/home', ViewsController.home);
 router.get('/saved', ViewsController.saved);
 router.get('/article/:id', ViewsController.details);
 router.get('/category/:nameCategory', ViewsController.category);
+router.get('/profile/:id', ViewsController.profile);
 
 
 module.exports = router;
