@@ -1,14 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Source+Sans+Pro:wght@400;700&display=swap');
 
 body {
-<<<<<<< HEAD
-    background:url('../images/Wallpaper\ login\ page\ dan\ register\ page.png') no-repeat center fixed;
-    -webkit-background-size:cover;
-    -moz-background-size:cover;
-    -o-background-size:cover;
-    background-size: cover;
-    font-family: 'Source Sans Pro', sans-serif;
-=======
   background: url('../images/Wallpaper\ login\ page\ dan\ register\ page.png')
     no-repeat center fixed;
   -webkit-background-size: cover;
@@ -16,7 +8,6 @@ body {
   -o-background-size: cover;
   background-size: cover;
   font-family: 'Source Sans Pro', sans-serif;
->>>>>>> fetch_head
 }
 
 .container {
@@ -54,7 +45,6 @@ button {
 }
 
 .btn {
-<<<<<<< HEAD
     background-color: #d67eff;
     border: none;
     border-radius: 25px;
@@ -63,39 +53,6 @@ button {
     width: 70%;
     margin-top: 4%;
     margin-left: 15%;
-=======
-  background-color: #d67eff;
-  border: none;
-  border-radius: 25px;
-  padding-right: 25px;
-  padding-left: 25px;
-  width: 70%;
-  margin-top: 4%;
-  margin-left: 15%;
-}
-
-.gradient-color {
-  font-family: 'Inter', sans-serif;
-  font-weight: 700;
-  line-height: 1.25;
-  background: #ffffff;
-  background: -webkit-linear-gradient(
-    to right,
-    #ffffff 48%,
-    #ffd215 60%,
-    #ffd215 100%
-  );
-  background: -moz-linear-gradient(
-    to right,
-    #ffffff 48%,
-    #ffd215 60%,
-    #ffd215 100%
-  );
-  background: linear-gradient(to right, #ffffff 48%, #ffd215 60%, #ffd215 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
->>>>>>> fetch_head
 }
 
 .link {
@@ -165,7 +122,6 @@ button {
 }
 
 .lock {
-<<<<<<< HEAD
     background-image: url(../images/lock.png);
     background-repeat: no-repeat;
     margin-top: 3%;
@@ -181,23 +137,6 @@ button {
     margin-left: 2%;
     background-size: 101%;
     background-position-y: 20%;
-=======
-  background-image: url(../images/lock.png);
-  background-repeat: no-repeat;
-  margin-top: 3%;
-  margin-left: 3%;
-  background-size: 85%;
-  background-position-y: 29%;
-}
-
-.email {
-  background-image: url(../images/mail.png);
-  background-repeat: no-repeat;
-  margin-top: 3%;
-  margin-left: 3%;
-  background-size: 85%;
-  background-position-y: 34%;
->>>>>>> fetch_head
 }
 
 #forgot-pass {
