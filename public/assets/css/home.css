@@ -156,7 +156,6 @@ div.greetings {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  /* background-clip: border-box; */
   background-position: right;
   border-radius: 0px 0px 25px 25px;
   -moz-border-radius: 0px 0px 25px 25px;

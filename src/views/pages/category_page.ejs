@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-    <%- include('../../partials/head'); %>
+    <%- include('../partials/head.ejs'); %>
 </head>
 
 <body>
     <header>
-        <%- include('../../partials/header'); %>
+        <%- include('../partials/header.ejs'); %>
     </header>
 
     <section>
@@ -22,9 +22,9 @@
                                 <div class="row pe-5 pb-3 ps-4">
                                     <div class="col-6 d-flex flex-column mt-3">
                                         <% if(data.isLogged==false) { %>
-                                            <h2>Selamat pagi,<br>Sayang</h2>
+                                            <h2>Selamat <%= data.timeNow %>,<br>Sayang</h2>
                                             <% } else { %>
-                                                <h2>Selamat pagi,<br>
+                                                <h2>Selamat <%= data.timeNow %>,<br>
                                                     <%= data.user.name %>
                                                 </h2>
                                                 <% } %>
@@ -37,7 +37,7 @@
                                 </div>
                                 <div class="ps-4">
                                     <audio loop id="music-src"
-                                        src="https://docs.google.com/uc?export=download&id=1gRjA3HFoPYenoxWarfRdNKlmlhTunIDA"></audio>
+                                        src="https://docs.google.com/uc?export=download&id=1zHEUqt_zW5vLF5a3ukGuwunfjdAx-vuu"></audio>
                                     <input type="checkbox" class="btn-check" id="btn-check" autocomplete="off">
                                     <label class="btn btn-music" for="btn-check" id="music-icon"><i
                                             class="far fa-volume-mute"></i></label>
@@ -63,6 +63,12 @@
                                                         class="btn rounded-pill button-congo-pink btn-sm p-0 px-4">Masuk/Daftar</button>
                                                 </div>
                                             </div>
+                                        </div>
+                                        <!-- Ads -->
+                                        <div class="d-flex flex-column justify-content-center ms-5 me-2">
+                                            <img src="<%= appLink %>/public/images/ad1.png" alt="ad1" class="img-fluid mt-4">
+                                            <img src="<%= appLink %>/public/images/ad2.png" alt="ad2" class="img-fluid mt-4">
+                                            <img src="<%= appLink %>/public/images/ad2.png" alt="ad2" class="img-fluid mt-4">
                                         </div>
                                         <% } else { %>
                                             <div class="card border-0 ms-5 me-2">
@@ -133,7 +139,7 @@
                                         <div class="card-img-overlay ms-2 mt-3">
                                             <div class="row">
                                                 <div class="col-9">
-                                                    <a href="/details">
+                                                    <a href="#">
                                                         <h4 class="card-title category">Tiktok Kemnaker Singgung 'Gaji
                                                             Gede Mental
                                                             Health
@@ -450,10 +456,9 @@
                                                 Kesehatan Mental</h5>
                                         </a>
                                     </div>
-                                    <p class="card-text side text-start m-0"><small>Senin, 20 Des
+                                    <p class="card-text side text-start"><small>Senin, 20 Des
                                             2021 16:30 WIB
                                         </small></p>
-                                    <div class="dropdown-divider"></div>
                                 </div>
                                 <% } %>
                         </div>
@@ -522,7 +527,7 @@
     </section>
 
     <footer>
-        <%- include('../../partials/footer'); %>
+        <%- include('../partials/footer.ejs'); %>
     </footer>
 </body>
 

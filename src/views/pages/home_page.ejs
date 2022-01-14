@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-    <%- include('../partials/head'); %>
+    <%- include('../partials/head.ejs'); %>
 </head>
 
 <body>
     <header>
-        <%- include('../partials/header'); %>
+        <%- include('../partials/header.ejs'); %>
     </header>
 
     <section>
@@ -23,9 +23,9 @@
                                     <div class="col-6 d-flex flex-column mt-3">
                                         
                                         <% if(data.isLogged==false) { %>
-                                            <h2>Selamat pagi,<br>Sayang</h2>
+                                            <h2>Selamat <%= data.timeNow %>,<br>Sayang</h2>
                                             <% } else { %>
-                                                <h2>Selamat pagi,<br>
+                                                <h2>Selamat <%= data.timeNow %>,<br>
                                                     <%= data.user.name %>
                                                 </h2>
                                                 <% } %>
@@ -451,7 +451,7 @@
     </section>
 
     <footer>
-        <%- include('../partials/footer'); %>
+        <%- include('../partials/footer.ejs'); %>
     </footer>
 </body>
 

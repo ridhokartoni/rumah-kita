@@ -3,9 +3,11 @@
         <div class="col-4 color-footer text-start pt-5">
             <div class="p-5">
                 <img src="<%= appLink %>/public/images/Logo.svg" alt="Rumah Kita" width="60%" height="60%">
-                <p class="desc mt-3">Our Home. A safe place we built to hear their stressful story without blasphemmy</p>
+                <p class="desc mt-3">Our Home. A safe place we built to hear their stressful story without blasphemmy
+                </p>
             </div>
-            <p class="text-center mx-5">&copy;<small> Semua berita ini milik portal berita terkait. Web ini hanya bertujuan untuk tugas semata.</small></p>
+            <p class="text-center mx-5">&copy;<small> Semua berita ini milik portal berita terkait. Web ini hanya
+                    bertujuan untuk tugas semata.</small></p>
         </div>
 
         <div class="col-8 image-footer pt-5">
@@ -19,22 +21,14 @@
                         <div class="pt-2"
                             style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='white'/%3E%3C/svg%3E&#34;);"
                             aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"></li>
-                                <li class="breadcrumb-item"><a class="link-light" href="/mentalissues">Mental Issues</a></li>
-                            </ol>   
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"></li>
-                                <li class="breadcrumb-item"><a class="link-light" href="/lifestyle">Gaya Hidup</a></li>
-                            </ol>
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"></li>
-                                <li class="breadcrumb-item"><a class="link-light" href="/">Terkini</a></li>
-                            </ol>
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"></li>
-                                <li class="breadcrumb-item"><a class="link-light" href="/cases">Kasus</a></li>
-                            </ol>
+                            <% for(let i=0; i<data.navItem.length-1; i++) { %>
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"></li>
+                                    <li class="breadcrumb-item"><a class="link-light" href="<%= data.navItem[i].url %>">
+                                            <%= data.navItem[i].name %>
+                                        </a></li>
+                                </ol>
+                                <% } %>
                         </div>
                     </div>
 

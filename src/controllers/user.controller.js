@@ -54,7 +54,7 @@ exports.forgotPassword = async (req,res) =>{
             let result = await UserServices.forgotPassword(req.query.email);
             res.send(result);
         }else{
-            throw new Error('Ngga ada emailnya cok!')
+            throw new Error('Please provide the email')
         }
     } catch (error) {
         res.status(500).send({
