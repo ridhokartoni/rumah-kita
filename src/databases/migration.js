@@ -1,21 +1,3 @@
-const mariadb = require('mariadb');
-
-const pool = mariadb.createPool({ 
-    host: process.env.DB_HOST, 
-    user: process.env.DB_USER, 
-    connectionLimit: 5,
-    port: process.env.DB_PORT,
-    password: process.env.DB_PASSWORD 
-});
-
-
-pool.getConnection().then( async conn => {
-    console.log("hahahah");
-    await conn.query(`CREATE DATABASE IF NOT EXISTS ${process.env.DB_NAME}`);
-    conn.destroy();
-}).catch((err) => console.log(err));
-
-
 const User = require('../model/user.model');
 const Role = require('../model/role.model');
 const Category = require('../model/category.model');

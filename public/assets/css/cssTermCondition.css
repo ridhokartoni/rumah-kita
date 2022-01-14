@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Source+Sans+Pro:wght@400;700&display=swap');
+
+body {
+    background:url('Wallpaper\ login\ page\ dan\ register\ page.png') no-repeat center fixed;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+    background-size: cover;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.container {
+    width: 60%;
+    height: 5%;
+    margin-top: 3%;
+    box-shadow: 0 3px 20px rgba(0,0,0,0.3);
+    padding: 40px;
+    background-color: white;
+    border: none;
+    border-radius: 25px;
+    padding-right: 25px;
+    padding-left: 25px;  
+    margin-right: 10%;
+}
+
+.btn1 {
+    background-color: transparent;
+    border: none;
+    color: black;
+    margin-top: 0px;
+    margin-bottom: 15px;
+    margin-right: 15%;
+    padding-right: 25px;
+    padding-left: 25px; 
+}
+
+.input-group-text {
+    background-color: transparent;
+    border: none;
+    color: black;
+    margin-top: 1px;
+}
+
+.btn {
+    background-color: #d67eff;
+    border: none;
+    border-radius: 25px;
+    padding-right: 25px;
+    padding-left: 25px;
+    width: 70%;
+    margin-top: 4%;
+    margin-left: 15%;
+}
+
+.form-check {
+    margin-top: 4%;
+    margin-left: 15%;
+}
+
+.our {
+    color: grey;
+    padding-right: 25px;
+    padding-left: 25px;
+}
+
+h6 {
+    margin-left: 10%;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+h3 {
+    margin-left: 20%;
+}
+
+h5 {
+    margin-left: 10%;
+}
+
+.logo {
+    align-content: left;
+    padding-left: 30px;
+    padding-top: 15px;
+}
