@@ -19,6 +19,8 @@ router.get('/home', ViewsController.home);
 router.get('/saved', ViewsController.saved);
 router.get('/article/:id', ViewsController.details);
 router.get('/category/:nameCategory', ViewsController.category);
+router.get('/see-others', ViewsController.others);
+router.get('/search', ViewsController.search);
 router.get('/profile/:id', ViewsController.profile);
 
 

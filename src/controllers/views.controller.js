@@ -1,4 +1,5 @@
 const formatterDate = require('../utilities/formatterDate');
+const letterFormatter = require('../utilities/letterFormatter');
 
 const navItems = [
     {
@@ -27,6 +28,13 @@ const navItems = [
         url: '/saved'
     },
 ]
+
+// const pageNames = [
+//     'Paling Disukai',
+//     'Spesial',
+//     'Kasus',
+//     'Terbaru'
+// ]
 
 exports.home = async (req, res) => {
     navItems.forEach((data) => {
@@ -93,6 +101,7 @@ exports.saved = async (req, res) => {
         navItem: navItems,
         dateNow: formatterDate.currentDate(),
         timeNow: formatterDate.formatterTime(),
+        pageName: 'Daftar Tersimpan',
         articles:
         {
             newest: [
@@ -113,6 +122,71 @@ exports.saved = async (req, res) => {
     } else {
         res.redirect('/home');
     }
+}
+
+exports.others = async (req, res) => {
+    // let pageName = '';
+    // for (let i = 0; i < pageNames.length; i++) {
+    //     if (req.query.page === pageNames[i].toLowerCase()) {
+    //         pageName = pageNames[i]
+    //     }
+    // }
+
+    let data = {
+        user: {
+            name: 'Alma Lawson',
+            email: 'alma.lawson@example.com'
+        },
+        navItem: navItems,
+        dateNow: formatterDate.currentDate(),
+        timeNow: formatterDate.formatterTime(),
+        pageName: letterFormatter.letterFormatter(req.query.page),
+        articles:
+        {
+            newest: [
+
+            ],
+
+            saved: [
+
+            ],
+        },
+        isLogged: req.query.isLogged
+    };
+
+    res.render('../views/pages/others_page.ejs', {
+        data: data,
+        appLink: process.env.APP_LINK
+    });
+}
+
+exports.search = async (req, res) => {
+    let data = {
+        user: {
+            name: 'Alma Lawson',
+            email: 'alma.lawson@example.com'
+        },
+        navItem: navItems,
+        dateNow: formatterDate.currentDate(),
+        timeNow: formatterDate.formatterTime(),
+        pageName: `Hasil Pencarian Untuk ${req.query.s}`,
+        articles:
+        {
+            newest: [
+
+            ],
+
+            searched: [
+
+            ],
+        },
+        isLogged: req.query.isLogged
+    };
+
+    res.render('../views/pages/others_page.ejs', {
+        data: data,
+        appLink: process.env.APP_LINK
+    });
 }
 
 exports.details = async (req, res) => {
@@ -145,6 +219,7 @@ exports.details = async (req, res) => {
         appLink: process.env.APP_LINK
     });
 }
+
 exports.category = async (req, res) => {
     navItems.forEach((data) => {
         if (data.name.toUpperCase() === req.params.nameCategory.toUpperCase()) {
@@ -238,9 +313,9 @@ exports.forgotpassword = async (req, res) => {
 }
 
 exports.resetpassword = async (req, res) => {
-        res.render('../views/pages/forgotpassword/resetpassword.ejs', {
-            appLink: process.env.APP_LINK
-        })
+    res.render('../views/pages/forgotpassword/resetpassword.ejs', {
+        appLink: process.env.APP_LINK
+    })
 }
 
 exports.resetpasswordSuccess = async (req, res) => {
@@ -248,7 +323,6 @@ exports.resetpasswordSuccess = async (req, res) => {
         appLink: process.env.APP_LINK
     })
 }
-
 
 
 exports.adminLogin = async (req, res) => {
