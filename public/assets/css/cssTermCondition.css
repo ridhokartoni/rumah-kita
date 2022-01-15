@@ -106,6 +106,15 @@ h5 {
   padding-right: 5px;
 }
 
+.btn-text > b {
+  font-weight: 700;
+  font-size: 20px;
+  width: 100%;
+  background: linear-gradient(to right, white, #ffd215);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .logo {
   align-content: left;
   padding-left: 30px;
