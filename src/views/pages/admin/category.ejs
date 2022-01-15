@@ -130,16 +130,13 @@
                                                     <%= category.name %>
                                                 </td>
                                                 <td>
-                                                    <%= category.path %>
-                                                </td>
-                                                <td>
                                                     <button data-toggle="modal"
                                                         data-target="#editModal-<%= category.id %>" type="button"
                                                         class="btn btn-success">Edit</button>
                                                 </td>
                                                 <td>
                                                     <button type="button" id="deleteButton-<%= category.id %>"
-                                                        class="btn btn-danger">Delete</button>
+                                                        class="btn btn-danger" onclick="deleteData('<%= category.id %>', '<%= appLink %>')">Delete</button>
                                                     <div class="spinner-border text-danger" role="status"
                                                         id="loading-delete-<%= category.id %>" hidden>
                                                 </td>

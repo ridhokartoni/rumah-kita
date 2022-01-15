@@ -29,7 +29,8 @@ exports.searchArticle = async (keyword, limit) => {
                         content: {
                             [Op.contains]: keyword
                         }
-                    }
+                    },
+
                 ]
             },
             limit : limit

@@ -2,9 +2,7 @@ const router = require('express').Router();
 const ViewsController = require('../controllers/views.controller');
 const authenticationUser = require('../middleware/viewsAuthenticationToken.');
 
-router.get('/', (req,res) => {
-    res.redirect('/home');
-})
+
 
 router.get('/admin/login', ViewsController.adminLogin);
 router.get('/login', ViewsController.login);
@@ -12,8 +10,10 @@ router.get('/forgotpassword/:success?', ViewsController.forgotpassword);
 router.get('/welcome', ViewsController.welcome);
 router.get('/resetpassword/success', ViewsController.resetpasswordSuccess);
 router.get('/resetpassword/:token', ViewsController.resetpassword);
+router.get('/see-others', ViewsController.seeOthers);
 
 router.use(authenticationUser);
+router.get('/', ViewsController.default);
 router.get('/home', ViewsController.home);
 router.get('/saved', ViewsController.saved);
 router.get('/article/:id', ViewsController.details);

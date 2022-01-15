@@ -1,3 +1,4 @@
+const article = require('../model/article.model');
 const formatterDate = require('../utilities/formatterDate');
 
 const navItems = [
@@ -182,6 +183,15 @@ exports.category = async (req, res) => {
     });
 }
 
+exports.default = async (req,res) => {
+    const isLogged = req.query.isLogged;
+    if(isLogged){
+        res.redirect('/home');
+    }else{
+        res.redirect('/welcome')
+    }
+}
+
 exports.welcome = async (req, res) => {
     res.render('../views/pages/welcome_page.ejs', { appLink: process.env.APP_LINK });
 }
@@ -218,6 +228,22 @@ exports.resetpasswordSuccess = async (req, res) => {
     })
 }
 
+exports.seeOthers = async (req,res) => {
+    const dataArticle = await article.findAll({
+        where : {
+            [Op.or] : [
+                {
+                    title : req.query.find
+                },
+                {
+                    content : req.query.find
+                }
+            ]
+        }
+    });
+
+    
+}
 
 
 exports.adminLogin = async (req, res) => {
@@ -225,6 +251,7 @@ exports.adminLogin = async (req, res) => {
 }
 
 
+ href="/see-others?page='paling disukai'"
 
 
 
