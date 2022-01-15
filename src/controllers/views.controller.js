@@ -29,13 +29,6 @@ const navItems = [
     },
 ]
 
-// const pageNames = [
-//     'Paling Disukai',
-//     'Spesial',
-//     'Kasus',
-//     'Terbaru'
-// ]
-
 exports.home = async (req, res) => {
     navItems.forEach((data) => {
         if (data.name === 'Terkini') {
@@ -125,13 +118,6 @@ exports.saved = async (req, res) => {
 }
 
 exports.others = async (req, res) => {
-    // let pageName = '';
-    // for (let i = 0; i < pageNames.length; i++) {
-    //     if (req.query.page === pageNames[i].toLowerCase()) {
-    //         pageName = pageNames[i]
-    //     }
-    // }
-
     let data = {
         user: {
             name: 'Alma Lawson',
@@ -147,7 +133,7 @@ exports.others = async (req, res) => {
 
             ],
 
-            saved: [
+            content: [
 
             ],
         },
