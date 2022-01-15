@@ -67,7 +67,7 @@ exports.forgotPassword = async (req,res) => {
             res.send(result);
             return
         }else{
-            throw new Error('Please provide the email');
+            throw new Error('Please provide the email')
         }
     } catch (error) {
         res.status(500).send({

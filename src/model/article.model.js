@@ -30,7 +30,7 @@ const article = connection.define('article', {
             return decodeURIComponent(values);
         }
     },
-
+    
     thumbnailPicture: {
         type: DataTypes.STRING,
         allowNull: false

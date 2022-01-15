@@ -2,26 +2,80 @@
 <html>
 
 <head>
-    <title>Settings Page</title>
-    <link rel="stylesheet" href="../../../public/assets/css/stylesheet_settings_page.css">
-    <% include('../partials/head'); %>
+    <%- include('../partials/head.ejs'); %>
 </head>
 
 <body>
     <header>
-        <% if(data==false) { %>
-        <%- include('../partials/headers/unregistered_header'); %>
-        <% } else { %>
-        <%- include('../partials/headers/registered_header'); %>
-        <% } %>
+        <%- include('../partials/header.ejs'); %>
     </header>
+
+    <div class="container-fluid mb-3">
+        <div class="row">
+            <div class="col-9 pe-5 ps-0">
+                <div class="container-fluid p-0">
+
+                    <!-- Greetings -->
+                    <section>
+                        <div class="container-fluid greetings text-white p-5 pb-4">
+                            <div class="row pe-5 pb-3 ps-4">
+                                <div class="col-6 d-flex flex-column mt-3">
+                                    <% if(data.isLogged==false) { %>
+                                        <h2>Selamat <%= data.timeNow %>,<br>Sayang</h2>
+                                        <% } else { %>
+                                            <h2>Selamat <%= data.timeNow %>,<br>
+                                                <%= data.user.name %>
+                                            </h2>
+                                            <% } %>
+                                                <p class="me-3"><small>“Kamu tidak harus mengendalikan pikiranmu.
+                                                        Anda hanya
+                                                        harus berhenti membiarkan mereka mengendalikan Anda.”<br>—
+                                                        Dan
+                                                        Millman</small></p>
+                                </div>
+                            </div>
+                            <div class="ps-4">
+                                <audio loop id="music-src"
+                                    src="https://docs.google.com/uc?export=download&id=1QnfknOaI-MzGeqTaRqz3nD9IRFRorWM1"></audio>
+                                <input type="checkbox" class="btn-check" id="btn-check" autocomplete="off">
+                                <label class="btn btn-music" for="btn-check" id="music-icon"><i
+                                        class="far fa-volume-mute"></i></label>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <!-- Menu Bagian Kanan -->
+            <div class="col-3 pe-4 ps-0">
+
+                <!-- Tanggal -->
+                <section>
+                    <div class="container-fluid">
+                        <div class="date">
+                            <div class="d-flex justify-content-center py-2">
+                                <h6>
+                                    <%= data.dateNow %>
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="d-flex justify-content-center mt-4 mb-5">
+                    <img src="<%= appLink %>/public/images/Saly-39.svg" alt="saly">
+                </div>
+            </div>
+
+        </div>
+    </div>
 
     <div class="flex-konten">
         <div class="flex-kiri">
             <div class="text-akun-saya">Akun Saya</div>
             <div class="notification-box">
-                <div class="edit-profile-button">&nbsp;<img src="../../../public/assets/images/People.png"
-                        alt="people">&nbsp;&nbsp; Edit
+                <div class="edit-profile-button">&nbsp;<img src="<%= appLink %>/public/images/People.png" alt="people">&nbsp;&nbsp;
+                    Edit
                     Profile</div>
                 <div class="flex-center">
                     <div class="exit-box-button">
@@ -30,7 +84,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="dog-gif"><img src="../../../public/assets/images/GugGug.gif" alt="dog-pic"></div>
+                <div class="dog-gif"><img src="<%= appLink %>/public/images/GugGug.gif" alt="dog-pic"></div>
             </div>
         </div>
         <div class="flex-kanan">
@@ -43,8 +97,8 @@
                         <div class="change-avatar-box">
                             <a href="#modal-change-avatar" class="no-line">
                                 <div class="change-avatar">
-                                    &nbsp;&nbsp;&nbsp;<img class="gallery-icon"
-                                        src="../../../public/assets/images/image.png" alt="gallery">&nbsp; &nbsp;
+                                    &nbsp;&nbsp;&nbsp;<img class="gallery-icon" src="<%= appLink %>/public/images/image.png"
+                                        alt="gallery">&nbsp; &nbsp;
                                     Ganti Avatar
                                 </div>
                             </a>
@@ -55,31 +109,31 @@
                                 <div class="flex-row-avatar-1">
                                     <label>
                                         <input type="radio" name="test" value="1.png">
-                                        <img class="avatar-style" src="../../../public/assets/images/Avatar 1.png">
+                                        <img class="avatar-style" src="<%= appLink %>/public/images/Avatar 1.png">
                                     </label>
                                     <label>
                                         <input type="radio" name="test" value="2.png">
-                                        <img class="avatar-style" src="../../../public/assets/images/Avatar 2.png">
+                                        <img class="avatar-style" src="<%= appLink %>/public/images/Avatar 2.png">
                                     </label>
                                     <label>
                                         <input type="radio" name="test" value="3.png">
-                                        <img class="avatar-style" src="../../../public/assets/images/Avatar 3.png">
+                                        <img class="avatar-style" src="<%= appLink %>/public/images/Avatar 3.png">
                                     </label>
                                 </div>
                                 <div class="flex-row-avatar-2">
                                     <label>
                                         <input type="radio" name="test" value="4.png">
-                                        <img class="avatar-style" src="../../../public/assets/images/Avatar 4.png">
+                                        <img class="avatar-style" src="<%= appLink %>/public/images/Avatar 4.png">
                                     </label>
                                     <label>
                                         <input type="radio" name="test" value="5.png">
-                                        <img class="avatar-style" src="../../../public/assets/images/Avatar 5.png">
+                                        <img class="avatar-style" src="<%= appLink %>/public/images/Avatar 5.png">
                                     </label>
                                 </div>
                                 <div class="change-avatar-wrapper">
                                 </div>
                                 <a href="#a" class="close-modal no-line">
-                                    <img class="close-icon" src="../../../public/assets/images/Close.png" alt="close">
+                                    <img class="close-icon" src="<%= appLink %>/public/images/Close.png" alt="close">
                                 </a>
                             </div>
                         </div>
@@ -92,21 +146,21 @@
                     <div class="data-box-wrapper">
                         <input readonly class="data-box" value="Alma Lawson">
                         <a href="" class="edit-icon">
-                            <img class="edit" src="../../../public/assets/images/Edit.png" alt="">
+                            <img class="edit" src="<%= appLink %>/public/images/Edit.png" alt="">
                         </a>
                     </div>
                     <div class="data-type">Email</div>
                     <div class="data-box-wrapper">
                         <input readonly class="data-box" value="alma.lawson@example.com" type="email">
                         <a href="" class="edit-icon">
-                            <img class="edit" src="../../../public/assets/images/Edit.png" alt="">
+                            <img class="edit" src="<%= appLink %>/public/images/Edit.png" alt="">
                         </a>
                     </div>
                     <div class="data-type">Kata Sandi</div>
                     <div class="data-box-wrapper">
                         <input readonly class="data-box" value="*************" type="password">
                         <a href="#modal" class="edit-icon">
-                            <img class="edit" src="../../../public/assets/images/Edit.png" alt="">
+                            <img class="edit" src="<%= appLink %>/public/images/Edit.png" alt="">
                         </a>
                     </div>
                     <div id="modal">
@@ -124,7 +178,7 @@
                                 </div>
                             </div>
                             <a href="#a" class="close-modal no-line">
-                                <img class="close-icon" src="../../../public/assets/images/Close.png" alt="close">
+                                <img class="close-icon" src="<%= appLink %>/public/images/Close.png" alt="close">
                             </a>
                         </div>
                     </div>
@@ -157,12 +211,11 @@
                     <!-- Modal buat Perubahan Berhasil Disimpan -->
                     <div id="modal-changes-saved">
                         <div class="modal-content-changes-saved">
-                            <img class="checklist" src="../../../public/assets/images/Checklist.png" alt="Checklist">
-                            <img class="girl-with-dog" src="../../../public/assets/images/Sally 2.png"
-                                alt="girl-with-dog">
+                            <img class="checklist" src="<%= appLink %>/public/images/Checklist.png" alt="Checklist">
+                            <img class="girl-with-dog" src="<%= appLink %>/public/images/Sally 2.png" alt="girl-with-dog">
                             <p class="changes-saved-text">Perubahan Berhasil Disimpan</p>
                             <a href="#a" class="close-modal no-line">
-                                <img class="close-icon" src="../../../public/assets/images/Close.png" alt="close">
+                                <img class="close-icon" src="<%= appLink %>/public/images/Close.png" alt="close">
                             </a>
                         </div>
                     </div>
@@ -174,7 +227,7 @@
     </div>
 
     <footer>
-        <%- include('../partials/footer'); %>
+        <%- include('../partials/footer.ejs'); %>
     </footer>
 </body>
 

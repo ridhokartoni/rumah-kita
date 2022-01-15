@@ -13,14 +13,14 @@ const authenticationUser = async (req, res, next) => {
                     where : {
                         id : decode.id
                     }
-                })
+                })   
 
                 if(!userAuth){
                     req.query.isLogged = false;
                     next();
                 }else {
-                    req.query.userAuth = userAuth;
                     req.query.isLogged = true;
+                    req.query.userAuth = userAuth
                     next();
                 }
             }

@@ -57,6 +57,7 @@ body{
     text-decoration: none;
     color: black;
 }
+
 .button-close > i:hover {
     cursor: pointer;
 }
@@ -131,9 +132,9 @@ body{
     width: 100%;
     background: linear-gradient(to right, white , #FFD215);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-
 
 .container-content-success{
     margin-top: 70px;

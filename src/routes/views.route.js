@@ -3,9 +3,9 @@ const ViewsController = require('../controllers/views.controller');
 const authenticationUser = require('../middleware/viewsAuthenticationToken.');
 
 
-
 router.get('/admin/login', ViewsController.adminLogin);
 router.get('/login', ViewsController.login);
+router.get('/register', ViewsController.registration)
 router.get('/forgotpassword/:success?', ViewsController.forgotpassword);
 router.get('/welcome', ViewsController.welcome);
 router.get('/resetpassword/success', ViewsController.resetpasswordSuccess);
@@ -18,6 +18,7 @@ router.get('/home', ViewsController.home);
 router.get('/saved', ViewsController.saved);
 router.get('/article/:id', ViewsController.details);
 router.get('/category/:nameCategory', ViewsController.category);
+router.get('/profile/:id', ViewsController.profile);
 
 
 module.exports = router;

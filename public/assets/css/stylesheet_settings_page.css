@@ -5,13 +5,6 @@ body {
     background-color: #f9f0fe;
 }
 
-header {
-    display: flex;
-    height: 330px;
-    flex-direction: row;
-    background-color: blue;
-}
-
 .flex-konten {
     display: flex;
     height: 1156px;
@@ -538,13 +531,6 @@ header {
 
 #modal-change-avatar:target {
     display: block;
-}
-
-footer {
-    display: flex;
-    height: 300px;
-    flex-direction: row;
-    background-color: blue;
 }
 
 .flex-row-avatar-1 {
