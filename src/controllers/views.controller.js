@@ -225,12 +225,9 @@ exports.registration = async (req, res) => {
     }
 }
 
-exports.termsandcondition = async (req, res) => {
-    if (req.query.isLogged == true) {
-        res.redirect('/home');
-    } else {
-        res.render('../views/pages/termcondition.ejs', { appLink: process.env.APP_LINK });
-    }
+exports.terms = async (req, res) => {
+    res.render('../views/pages/termCondition.ejs', { appLink: process.env.APP_LINK });
+    
 }
 
 

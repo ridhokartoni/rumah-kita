@@ -8,7 +8,8 @@ router.get('/', (req, res) => {
 
 router.get('/admin/login', ViewsController.adminLogin);
 router.get('/login', ViewsController.login);
-router.get('/register', ViewsController.registration)
+router.get('/register', ViewsController.registration);
+router.get('/register/termsandcondition', ViewsController.terms);
 router.get('/forgotpassword/:success?', ViewsController.forgotpassword);
 router.get('/welcome', ViewsController.welcome);
 router.get('/resetpassword/success', ViewsController.resetpasswordSuccess);
