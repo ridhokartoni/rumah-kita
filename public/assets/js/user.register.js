@@ -14,7 +14,6 @@ registerButton.addEventListener('submit', () => {
             password: registerPassword.value
         },
         success: (data) => {
-            // localStorage.setItem('userToken', data.token);
             window.location.href = '/login';
         },
         error: (XMLHttpRequest, textStatus, errorThrown) => {

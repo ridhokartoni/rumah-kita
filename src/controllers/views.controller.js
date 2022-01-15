@@ -254,6 +254,7 @@ exports.default = async (req,res) => {
         res.redirect('/welcome')
     }
 }
+
 exports.profile = async (req, res) => {
     let data = {
         user: {
