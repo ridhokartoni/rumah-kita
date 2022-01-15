@@ -251,7 +251,6 @@ exports.adminLogin = async (req, res) => {
 }
 
 
- href="/see-others?page='paling disukai'"
 
 
 
