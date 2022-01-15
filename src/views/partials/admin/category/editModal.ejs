@@ -1,5 +1,6 @@
 <!-- Logout Modal-->
-<div class="modal fade" id="editModal-<%= category.id %>" tabindex="-1" category="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+<div class="modal fade" id="editModal-<%= category.id %>" tabindex="-1" category="dialog"
+    aria-labelledby="editModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -14,14 +15,17 @@
                         <label for="exampleFormControlInput1">
                             Name
                         </label>
-                        <input type="text" value="<%= category.name %>" class="form-control" id="title" placeholder="">
+                        <input type="text" value="<%= category.name %>" class="form-control" id="name-<%= category.id %>" placeholder="">
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="#">Edit</a>
+                <div class="spinner-border text-danger" role="status" id="loading-edit-<%= category.id %>" hidden>
+                </div>
+                <button class="btn btn-primary" id="buttonEdit-<%= category.id %>"
+                    onclick="editData('<%= category.id %>', '<%= appLink %>')">Edit</button>
+
             </div>
         </div>
     </div>
-</div>

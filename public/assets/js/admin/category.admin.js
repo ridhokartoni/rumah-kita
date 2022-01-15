@@ -43,7 +43,7 @@ function editData(id, appLink) {
 
     $.ajax({
         type: 'PUT',
-        url: `${appLink}/admin/role/update`,
+        url: `${appLink}/admin/category/update`,
         data: {
             id : id,
             name : name.value
@@ -71,7 +71,7 @@ function deleteData(id, appLink){
 
     $.ajax({
         type : 'DELETE',
-        url : `${appLink}/admin/role/delete`,
+        url : `${appLink}/admin/category/delete`,
         data : {
             id : id
         },
