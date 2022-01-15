@@ -132,10 +132,10 @@
                                         <% data.articles.forEach((article)=> { %>
                                             <tr>
                                                 <td>
-                                                    <%= article.title %>
+                                                    <%= article.title.slice(0,20) + '...' %>
                                                 </td>
                                                 <td>
-                                                    <%= article.linkOrigin %>
+                                                    <%= article.linkOrigin.slice(0,20) + '...' %>
                                                 </td>
                                                 <td>
                                                     <%= article.content.slice(0,20) + '...' %>
