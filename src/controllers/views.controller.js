@@ -230,6 +230,11 @@ exports.terms = async (req, res) => {
     
 }
 
+exports.registersuccess = async (req, res) => {
+    res.render('../views/pages/register_berhasil.ejs', { appLink: process.env.APP_LINK });
+    
+}
+
 
 
 exports.forgotpassword = async (req, res) => {
