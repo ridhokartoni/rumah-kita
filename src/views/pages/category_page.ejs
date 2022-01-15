@@ -138,27 +138,26 @@
                                     <div class="card text-white border-0">
                                         <div class="img-stack">
                                             <img class="card-img content"
-                                                src="<%= data.articles.newest[data.articles.newest.length].thumbnailPicture %>"
-                                                alt="<%= data.articles.newest[data.articles.newest.length].title %>">
+                                                src="<%= data.articles.newest.thumbnailPicture %>"
+                                                alt="<%= data.articles.newest.title %>">
                                         </div>
                                         <div class="card-img-overlay ms-2 mt-3">
                                             <div class="row">
                                                 <div class="col-9">
                                                     <a
-                                                        href="/article/<%= data.articles.newest[data.articles.newest.length].id %>">
+                                                        href="/article/<%= data.articles.newest.id %>">
                                                         <h4 class="card-title category">
-                                                            <%= data.articles.newest[data.articles.newest.length].title %>
+                                                            <%= data.articles.newest.title %>
                                                         </h4>
                                                     </a>
                                                     <p class="card-text date-category">
                                                         <small>
-                                                            <%= data.articles.newest[data.articles.newest.length].createdAt %>
+                                                            <%= data.articles.newest.createdAt %>
                                                         </small>
                                                     </p>
                                                     <button type="button"
-                                                        class="btn button-white rounded-pill btn-sm p-0 px-3 mt-2"
-                                                        onclick="location.href='/category/mental issues'">
-                                                        Mental Issue
+                                                        class="btn button-white rounded-pill btn-sm p-0 px-3 mt-2">
+                                                        <%= data.articles.newest.category.name %>
                                                     </button>
                                                 </div>
                                             </div>
@@ -174,27 +173,27 @@
                                     <div class="card border-0">
                                         <div class="row g-0 min-height-100">
                                             <div class="col-md-4 p-2">
-                                                <img src="<%= data.articles.mostSaved[data.articles.mostSaved.length].thumbnailPicture %>"
+                                                <img src="<%= data.articles.mostSaved[data.articles.mostSaved.length - 1].thumbnailPicture %>"
                                                     class="img-fluid rounded min-height-100"
-                                                    alt="<%= data.articles.mostSaved[data.articles.mostSaved.length].title %>">
+                                                    alt="<%= data.articles.mostSaved[data.articles.mostSaved.length - 1 ].title %>">
                                             </div>
                                             <div class="col-md-8">
                                                 <div class="card-body d-flex flex-column min-height-100 ps-2 py-2 pe-3">
                                                     <div class="me-3">
                                                         <a href="#">
                                                             <h5 class="card-title title-content mb-0">
-                                                                <%= data.articles.mostSaved[data.articles.mostSaved.length].title
-                                                                    %>
+                                                                <%= data.articles.mostSaved[data.articles.mostSaved.length
+                                                                    - 1 ].title %>
                                                             </h5>
                                                         </a>
                                                         <p class="card-text main m-0 mt-1 mb-2"><small>
-                                                                <%= data.articles.mostSaved[data.articles.mostSaved.length].createdAt
-                                                                    %>
+                                                                <%= data.articles.mostSaved[data.articles.mostSaved.length
+                                                                    - 1 ].createdAt %>
                                                             </small></p>
                                                         <div class="max-lines-5">
                                                             <p class="card-text sub">
-                                                                <%= data.articles.mostSaved[data.articles.mostSaved.length].content
-                                                                    %>
+                                                                <%= data.articles.mostSaved[data.articles.mostSaved.length
+                                                                    - 1 ].content %>
                                                             </p>
                                                         </div>
                                                     </div>
@@ -252,14 +251,14 @@
                                                                     class="card-body d-flex flex-column justify-content-between min-height-100 ps-2 py-2 pe-3">
                                                                     <div class="side-content">
                                                                         <a
-                                                                            href="/article/<%= data.articles.newest[i].id %>">
+                                                                            href="/article/<%= data.articles.fourDaysAgo[i].id %>">
                                                                             <h5 class="card-title title-content side">
-                                                                                <%= data.articles.newest[i].title %>
+                                                                                <%= data.articles.fourDaysAgo[i].title %>
                                                                             </h5>
                                                                         </a>
                                                                     </div>
                                                                     <p class="card-text side text-start"><small>
-                                                                            <%= data.articles.newest[i].createdAt %>
+                                                                            <%= data.articles.fourDaysAgo[i].createdAt %>
                                                                         </small></p>
                                                                 </div>
                                                             </div>
@@ -321,14 +320,16 @@
                                                         <div
                                                             class="card-body d-flex flex-column justify-content-between min-height-100 ps-2 py-2 pe-3">
                                                             <div class="side-content">
-                                                                <a href="#">
+                                                                <a
+                                                                href="/article/<%= data.articles.fourDaysAgo[i].id %>">
+                                                            
                                                                     <h5 class="card-title title-content side">
-                                                                        <%= data.articles.newest[i].title %>
+                                                                        <%= data.articles.fourDaysAgo[i].title %>
                                                                     </h5>
                                                                 </a>
                                                             </div>
                                                             <p class="card-text side text-start"><small>
-                                                                    <%= data.articles.newest[i].createdAt %>
+                                                                    <%= data.articles.fourDaysAgo[i].createdAt %>
                                                                 </small></p>
                                                         </div>
                                                     </div>
@@ -431,11 +432,11 @@
 
                     <!-- Spesial Buat Kamu -->
                     <section>
-                        <div class="container-fluid pt-3 pb-3 px-0 ">
+                        <div class="container-fluid pt-5 pb-3 px-0 ">
                             <div class="d-flex bd-highlight">
                                 <div class="flex-grow-1 bd-highlight">
                                     <div class="d-flex">
-                                        <div class="box-congo-pink"></div>
+                                        <div class="box-heliotrope"></div>
                                         <h6 class="side-text ms-1">
                                             Spesial Buat Kamu
                                         </h6>
@@ -443,7 +444,7 @@
                                 </div>
                                 <div class="bd-highlight">
                                     <button type="button" class="d-flex btn p-0 m-0"
-                                        onclick="location.href='/see-others?page=spesial'">
+                                        onclick="location.href='/see-others?page=spesials'">
                                         <small class="other">Lihat Lainnya</small>
                                         <div class="ms-2">
                                             <i class="fas fa-chevron-right"></i>
@@ -452,23 +453,32 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card border-0 mb-3">
-                            <% for(let i=0; i<3; i++) { %>
-                                <div
-                                    class="card-body d-flex flex-column justify-content-between min-height-100 ps-2 py-2 pe-3">
-                                    <div class="side-content">
-                                        <a href="/article/<%= data.articles.specials[i].id %>">
-                                            <h5 class="card-title title-content side">
-                                                <%= data.articles.specials[i].title %>
-                                            </h5>
-                                        </a>
+                        <% for(let i=0; i<3; i++) { %>
+                            <div class="card side-card border-0 mb-3">
+                                <div class="row g-0 min-height-100">
+                                    <div class="col-md-4 p-2">
+                                        <img src="<%= data.articles.specials[i].thumbnailPicture %>"
+                                            class="img-fluid rounded min-height-100"
+                                            alt="<%= data.articles.specials[i].title %>">
                                     </div>
-                                    <p class="card-text side text-start"><small>
-                                            <%= data.articles.specials[i].createdAt %>
-                                        </small></p>
+                                    <div class="col-md-8">
+                                        <div
+                                            class="card-body d-flex flex-column justify-content-between min-height-100 ps-2 py-2 pe-3">
+                                            <div class="side-content">
+                                                <a href="/article/<%= data.articles.specials[i].id %>">
+                                                    <h5 class="card-title title-content side">
+                                                        <%= data.articles.specials[i].title %>
+                                                    </h5>
+                                                </a>
+                                            </div>
+                                            <p class="card-text side text-end"><small>
+                                                    <%= data.articles.specials[i].createdAt %>
+                                                </small></p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <% } %>
-                        </div>
+                            </div>
+                            <% } %>
                     </section>
 
                     <!-- Kasus -->

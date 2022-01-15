@@ -159,14 +159,14 @@
                                     </div>
                                     <div class="card content mb-4">
                                         <img class="article card-img-top img-fluid"
-                                            src="<%= data.articles.mostPopular[data.articles.mostPopular.length].thumbnailPicture %>"
-                                            alt="<%= data.articles.mostPopular[data.articles.mostPopular.length].title %>">
+                                            src="<%= data.articles.mostPopular[data.articles.mostPopular.length - 1 ].thumbnailPicture %>"
+                                            alt="<%= data.articles.mostPopular[data.articles.mostPopular.length - 1].title %>">
                                         <div class="card-body">
                                             <div class="d-flex justify-content-end react">
                                                 <div class="d-flex react ms-2">
                                                     <i class="fas fa-eye"></i>
                                                     <small class="ms-1">
-                                                        <%= data.articles.mostPopular[data.articles.mostPopular.length].viewers
+                                                        <%= data.articles.mostPopular[data.articles.mostPopular.length - 1].viewers
                                                             %>
                                                     </small>
                                                 </div>
@@ -179,14 +179,14 @@
                                                 <div class="col-10">
                                                     <a href="#">
                                                         <h5 class="card-title title-content px-3 pt-3 pb-2">
-                                                            <%= data.articles.mostPopular[data.articles.mostPopular.length].title
+                                                            <%= data.articles.mostPopular[data.articles.mostPopular.length - 1].title
                                                                 %>
                                                         </h5>
                                                     </a>
                                                 </div>
                                             </div>
                                             <p class="card-text px-3 pb-3"><small class="main-content">
-                                                    <%= data.articles.mostPopular[data.articles.mostPopular.length].createdAt
+                                                    <%= data.articles.mostPopular[data.articles.mostPopular.length - 1].createdAt
                                                         %>
                                                 </small>
                                             </p>
@@ -216,18 +216,18 @@
                                         <div class="d-flex flex-wrap">
                                             <% for(let i=0; i<9; i++) { %>
                                                 <div class="card sec-content border-0 p-3">
-                                                    <img src="<%= data.articles.newest[i].thumbnailPicture %>"
+                                                    <img src="<%= data.articles.seeOther[i].thumbnailPicture %>"
                                                         class="sec-content card-img-top"
-                                                        alt="<%= data.articles[i].title %>">
+                                                        alt="<%= data.articles.seeOther[i].title %>">
                                                     <div class="sec-content pt-2">
-                                                        <a href="/article/<%= data.articles.newest[i].id %>">
+                                                        <a href="/article/<%= data.articles.seeOther[i].id %>">
                                                             <p class="sec-content m-0">
-                                                                <%= data.articles.newest[i].title %>
+                                                                <%= data.articles.seeOther[i].title %>
                                                             </p>
                                                         </a>
                                                     </div>
                                                     <small class="sec-content">
-                                                        <%= data.articles.newest[i].createdAt %>
+                                                        <%= data.articles.seeOther[i].createdAt %>
                                                     </small>
                                                 </div>
                                                 <% } %>

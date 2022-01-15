@@ -1,6 +1,6 @@
-const article = require('../model/article.model');
 const formatterDate = require('../utilities/formatterDate');
 const letterFormatter = require('../utilities/letterFormatter');
+const ArticleServices = require('../services/articles.services');
 
 const navItems = [
     {
@@ -37,38 +37,34 @@ exports.home = async (req, res) => {
         } else {
             data.isActive = ' '
         }
-    })
+    });
 
+    let dataArticles = await ArticleServices.getSomeArticle(9);
+    let userAuth = req.query.userAuth ? req.query.userAuth : {};
+    let newest = await ArticleServices.newestOne('mental issues');
+    let cases = await ArticleServices.articleByCategory("kasus", 3);
+    let mostPopular = await ArticleServices.mostPopular(9);
+
+    
     let data = {
-        user: {
-            name: 'Alma Lawson',
-            email: 'alma.lawson@example.com'
-        },
+        user: userAuth,
 
         navItem: navItems,
         dateNow: formatterDate.currentDate(),
         timeNow: formatterDate.formatterTime(),
         articles:
-        {
-            newest: [
+        {  
+            seeOther : dataArticles,
+ 
+            newest: newest,
 
-            ],
+            specials: dataArticles.slice(4,9),
 
-            specials: [
+            cases: cases,
 
-            ],
+            mostPopular: mostPopular,
 
-            cases: [
-
-            ],
-
-            mostPopular: [
-
-            ],
-
-            mostSaved: [
-
-            ]
+            mostSaved: dataArticles.slice(1,5)
 
         },
         isLogged: req.query.isLogged
@@ -80,6 +76,8 @@ exports.home = async (req, res) => {
 }
 
 exports.saved = async (req, res) => {
+    let userAuth = req.query.userAuth ? req.query.userAuth : {};
+
     navItems.forEach((data) => {
         if (data.name === 'Tersimpan') {
             data.isActive = 'active'
@@ -87,11 +85,9 @@ exports.saved = async (req, res) => {
             data.isActive = ' '
         }
     })
+    
     let data = {
-        user: {
-            name: 'Alma Lawson',
-            email: 'alma.lawson@example.com'
-        },
+        user: userAuth,
         navItem: navItems,
         dateNow: formatterDate.currentDate(),
         timeNow: formatterDate.formatterTime(),
@@ -118,11 +114,9 @@ exports.saved = async (req, res) => {
 }
 
 exports.others = async (req, res) => {
+    let userAuth = req.query.userAuth ? req.query.userAuth : {};
     let data = {
-        user: {
-            name: 'Alma Lawson',
-            email: 'alma.lawson@example.com'
-        },
+        user: userAuth,
         navItem: navItems,
         dateNow: formatterDate.currentDate(),
         timeNow: formatterDate.formatterTime(),
@@ -147,11 +141,10 @@ exports.others = async (req, res) => {
 }
 
 exports.search = async (req, res) => {
+    let userAuth = req.query.userAuth ? req.query.userAuth : {};
+
     let data = {
-        user: {
-            name: 'Alma Lawson',
-            email: 'alma.lawson@example.com'
-        },
+        user: userAuth,
         navItem: navItems,
         dateNow: formatterDate.currentDate(),
         timeNow: formatterDate.formatterTime(),
@@ -176,6 +169,8 @@ exports.search = async (req, res) => {
 }
 
 exports.details = async (req, res) => {
+    let theArticle = await ArticleServices.getArticleById(req.params.id); 
+    let otherArticles = await ArticleServices.getSomeArticle(9);
     let data = {
         user: {
             name: 'Alma Lawson',
@@ -186,17 +181,9 @@ exports.details = async (req, res) => {
         timeNow: formatterDate.formatterTime(),
         articles:
         {
-            articleDetails: {
-                img: '',
-                title: '',
-                createdAt: '',
-                place: '',
-                source: ''
-            },
+            articleDetails : theArticle,
 
-            newest: [
-
-            ],
+            newest: otherArticles,
         },
         isLogged: req.query.isLogged
     };
@@ -214,36 +201,36 @@ exports.category = async (req, res) => {
             data.isActive = ' '
         }
     })
+    let newest = await ArticleServices.newestOne(req.params.nameCategory);
+    let cases = await ArticleServices.articleByCategory('kasus', 3);
+    let mostPopular = await ArticleServices.mostPopular(4);
+    let dataArticles = await ArticleServices.articleByCategory(req.params.nameCategory, 9);
+    let fourDaysAgo = await ArticleServices.articlesFourDaysAgo(5);
+    
+ 
 
     let data = {
         user: {
             name: 'Alma Lawson',
             email: 'alma.lawson@example.com'
         },
+        nameCategory : req.params.nameCategory,
         navItem: navItems,
         dateNow: formatterDate.currentDate(),
         timeNow: formatterDate.formatterTime(),
+
         articles:
         {
-            newest: [
+            fourDaysAgo : fourDaysAgo,
+            newest: newest,
 
-            ],
-            
-            specials: [
+            specials: dataArticles.slice(4,9),
 
-            ],
+            cases: cases,
 
-            cases: [
+            mostPopular: mostPopular,
 
-            ],
-
-            mostPopular: [
-
-            ],
-
-            mostSaved: [
-
-            ]
+            mostSaved: dataArticles
         },
         isLogged: req.query.isLogged
     };
@@ -253,11 +240,11 @@ exports.category = async (req, res) => {
     });
 }
 
-exports.default = async (req,res) => {
+exports.default = async (req, res) => {
     const isLogged = req.query.isLogged;
-    if(isLogged){
+    if (isLogged) {
         res.redirect('/home');
-    }else{
+    } else {
         res.redirect('/welcome')
     }
 }
@@ -305,12 +292,12 @@ exports.registration = async (req, res) => {
 
 exports.terms = async (req, res) => {
     res.render('../views/pages/termCondition.ejs', { appLink: process.env.APP_LINK });
-    
+
 }
 
 exports.registersuccess = async (req, res) => {
     res.render('../views/pages/register_berhasil.ejs', { appLink: process.env.APP_LINK });
-    
+
 }
 
 
@@ -339,22 +326,7 @@ exports.resetpasswordSuccess = async (req, res) => {
     })
 }
 
-exports.seeOthers = async (req,res) => {
-    const dataArticle = await article.findAll({
-        where : {
-            [Op.or] : [
-                {
-                    title : req.query.find
-                },
-                {
-                    content : req.query.find
-                }
-            ]
-        }
-    });
 
-    
-}
 
 exports.adminLogin = async (req, res) => {
     res.render('../views/pages/admin/login.ejs', { appLink: process.env.APP_LINK });

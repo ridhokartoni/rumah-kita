@@ -20,6 +20,17 @@ h6.detail span.source {
   color: #545454;
 }
 
+.details {
+  width: 100%;
+  background-color: #F9F0FE;
+  height: 800px;
+  border-style: none;
+}
+
+.details:active{
+  border-style: none;
+}
+
 .scrollable {
   overflow-y: auto;
   max-height: 300px;

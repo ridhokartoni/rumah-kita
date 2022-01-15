@@ -50,7 +50,7 @@
                             <div class="row">
                                 <div class="col-12" style="border-right: 1px solid #908e8e;">
                                     <div class="container-fluid p-0 pe-4">
-                                        <img src="/assets/images/dummy_content.jpeg" alt="dummy"
+                                        <img src="<%= data.articles.articleDetails.thumbnailPicture %>" alt="dummy"
                                             class="img-fluid min-height-100" style="min-width: 100%">
                                         <div class="my-4">
                                             <h4 class="main-text">
@@ -60,13 +60,13 @@
                                                     <%= data.articles.articleDetails.createdAt %>
                                                 </small></p>
                                         </div>
-                                        <h6 class="detail">
-                                            <%= data.articles.articleDetails.content %>
-                                                <span class="source">
-                                                    Sumber :
-                                                    <%= data.articles.articleDetails.linkOrigin %>
-                                                </span>
-                                        </h6>
+                                        <textarea class="details" readonly>
+                                            <%= data.articles.articleDetails.content %> 
+                                        </textarea>
+                                        <span class="source">
+                                            Sumber :
+                                            <%= data.articles.articleDetails.linkOrigin %>
+                                        </span>
                                     </div>
                                 </div>
                             </div>
@@ -205,7 +205,7 @@
 
                     <section>
                         <div class="d-flex flex-column justify-content-end" style="height: 100vh;">
-                            <img src="/assets/images/GugGug.gif" alt="guggug">
+                            <img src="<%= appLink %>/public/images/GugGug.gif" alt="guggug">
                         </div>
                     </section>
                 </div>
