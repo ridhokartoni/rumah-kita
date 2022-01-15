@@ -24,8 +24,8 @@
                                         <% if(data.isLogged==false) { %>
                                             <h2>Selamat <%= data.timeNow %>,<br>Sayang</h2>
                                             <% } else { %>
-                                                <h2>Selamat <%= timeNow %>,<br>
-                                                    <%= data.user.name %>
+                                                <h2>Selamat <%= data.timeNow %>,<br>
+                                                        <%= data.user.name %>
                                                 </h2>
                                                 <% } %>
                                                     <p class="me-3"><small>“Kamu tidak harus mengendalikan pikiranmu.
@@ -54,61 +54,18 @@
                                             class="img-fluid min-height-100" style="min-width: 100%">
                                         <div class="my-4">
                                             <h4 class="main-text">
-                                                Sehat Tak Cuma Fisik, Semua Juga Harus Sehat Baik Mental Maupun Fisik !
+                                                <%= data.articles.articleDetails.title %>
                                             </h4>
-                                            <p class="detail"><small>Jum’at, 24 Des 2021 15:00 WIB</small></p>
+                                            <p class="detail"><small>
+                                                    <%= data.articles.articleDetails.createdAt %>
+                                                </small></p>
                                         </div>
-                                        <h6 class="detail"><span>Jakarta, CNN Indonesia</span> -- Hari kesehatan jiwa
-                                            sedunia atau world mental health day dirayakan pada 10 Oktober setiap
-                                            tahunnya. Tahun ini Organisasi Kesehatan Dunia (WHO) mengambil tema Mental
-                                            health care for all: let's make it a reality. <br><br>
-
-                                            Kesehatan jiwa memang menjadi hal yang penting untuk diperhatikan, apalagi
-                                            di masa pandemi Covid-19. Faktanya tak hanya kesehatan secara fisik yang
-                                            terpapar, banyak orang yang merasa depresi akibat pandemi ini. <br><br>
-
-                                            Tak hanya itu, walau tanpapandemi Awareness Day menyebut, setiap tahun satu
-                                            dari empat orang dewasa serta satu dari sepuluh anak memiliki masalah
-                                            kesehatan jiwa. Kesehatan jiwa yang erganggu bisa berpengaruh terhadap
-                                            kehidupan, kemampuan untuk melewati hari, mempertahankan hubungan, bahkan
-                                            mempertahankan pekerjaan. <br><br>
-
-                                            Selain itu, stigma yang melekat pada kesehatan mental juga masih cenderung
-                                            negatif. Kurangnya informasi dan pengetahuan mempersulit mereka yang memang
-                                            memiliki masalah kesehatan jiwa untuk mendapatkan atau mencari bantuan.
-                                            Oleh karena itu, penting untuk meningkatkan kesadaran berkaitan dengan
-                                            kesehatan jiwa. Hal ini dilakukan untuk mengatasi stigma yang cenderung
-                                            negatif berkaitan dengan kesehatan mental. <br><br>
-
-                                            Sejarah kesehatan jiwa sedunia
-                                            Federasi kesehatan mental dunia pada 1992 melalui wakil sekretaris jenderal
-                                            saat itu, Richard Hunter, menciptakan Hari Kesehatan Jiwa Sedunia. Meski
-                                            begitu didirikannya hari kesehatan jiwa ini memang belum ada tujuan pasti
-                                            selain mengadvokasi kesehatan mental secara keseluruhan. <br><br>
-
-                                            Dilansir dari National Today, di hampir seluruh negara yang ada di dunia
-                                            masih banyak masalah kesehatan mental yang tidak ditangani dengan benar.
-                                            Selama tiga tahun pertama, dibuatlah siaran televisi selama dua jam di
-                                            seluruh dunia melalui satelit badan informasi AS. <br><br>
-
-                                            Studio tersebut berlokasi di Tallahassee, Florida. Siaran dilakukan untuk
-                                            menyampaikan pesan advokasi berkaitan dengan kesehatan mental. Mereka
-                                            memiliki partisipan dari Chili, Inggris, Australia, dan Zambia, sementara
-                                            Jenewa, Atlanta, dan Mexico City merekam segmen untuk siaran tersebut.Tema
-                                            Hari Kesehatan Jiwa Sedunia yang pertama adalah 'Meningkatkan Kualitas
-                                            Layanan Kesehatan Mental di Seluruh Dunia' yang dirayakan pada 1994. 27
-                                            negara mengirimkan laporan umpan balik setelah kampanye dan ada kampanye
-                                            nasional di Australia dan Inggris. <br><br>
-
-                                            Tema Hari Kesehatan Jiwa Sedunia berkembang seiring dengan perkembangan
-                                            zaman. Wanita, anak-anak, kesehatan, pekerjaan, trauma, bunuh diri, dan
-                                            banyak tema lainnya yang diangkat setiap tahunnya. <br><br><br><br>
-
-
-                                            <span class="source">
-                                                Sumber :
-                                                https://www.cnnindonesia.com/gaya-hidup/20211008175103-255-705357/tak-cuma-sehat-fisik-semua-juga-harus-sehat-mental
-                                            </span>
+                                        <h6 class="detail">
+                                            <%= data.articles.articleDetails.content %>
+                                                <span class="source">
+                                                    Sumber :
+                                                    <%= data.articles.articleDetails.linkOrigin %>
+                                                </span>
                                         </h6>
                                     </div>
                                 </div>
@@ -230,15 +187,14 @@
                                             <div
                                                 class="card-body d-flex flex-column justify-content-between min-height-100 ps-2 py-2 pe-3">
                                                 <div class="side-content">
-                                                    <a href="#">
-                                                        <h5 class="card-title title-content side">Kamu Berhak
-                                                            Bahagia! 10 Cara
-                                                            Menjaga
-                                                            Kesehatan Mental</h5>
+                                                    <a href="/article/<%= data.articles.newest[i].id %>">
+                                                        <h5 class="card-title title-content side">
+                                                            <%= data.articles.newest[i].title %>
+                                                        </h5>
                                                     </a>
                                                 </div>
-                                                <p class="card-text side text-start"><small>Senin, 20 Des
-                                                        2021 16:30 WIB
+                                                <p class="card-text side text-start"><small>
+                                                        <%= data.articles.newest[i].createdAt %>
                                                     </small></p>
                                             </div>
                                         </div>

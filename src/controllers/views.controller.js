@@ -95,7 +95,6 @@ exports.saved = async (req, res) => {
         navItem: navItems,
         dateNow: formatterDate.currentDate(),
         timeNow: formatterDate.formatterTime(),
-        pageName: 'Daftar Tersimpan',
         articles:
         {
             newest: [
@@ -134,7 +133,7 @@ exports.others = async (req, res) => {
 
             ],
 
-            content: [
+            othersContent: [
 
             ],
         },
@@ -226,6 +225,10 @@ exports.category = async (req, res) => {
         timeNow: formatterDate.formatterTime(),
         articles:
         {
+            newest: [
+
+            ],
+            
             specials: [
 
             ],
@@ -237,6 +240,10 @@ exports.category = async (req, res) => {
             mostPopular: [
 
             ],
+
+            mostSaved: [
+
+            ]
         },
         isLogged: req.query.isLogged
     };
