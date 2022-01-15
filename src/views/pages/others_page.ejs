@@ -50,11 +50,10 @@
                             <div class="row">
                                 <div class="col-12" style="border-right: 1px solid #908e8e;">
                                     <h4 class="main-text">
-                                        Daftar Tersimpan
+                                        <%= data.pageName %>
                                     </h4>
                                     <div class="dropdown-divider me-5"></div>
 
-                                    <!-- Artikel Tersimpan -->
                                     <div class="container-fluid p-0 mt-4">
                                         <% for(let i=0; i<6; i++) { %>
                                             <div class="d-flex">
@@ -63,23 +62,24 @@
                                                 <div class="card border-0 bg-transparent pb-5">
                                                     <div class="row g-0">
                                                         <div class="col-4">
-                                                            <img src="<%= data.articles.saved[i].thumbnailPicture %>"
+                                                            <img src="<%= data.articles.othersContent[i].thumbnailPicture %>"
                                                                 class="img-fluid min-height-100"
-                                                                alt="<%= data.articles.saved[i].title %>">
+                                                                alt="<%= data.articles.othersContent[i].title %>">
                                                         </div>
                                                         <div class="col-8">
                                                             <div class="card-body py-0">
-                                                                <a href="/article/<%= data.articles.saved[i].id %>">
+                                                                <a
+                                                                    href="/article/<%= data.articles.othersContent[i].id %>">
                                                                     <h5 class="card-title saved m-0">
-                                                                        <%= data.articles.saved[i].title %>
+                                                                        <%= data.articles.othersContent[i].title %>
                                                                     </h5>
                                                                 </a>
                                                                 <small class="saved">
-                                                                    <%= data.articles.saved[i].createdAt %>
+                                                                    <%= data.articles.othersContent[i].createdAt %>
                                                                 </small>
                                                                 <div class="max-lines-5">
                                                                     <p class="card-text saved mt-2">
-                                                                        <%= data.articles.saved[i].content %>
+                                                                        <%= data.articles.othersContent[i].content %>
                                                                     </p>
                                                                 </div>
                                                             </div>

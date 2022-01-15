@@ -1,5 +1,6 @@
 const article = require('../model/article.model');
 const formatterDate = require('../utilities/formatterDate');
+const letterFormatter = require('../utilities/letterFormatter');
 
 const navItems = [
     {
@@ -116,6 +117,64 @@ exports.saved = async (req, res) => {
     }
 }
 
+exports.others = async (req, res) => {
+    let data = {
+        user: {
+            name: 'Alma Lawson',
+            email: 'alma.lawson@example.com'
+        },
+        navItem: navItems,
+        dateNow: formatterDate.currentDate(),
+        timeNow: formatterDate.formatterTime(),
+        pageName: letterFormatter.letterFormatter(req.query.page),
+        articles:
+        {
+            newest: [
+
+            ],
+
+            othersContent: [
+
+            ],
+        },
+        isLogged: req.query.isLogged
+    };
+
+    res.render('../views/pages/others_page.ejs', {
+        data: data,
+        appLink: process.env.APP_LINK
+    });
+}
+
+exports.search = async (req, res) => {
+    let data = {
+        user: {
+            name: 'Alma Lawson',
+            email: 'alma.lawson@example.com'
+        },
+        navItem: navItems,
+        dateNow: formatterDate.currentDate(),
+        timeNow: formatterDate.formatterTime(),
+        pageName: `Hasil Pencarian Untuk ${req.query.s}`,
+        articles:
+        {
+            newest: [
+
+            ],
+
+            searched: [
+
+            ],
+        },
+        isLogged: req.query.isLogged
+    };
+
+    res.render('../views/pages/others_page.ejs', {
+        data: data,
+        appLink: process.env.APP_LINK
+    });
+}
+
 exports.details = async (req, res) => {
     let data = {
         user: {
@@ -146,6 +205,7 @@ exports.details = async (req, res) => {
         appLink: process.env.APP_LINK
     });
 }
+
 exports.category = async (req, res) => {
     navItems.forEach((data) => {
         if (data.name.toUpperCase() === req.params.nameCategory.toUpperCase()) {
@@ -165,6 +225,10 @@ exports.category = async (req, res) => {
         timeNow: formatterDate.formatterTime(),
         articles:
         {
+            newest: [
+
+            ],
+            
             specials: [
 
             ],
@@ -176,6 +240,10 @@ exports.category = async (req, res) => {
             mostPopular: [
 
             ],
+
+            mostSaved: [
+
+            ]
         },
         isLogged: req.query.isLogged
     };
@@ -193,6 +261,7 @@ exports.default = async (req,res) => {
         res.redirect('/welcome')
     }
 }
+
 exports.profile = async (req, res) => {
     let data = {
         user: {
@@ -259,9 +328,9 @@ exports.forgotpassword = async (req, res) => {
 }
 
 exports.resetpassword = async (req, res) => {
-        res.render('../views/pages/forgotpassword/resetpassword.ejs', {
-            appLink: process.env.APP_LINK
-        })
+    res.render('../views/pages/forgotpassword/resetpassword.ejs', {
+        appLink: process.env.APP_LINK
+    })
 }
 
 exports.resetpasswordSuccess = async (req, res) => {
@@ -286,7 +355,6 @@ exports.seeOthers = async (req,res) => {
 
     
 }
-
 
 exports.adminLogin = async (req, res) => {
     res.render('../views/pages/admin/login.ejs', { appLink: process.env.APP_LINK });

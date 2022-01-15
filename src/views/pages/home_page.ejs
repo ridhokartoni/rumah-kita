@@ -21,12 +21,12 @@
                             <div class="container-fluid greetings text-white p-5 pb-4">
                                 <div class="row pe-5 pb-3 ps-4">
                                     <div class="col-6 d-flex flex-column mt-3">
-                                        
+
                                         <% if(data.isLogged==false) { %>
                                             <h2>Selamat <%= data.timeNow %>,<br>Sayang</h2>
                                             <% } else { %>
                                                 <h2>Selamat <%= data.timeNow %>,<br>
-                                                    <%= data.user.name %>
+                                                        <%= data.user.name %>
                                                 </h2>
                                                 <% } %>
                                                     <p class="me-3"><small>“Kamu tidak harus mengendalikan pikiranmu.
@@ -61,7 +61,8 @@
                                                     keuntungan lebih...</h6>
                                                 <div class="d-flex justify-content-center pt-3">
                                                     <button type="button"
-                                                        class="btn rounded-pill button-congo-pink btn-sm p-0 px-4" onclick="location.href='/login'">Masuk/Daftar</button>
+                                                        class="btn rounded-pill button-congo-pink btn-sm p-0 px-4"
+                                                        onclick="location.href='/login'">Masuk/Daftar</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -95,7 +96,8 @@
                                                         </div>
                                                         <div class="dropdown-divider home-divider"></div>
                                                         <div class="d-flex bd-highlight pb-2">
-                                                            <button type="button" class="btn d-flex">
+                                                            <button type="button" class="btn d-flex"
+                                                                onclick="location.href='/profile/<%= data.user.id %>'">
                                                                 <div class="me-2">
                                                                     <i class="far fa-cog"></i>
                                                                 </div>
@@ -119,7 +121,8 @@
                                                     <div class="card-body">
                                                         <h6 class="text-center">Anda Yakin Keluar?</h6>
                                                         <div class="d-flex justify-content-around">
-                                                            <button id="logoutButton" type="submit" class="btn button-logout ok px-4">OK</button>
+                                                            <button id="logoutButton" type="submit"
+                                                                class="btn button-logout ok px-4">OK</button>
                                                             <button class="btn button-logout cancel px-4" type="button"
                                                                 data-bs-toggle="collapse"
                                                                 data-bs-target="#logoutCollapse" aria-expanded="false"
@@ -145,7 +148,8 @@
                                             </div>
                                         </div>
                                         <div class="bd-highlight">
-                                            <button type="button" class="btn d-flex">
+                                            <button type="button" class="btn d-flex"
+                                                onclick="location.href='/see-others?page=paling disukai'">
                                                 <small class="other">Lihat Lainnya</small>
                                                 <div class="ms-2">
                                                     <i class="fas fa-chevron-right"></i>
@@ -155,12 +159,16 @@
                                     </div>
                                     <div class="card content mb-4">
                                         <img class="article card-img-top img-fluid"
-                                            src="<%= appLink %>/public/images/dummy_content.jpeg" alt="dummy">
+                                            src="<%= data.articles.mostPopular[data.articles.mostPopular.length].thumbnailPicture %>"
+                                            alt="<%= data.articles.mostPopular[data.articles.mostPopular.length].title %>">
                                         <div class="card-body">
                                             <div class="d-flex justify-content-end react">
                                                 <div class="d-flex react ms-2">
                                                     <i class="fas fa-eye"></i>
-                                                    <small class="ms-1">1.8k</small>
+                                                    <small class="ms-1">
+                                                        <%= data.articles.mostPopular[data.articles.mostPopular.length].viewers
+                                                            %>
+                                                    </small>
                                                 </div>
                                                 <div class="d-flex react mx-2">
                                                     <i class="fas fa-bookmark"></i>
@@ -170,21 +178,16 @@
                                             <div class="row">
                                                 <div class="col-10">
                                                     <a href="#">
-                                                        <h5 class="card-title title-content px-3 pt-3 pb-2">5 Cara
-                                                            Bangun
-                                                            Mental
-                                                            Positif
-                                                            agar
-                                                            Lebih Pede dengan
-                                                            Penampilan Badan</h5>
+                                                        <h5 class="card-title title-content px-3 pt-3 pb-2">
+                                                            <%= data.articles.mostPopular[data.articles.mostPopular.length].title
+                                                                %>
+                                                        </h5>
                                                     </a>
                                                 </div>
                                             </div>
-                                            <p class="card-text px-3 pb-3"><small class="main-content">Erika Dyah -
-                                                    Sabtu,
-                                                    25
-                                                    Des 2021
-                                                    14:47 WIB
+                                            <p class="card-text px-3 pb-3"><small class="main-content">
+                                                    <%= data.articles.mostPopular[data.articles.mostPopular.length].createdAt
+                                                        %>
                                                 </small>
                                             </p>
                                         </div>
@@ -200,7 +203,8 @@
                                             </div>
                                         </div>
                                         <div class="bd-highlight">
-                                            <button type="button" class="d-flex btn">
+                                            <button type="button" class="d-flex btn"
+                                                onclick="location.href='/see-others?page=terbaru'">
                                                 <small class="other">Lihat Lainnya</small>
                                                 <div class="ms-2">
                                                     <i class="fas fa-chevron-right"></i>
@@ -212,16 +216,18 @@
                                         <div class="d-flex flex-wrap">
                                             <% for(let i=0; i<9; i++) { %>
                                                 <div class="card sec-content border-0 p-3">
-                                                    <img src="<%= appLink %>/public/images/dummy_content.jpeg"
-                                                        class="sec-content card-img-top" alt="...">
+                                                    <img src="<%= data.articles.newest[i].thumbnailPicture %>"
+                                                        class="sec-content card-img-top"
+                                                        alt="<%= data.articles[i].title %>">
                                                     <div class="sec-content pt-2">
-                                                        <a href="#">
-                                                            <p class="sec-content m-0">3 Tips Meringankan
-                                                                Beban Masalah dari Pakar Undip</p>
+                                                        <a href="/article/<%= data.articles.newest[i].id %>">
+                                                            <p class="sec-content m-0">
+                                                                <%= data.articles.newest[i].title %>
+                                                            </p>
                                                         </a>
                                                     </div>
                                                     <small class="sec-content">
-                                                        Kamis, 16 Des 2021 09:45 WIB
+                                                        <%= data.articles.newest[i].createdAt %>
                                                     </small>
                                                 </div>
                                                 <% } %>
@@ -238,7 +244,8 @@
                                             </div>
                                         </div>
                                         <div class="bd-highlight">
-                                            <button type="button" class="d-flex btn">
+                                            <button type="button" class="d-flex btn"
+                                                onclick="location.href='/see-others?page=paling disukai'">
                                                 <small class="other">Lihat Lainnya</small>
                                                 <div class="ms-2">
                                                     <i class="fas fa-chevron-right"></i>
@@ -250,16 +257,18 @@
                                         <div class="d-flex flex-wrap">
                                             <% for(let i=0; i<6; i++) { %>
                                                 <div class="card sec-content border-0 p-3">
-                                                    <img src="<%= appLink %>/public/images/dummy_content.jpeg"
-                                                        class="sec-content card-img-top" alt="...">
+                                                    <img src="<%= data.articles.mostPopular[i].thumbnailPicture %>"
+                                                        class="sec-content card-img-top"
+                                                        alt="<%= data.articles.mostPopular[i].title %>">
                                                     <div class="sec-content pt-2">
-                                                        <a href="#">
-                                                            <p class="sec-content m-0">3 Tips Meringankan
-                                                                Beban Masalah dari Pakar Undip</p>
+                                                        <a href="/article/<%= data.articles.mostPopular[i].id %>">
+                                                            <p class="sec-content m-0">
+                                                                <%= data.articles.mostPopular[i].title %>
+                                                            </p>
                                                         </a>
                                                     </div>
                                                     <small class="sec-content">
-                                                        Kamis, 16 Des 2021 09:45 WIB
+                                                        <%= data.articles.mostPopular[i].createdAt %>
                                                     </small>
                                                 </div>
                                                 <% } %>
@@ -300,7 +309,8 @@
                                     </div>
                                 </div>
                                 <div class="bd-highlight">
-                                    <button type="button" class="d-flex btn p-0 m-0">
+                                    <button type="button" class="d-flex btn p-0 m-0"
+                                        onclick="location.href='/see-others?page=paling disukai'">
                                         <small class="other">Lihat Lainnya</small>
                                         <div class="ms-2">
                                             <i class="fas fa-chevron-right"></i>
@@ -313,23 +323,22 @@
                             <div class="card side-card border-0 mb-3">
                                 <div class="row g-0 min-height-100">
                                     <div class="col-md-4 p-2">
-                                        <img src="<%= appLink %>/public/images/dummy_content.jpeg"
-                                            class="img-fluid rounded min-height-100" alt="...">
+                                        <img src="<%= data.articles.mostSaved[i].thumbnailPicture %>"
+                                            class="img-fluid rounded min-height-100"
+                                            alt="<%= data.articles.mostSaved[i].title %>">
                                     </div>
                                     <div class="col-md-8">
                                         <div
                                             class="card-body d-flex flex-column justify-content-between min-height-100 ps-2 py-2 pe-3">
                                             <div class="side-content">
-                                                <a href="#">
-                                                    <h5 class="card-title title-content side">8 Cara Menjaga
-                                                        Otak Agar
-                                                        Tetap
-                                                        Sehat
-                                                        dan Awet Muda</h5>
+                                                <a href="/article/<%= data.articles.mostSaved[i].id %>">
+                                                    <h5 class="card-title title-content side">
+                                                        <%= data.articles.mostSaved[i].title %>
+                                                    </h5>
                                                 </a>
                                             </div>
-                                            <p class="card-text side text-end"><small>Senin, 20 Des
-                                                    2021 16:30 WIB
+                                            <p class="card-text side text-end"><small>
+                                                    <%= data.articles.mostSaved[i].createdAt %>
                                                 </small></p>
                                         </div>
                                     </div>
@@ -351,7 +360,8 @@
                                     </div>
                                 </div>
                                 <div class="bd-highlight">
-                                    <button type="button" class="d-flex btn p-0 m-0">
+                                    <button type="button" class="d-flex btn p-0 m-0"
+                                        onclick="location.href='/see-others?page=spesial'">
                                         <small class="other">Lihat Lainnya</small>
                                         <div class="ms-2">
                                             <i class="fas fa-chevron-right"></i>
@@ -364,22 +374,22 @@
                             <div class="card side-card border-0 mb-3">
                                 <div class="row g-0 min-height-100">
                                     <div class="col-md-4 p-2">
-                                        <img src="<%= appLink %>/public/images/dummy_content.jpeg"
-                                            class="img-fluid rounded min-height-100" alt="...">
+                                        <img src="<%= data.articles.specials[i].thumbnailPicture %>"
+                                            class="img-fluid rounded min-height-100"
+                                            alt="<%= data.articles.specials[i].title %>">
                                     </div>
                                     <div class="col-md-8">
                                         <div
                                             class="card-body d-flex flex-column justify-content-between min-height-100 ps-2 py-2 pe-3">
                                             <div class="side-content">
-                                                <a href="#">
-                                                    <h5 class="card-title title-content side">Kamu Berhak
-                                                        Bahagia! 10 Cara
-                                                        Menjaga
-                                                        Kesehatan Mental</h5>
+                                                <a href="/article/<%= data.articles.specials[i].id %>">
+                                                    <h5 class="card-title title-content side">
+                                                        <%= data.articles.specials[i].title %>
+                                                    </h5>
                                                 </a>
                                             </div>
-                                            <p class="card-text side text-end"><small>Senin, 20 Des
-                                                    2021 16:30 WIB
+                                            <p class="card-text side text-end"><small>
+                                                    <%= data.articles.specials[i].createdAt %>
                                                 </small></p>
                                         </div>
                                     </div>
@@ -401,7 +411,8 @@
                                     </div>
                                 </div>
                                 <div class="bd-highlight">
-                                    <button type="button" class="d-flex btn p-0 m-0">
+                                    <button type="button" class="d-flex btn p-0 m-0"
+                                        onclick="location.href='/see-others?page=kasus'">
                                         <small class="other">Lihat Lainnya</small>
                                         <div class="ms-2">
                                             <i class="fas fa-chevron-right"></i>
@@ -414,23 +425,22 @@
                             <div class="card side-card border-0 mb-3">
                                 <div class="row g-0 min-height-100">
                                     <div class="col-md-4 p-2">
-                                        <img src="<%= appLink %>/public/images/dummy_content.jpeg"
-                                            class="img-fluid rounded min-height-100" alt="...">
+                                        <img src="<%= data.articles.cases[i].thumbnailPicture %>"
+                                            class="img-fluid rounded min-height-100"
+                                            alt="<%= data.articles.cases[i].title %>">
                                     </div>
                                     <div class="col-md-8">
                                         <div
                                             class="card-body d-flex flex-column justify-content-between min-height-100 ps-2 py-2 pe-3">
                                             <div class="side-content">
-                                                <a href="#">
-                                                    <h5 class="card-title title-content side">Pakar soal
-                                                        Perkosaan Santri
-                                                        Bandung:
-                                                        Umumnya Pelaku Psikopat
+                                                <a href="/article/<%= data.articles.cases[i].id %>">
+                                                    <h5 class="card-title title-content side">
+                                                        <%= data.articles.cases[i].title %>
                                                     </h5>
                                                 </a>
                                             </div>
-                                            <p class="card-text side text-end"><small>Senin, 20 Des
-                                                    2021 16:30 WIB
+                                            <p class="card-text side text-end"><small>
+                                                    <%= data.articles.cases[i].createdAt %>
                                                 </small></p>
                                         </div>
                                     </div>
