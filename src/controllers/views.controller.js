@@ -230,9 +230,21 @@ exports.registration = async (req, res) => {
     if (req.query.isLogged == true) {
         res.redirect('/home');
     } else {
-        res.render('../views/pages/register_berhasil.ejs', { appLink: process.env.APP_LINK });
+        res.render('../views/pages/register.ejs', { appLink: process.env.APP_LINK });
     }
 }
+
+exports.terms = async (req, res) => {
+    res.render('../views/pages/termCondition.ejs', { appLink: process.env.APP_LINK });
+    
+}
+
+exports.registersuccess = async (req, res) => {
+    res.render('../views/pages/register_berhasil.ejs', { appLink: process.env.APP_LINK });
+    
+}
+
+
 
 exports.forgotpassword = async (req, res) => {
     if (req.params.success == 'success') {
