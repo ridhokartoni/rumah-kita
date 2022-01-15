@@ -25,6 +25,8 @@ function addData(appLink) {
             let responseError = JSON.parse(XMLHttpRequest.responseText);
             console.log(responseError)
             alert(responseError.errorMessage);
+            location.reload();
+
         }
         
     })
@@ -43,7 +45,7 @@ function editData(id, appLink) {
 
     $.ajax({
         type: 'PUT',
-        url: `${appLink}/admin/role/update`,
+        url: `${appLink}/admin/category/update`,
         data: {
             id : id,
             name : name.value
@@ -59,6 +61,8 @@ function editData(id, appLink) {
             let responseError = JSON.parse(XMLHttpRequest.responseText);
             console.log(responseError)
             alert(responseError.errorMessage);
+            location.reload();
+
         }
     })
 }
@@ -71,7 +75,7 @@ function deleteData(id, appLink){
 
     $.ajax({
         type : 'DELETE',
-        url : `${appLink}/admin/role/delete`,
+        url : `${appLink}/admin/category/delete`,
         data : {
             id : id
         },
@@ -86,6 +90,8 @@ function deleteData(id, appLink){
             let responseError = JSON.parse(XMLHttpRequest.responseText);
             console.log(responseError)
             alert(responseError.errorMessage);
+            location.reload();
+
         }
     })
 }
