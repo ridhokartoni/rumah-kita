@@ -25,6 +25,8 @@ function addData(appLink) {
             let responseError = JSON.parse(XMLHttpRequest.responseText);
             console.log(responseError)
             alert(responseError.errorMessage);
+            location.reload();
+
         }
         
     })
@@ -59,6 +61,8 @@ function editData(id, appLink) {
             let responseError = JSON.parse(XMLHttpRequest.responseText);
             console.log(responseError)
             alert(responseError.errorMessage);
+            location.reload();
+
         }
     })
 }
@@ -86,6 +90,8 @@ function deleteData(id, appLink){
             let responseError = JSON.parse(XMLHttpRequest.responseText);
             console.log(responseError)
             alert(responseError.errorMessage);
+            location.reload();
+
         }
     })
 }

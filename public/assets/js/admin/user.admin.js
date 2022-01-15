@@ -34,6 +34,8 @@ function addData(appLink) {
             let responseText = JSON.parse(XMLHttpRequest.responseText);
             console.log(responseText);
             alert('Gagal Menambah data');
+            location.reload();
+
         }
     })
 }
@@ -77,6 +79,8 @@ function editData(id, appLink){
             let responseText = JSON.parse(XMLHttpRequest.responseText);
             console.log(responseText);
             alert('Gagal Menambah data');
+            location.reload();
+
         }
     })
 }
@@ -104,6 +108,8 @@ function deleteData(id, appLink){
             let responseText = JSON.parse(XMLHttpRequest.responseText);
             console.log(responseText);
             alert('Gagal Menambah data');
+            location.reload();
+
         }
     })
 }
