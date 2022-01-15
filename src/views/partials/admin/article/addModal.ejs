@@ -41,7 +41,7 @@
                         <label">Kategori</label>
                             <select id="add-category" class="form-control">
                                 <% for(let i=0; i < category.length; i++) { %>
-                                    <option value="<%= i+1 %>">
+                                    <option value="<%= category[i].id %>">
                                         <%= category[i].name %>
                                     </option>
                                     <% } %>
