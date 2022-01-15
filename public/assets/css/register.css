@@ -1,13 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Source+Sans+Pro:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Source+Sans+Pro:wght@400;700&display=swap");
 
 body {
-  background: url('../images/Wallpaper\ login\ page\ dan\ register\ page.png')
+  background: url("../images/Wallpaper\ login\ page\ dan\ register\ page.png")
     no-repeat center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 .container {
@@ -73,12 +73,12 @@ form div.form-group {
   text-align: center;
   padding-top: 10px;
   border-radius: 25px;
-  padding-left: 25px;
+  padding-left: 20px;
   width: 100%;
 }
 
 .gradient-color {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 700;
   line-height: 1.25;
   background: #ffffff;
@@ -109,11 +109,11 @@ form div.form-group {
   cursor: pointer;
 }
 
-.inputWithIcon input[type='email'] {
+.inputWithIcon input[type="email"] {
   padding-left: 45px;
 }
 
-.inputWithIcon input[type='password'] {
+.inputWithIcon input[type="password"] {
   padding-left: 45px;
 }
 
@@ -224,6 +224,10 @@ form div.form-group {
   margin-top: -5%;
 }
 
+.btn-register {
+  padding-left: -8px;
+}
+
 .lock {
   background-image: url(../images/lock.png);
   background-repeat: no-repeat;
@@ -242,7 +246,7 @@ form div.form-group {
 
 #forgot-pass {
   color: black;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 12%;
 }
 
