@@ -48,12 +48,12 @@ exports.searchArticle = async (keyword, limit) => {
                 [Op.or]: [
                     {
                         title: {
-                            [Op.contains]: keyword
+                            [Op.iLike]: `%${keyword}%`
                         }
                     },
                     {
                         content: {
-                            [Op.contains]: keyword
+                            [Op.iLike]: `%${keyword}%`
                         }
                     },
 
@@ -138,13 +138,13 @@ exports.getArticleById = async (id) => {
     }
 }
 
-exports.articlesFourDaysAgo = async (limit) => {
+exports.articlesBySomeDaysAgo = async (days, limit) => {
     let result;
     try {
         result = await Article.findAll({
             where : {
                 createdAt : {
-                    [Op.gte] : moment().subtract(4, 'days').toDate()
+                    [Op.gte] : moment().subtract(days, 'days').toDate()
                 }
             },
             include : ['category'],

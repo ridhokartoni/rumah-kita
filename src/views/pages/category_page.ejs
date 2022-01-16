@@ -3,6 +3,8 @@
 
 <head>
     <%- include('../partials/head.ejs'); %>
+        <script src="<% appLink %>/public/js/startup.views.js"></script>
+
 </head>
 
 <body>
@@ -144,8 +146,7 @@
                                         <div class="card-img-overlay ms-2 mt-3">
                                             <div class="row">
                                                 <div class="col-9">
-                                                    <a
-                                                        href="/article/<%= data.articles.newest.id %>">
+                                                    <a href="/article/<%= data.articles.newest.id %>">
                                                         <h4 class="card-title category">
                                                             <%= data.articles.newest.title %>
                                                         </h4>
@@ -253,12 +254,14 @@
                                                                         <a
                                                                             href="/article/<%= data.articles.fourDaysAgo[i].id %>">
                                                                             <h5 class="card-title title-content side">
-                                                                                <%= data.articles.fourDaysAgo[i].title %>
+                                                                                <%= data.articles.fourDaysAgo[i].title
+                                                                                    %>
                                                                             </h5>
                                                                         </a>
                                                                     </div>
                                                                     <p class="card-text side text-start"><small>
-                                                                            <%= data.articles.fourDaysAgo[i].createdAt %>
+                                                                            <%= data.articles.fourDaysAgo[i].createdAt
+                                                                                %>
                                                                         </small></p>
                                                                 </div>
                                                             </div>
@@ -321,8 +324,8 @@
                                                             class="card-body d-flex flex-column justify-content-between min-height-100 ps-2 py-2 pe-3">
                                                             <div class="side-content">
                                                                 <a
-                                                                href="/article/<%= data.articles.fourDaysAgo[i].id %>">
-                                                            
+                                                                    href="/article/<%= data.articles.fourDaysAgo[i].id %>">
+
                                                                     <h5 class="card-title title-content side">
                                                                         <%= data.articles.fourDaysAgo[i].title %>
                                                                     </h5>
@@ -547,5 +550,7 @@
         <%- include('../partials/footer.ejs'); %>
     </footer>
 </body>
+<script src="<%= appLink %>/public/js/user.logout.js"></script>
+
 
 </html>

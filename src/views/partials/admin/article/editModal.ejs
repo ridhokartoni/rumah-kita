@@ -41,13 +41,13 @@
 
                     <div class="form-group ">
                         <label">Kategori</label>
-                        <select id="category-<%=article.id %>" class="form-control">
+                        <select id="category-<%=article.id%>" class="form-control">
                             <% for(let i = 0; i < category.length; i++) { %>
                                 <% if(category[i].id === article.categoryId){ %>
-                                    <option value="<%= i+1 %>" selected><%= category[i].name %></option>
+                                    <option value="<%= category[i].id %>" selected><%= category[i].name %></option>
 
                                 <% } else { %>
-                                <option value="<%= i+1 %>"><%= category[i].name %></option>
+                                <option value="<%= category[i].id %>"><%= category[i].name %></option>
                                 <% } %> 
                            <% } %>
                         </select>

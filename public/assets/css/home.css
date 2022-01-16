@@ -355,6 +355,11 @@ button.button-logout.cancel:focus {
   min-height: 100%;
 }
 
+.thumbnail-rightsection{
+  max-width: 86px;
+  max-height: 82px;;
+}
+
 .card.content {
   -webkit-box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.25);
   -moz-box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.25);

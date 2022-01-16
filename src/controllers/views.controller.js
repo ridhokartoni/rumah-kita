@@ -37,6 +37,11 @@ exports.home = async (req, res) => {
         } else {
             data.isActive = ' '
         }
+
+        if(req.query.isLogged){
+            let originalPath = data.url.split('?');
+            data.url = `${originalPath[0]}?identify=${req.query.identify}`
+        }
     });
 
     let dataArticles = await ArticleServices.getSomeArticle(9);
@@ -171,6 +176,13 @@ exports.search = async (req, res) => {
 exports.details = async (req, res) => {
     let theArticle = await ArticleServices.getArticleById(req.params.id); 
     let otherArticles = await ArticleServices.getSomeArticle(9);
+    let userAuth = {}
+    theArticle.isSaved = false
+    if(req.query.userAuth){
+        userAuth = req.query.userAuth;
+        theArticle.isSaved = true;
+    }
+
     let data = {
         user: {
             name: 'Alma Lawson',
@@ -195,25 +207,27 @@ exports.details = async (req, res) => {
 
 exports.category = async (req, res) => {
     navItems.forEach((data) => {
+        
         if (data.name.toUpperCase() === req.params.nameCategory.toUpperCase()) {
             data.isActive = 'active'
         } else {
             data.isActive = ' '
+        }
+
+        if(req.query.isLogged){
+            let originalPath = data.url.split('?');
+            data.url = `${originalPath[0]}?identify=${req.query.identify}`
         }
     })
     let newest = await ArticleServices.newestOne(req.params.nameCategory);
     let cases = await ArticleServices.articleByCategory('kasus', 3);
     let mostPopular = await ArticleServices.mostPopular(4);
     let dataArticles = await ArticleServices.articleByCategory(req.params.nameCategory, 9);
-    let fourDaysAgo = await ArticleServices.articlesFourDaysAgo(5);
-    
- 
+    let fourDaysAgo = await ArticleServices.articlesBySomeDaysAgo(4, 5);
+    let userAuth = req.query.isLogged ? req.query.userAuth : {}
 
     let data = {
-        user: {
-            name: 'Alma Lawson',
-            email: 'alma.lawson@example.com'
-        },
+        user: userAuth,
         nameCategory : req.params.nameCategory,
         navItem: navItems,
         dateNow: formatterDate.currentDate(),

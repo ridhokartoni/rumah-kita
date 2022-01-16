@@ -324,7 +324,7 @@
                                 <div class="row g-0 min-height-100">
                                     <div class="col-md-4 p-2">
                                         <img src="<%= data.articles.mostSaved[i].thumbnailPicture %>"
-                                            class="img-fluid rounded min-height-100"
+                                            class="img-fluid rounded thumbnail-rightsection"
                                             alt="<%= data.articles.mostSaved[i].title %>">
                                     </div>
                                     <div class="col-md-8">
@@ -375,7 +375,7 @@
                                 <div class="row g-0 min-height-100">
                                     <div class="col-md-4 p-2">
                                         <img src="<%= data.articles.specials[i].thumbnailPicture %>"
-                                            class="img-fluid rounded min-height-100"
+                                            class="img-fluid rounded  thumbnail-rightsection"
                                             alt="<%= data.articles.specials[i].title %>">
                                     </div>
                                     <div class="col-md-8">
@@ -426,7 +426,7 @@
                                 <div class="row g-0 min-height-100">
                                     <div class="col-md-4 p-2">
                                         <img src="<%= data.articles.cases[i].thumbnailPicture %>"
-                                            class="img-fluid rounded min-height-100"
+                                            class="img-fluid rounded thumbnail-rightsection"
                                             alt="<%= data.articles.cases[i].title %>">
                                     </div>
                                     <div class="col-md-8">
@@ -464,5 +464,7 @@
         <%- include('../partials/footer.ejs'); %>
     </footer>
 </body>
+<script src="<% appLink %>/public/js/startup.views.js"></script>
+<script src="<%= appLink %>/public/js/user.logout.js"></script>
 
 </html>
