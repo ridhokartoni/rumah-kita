@@ -1,6 +1,7 @@
 const formatterDate = require('../utilities/formatterDate');
 const letterFormatter = require('../utilities/letterFormatter');
 const ArticleServices = require('../services/articles.services');
+const SavedAriclesServices = require('../services/saved.articles.services');
 const CommentServices = require('../services/comment.services');
 const navItems = [
     {
@@ -62,7 +63,7 @@ exports.home = async (req, res) => {
     let cases = await ArticleServices.articleByCategory("kasus", 3);
     let mostPopular = await ArticleServices.mostPopular(9);
 
-    
+
     let data = {
         user: userAuth,
 
@@ -70,18 +71,18 @@ exports.home = async (req, res) => {
         dateNow: formatterDate.currentDate(),
         timeNow: formatterDate.formatterTime(),
         articles:
-        {  
-            seeOther : dataArticles,
- 
+        {
+            seeOther: dataArticles,
+
             newest: newest,
 
-            specials: dataArticles.slice(4,9),
+            specials: dataArticles.slice(4, 9),
 
             cases: cases,
 
             mostPopular: mostPopular,
 
-            mostSaved: dataArticles.slice(1,5)
+            mostSaved: dataArticles.slice(1, 5)
 
         },
         isLogged: isLogged
@@ -111,7 +112,10 @@ exports.saved = async (req, res) => {
             data.url = `${originalPath[0]}`
         }
     })
-    
+
+    let newest = await ArticleServices.newest();
+    let savedArticles = await SavedAriclesServices.findAllByUser(userAuth.id)
+
     let data = {
         user: userAuth,
         navItem: navItems,
@@ -119,13 +123,9 @@ exports.saved = async (req, res) => {
         timeNow: formatterDate.formatterTime(),
         articles:
         {
-            newest: [
+            newest: newest,
 
-            ],
-
-            saved: [
-
-            ],
+            saved: savedArticles,
         },
         isLogged: isLogged
     };
@@ -141,7 +141,14 @@ exports.saved = async (req, res) => {
 
 exports.others = async (req, res) => {
     let userAuth = req.query.userAuth ? req.query.userAuth : {};
+    let specials = await ArticleServices.getSomeArticle(9);
+    let mostLiked = await ArticleServices.mostPopular(9);
+    let cases = await ArticleServices.articleByCategory('kasus', 9);
+    let newest = await ArticleServices.newest();
+
+    let dataArticles = req.query.page == 'paling disukai' ? mostLiked : req.query.page == 'spesial' ? specials : req.query.page == 'kasus' ? cases : newest;
     let isLogged = req.query.userAuth ? true : false
+    
     let data = {
         user: userAuth,
         navItem: navItems,
@@ -150,13 +157,9 @@ exports.others = async (req, res) => {
         pageName: letterFormatter.letterFormatter(req.query.page),
         articles:
         {
-            newest: [
+            newest: dataArticles,
 
-            ],
-
-            othersContent: [
-
-            ],
+            othersContent: dataArticles,
         },
         isLogged: isLogged
     };
@@ -169,23 +172,20 @@ exports.others = async (req, res) => {
 
 exports.search = async (req, res) => {
     let userAuth = req.query.userAuth ? req.query.userAuth : {};
-    let articles = await ArticleServices.searchArticle(req.query.find, 20);
+    let newest = await ArticleServices.newest();
+    let searchedArticles = await ArticleServices.searchArticle(req.query.find, 20);
     let isLogged = req.query.userAuth ? true : false
     let data = {
         user: userAuth,
         navItem: navItems,
         dateNow: formatterDate.currentDate(),
         timeNow: formatterDate.formatterTime(),
-        pageName: `Hasil Pencarian Untuk ${req.query.s}`,
+        pageName: `Hasil Pencarian Untuk ${req.query.find}`,
         articles:
         {
-            newest: [
+            newest: newest,
 
-            ],
-
-            searched: [
-
-            ],
+            othersContent: searchedArticles,
         },
         isLogged: isLogged
     };
@@ -222,7 +222,7 @@ exports.details = async (req, res) => {
         isSaved : isSaved,
         articles:
         {
-            articleDetails : theArticle,
+            articleDetails: theArticle,
 
             newest: otherArticles,
         },
@@ -236,7 +236,7 @@ exports.details = async (req, res) => {
 
 exports.category = async (req, res) => {
     navItems.forEach((data) => {
-        
+
         if (data.name.toUpperCase() === req.params.nameCategory.toUpperCase()) {
             data.isActive = 'active'
         } else {
@@ -261,17 +261,17 @@ exports.category = async (req, res) => {
 
     let data = {
         user: userAuth,
-        nameCategory : req.params.nameCategory,
+        nameCategory: req.params.nameCategory,
         navItem: navItems,
         dateNow: formatterDate.currentDate(),
         timeNow: formatterDate.formatterTime(),
 
         articles:
         {
-            fourDaysAgo : fourDaysAgo,
+            fourDaysAgo: fourDaysAgo,
             newest: newest,
 
-            specials: dataArticles.slice(4,9),
+            specials: dataArticles.slice(4, 9),
 
             cases: cases,
 

@@ -72,13 +72,7 @@ exports.searchArticle = async (keyword, limit) => {
                         title: {
                             [Op.iLike]: `%${keyword}%`
                         }
-                    },
-                    {
-                        content: {
-                            [Op.iLike]: `%${keyword}%`
-                        }
-                    },
-
+                    }
                 ]
             },
             limit : limit
@@ -180,6 +174,21 @@ exports.articlesBySomeDaysAgo = async (days, limit) => {
         return result
     } catch (error) {
         throw new Error(error.message)
+    }
+}
+
+exports.newest = async () => {
+    try {
+        result = await Article.findAll({
+            order : [
+                ['createdAt', 'DESC']
+            ],
+        });
+
+        return result
+    } catch (error) {
+        throw new Error(error.message)
+        
     }
 }
 
