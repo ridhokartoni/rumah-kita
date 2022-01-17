@@ -206,7 +206,7 @@
                                                 <div class="card sec-content border-0 p-2">
                                                     <img src="<%= data.articles.mostSaved[i].thumbnailPicture %>"
                                                         class="sec-content card-img-top"
-                                                        alt="<%= data.articles.mostSaved[i].title %>">
+                                                        alt="<%= data.articles.mostSaved[i].title %>" style="object-fit: cover;">
                                                     <div class="sec-content pt-2">
                                                         <a href="/article/<%= data.articles.mostSaved[i].id %>">
                                                             <p class="sec-content m-0">
@@ -259,10 +259,6 @@
                                                                             </h5>
                                                                         </a>
                                                                     </div>
-                                                                    <p class="card-text side text-start"><small>
-                                                                            <%= data.articles.fourDaysAgo[i].createdAt
-                                                                                %>
-                                                                        </small></p>
                                                                 </div>
                                                             </div>
 
@@ -331,9 +327,6 @@
                                                                     </h5>
                                                                 </a>
                                                             </div>
-                                                            <p class="card-text side text-start"><small>
-                                                                    <%= data.articles.fourDaysAgo[i].createdAt %>
-                                                                </small></p>
                                                         </div>
                                                     </div>
 
@@ -347,7 +340,7 @@
                                             <img src="<%= data.articles.mostPopular[i].thumbnailPicture %>"
                                                 class="img-fluid min-height-100"
                                                 alt="<%= data.articles.mostPopular[i].title %>">
-                                            <a href="#">
+                                            <a href="<%= data.articles.mostPopular[i].id %>">
                                                 <h5 class="title-content mt-3" style="font-size: 18px;">
                                                     <%= data.articles.mostPopular[i].title %>
                                                 </h5>
@@ -396,7 +389,7 @@
                                 </div>
                                 <div class="bd-highlight">
                                     <button type="button" class="d-flex btn p-0 m-0"
-                                        onclick="location.href='/see-others?page=paling disukai'">
+                                        onclick="clickOthers('paling disukai')">
                                         <small class="other">Lihat Lainnya</small>
                                         <div class="ms-2">
                                             <i class="fas fa-chevron-right"></i>
@@ -411,7 +404,7 @@
                                     <div class="col-md-4 p-2">
                                         <img src="<%= data.articles.mostPopular[i].thumbnailPicture %>"
                                             class="img-fluid rounded min-height-100"
-                                            alt="<%= data.articles.mostPopular[i].title %>">
+                                            alt="<%= data.articles.mostPopular[i].title %>" style="object-fit: cover;">
                                     </div>
                                     <div class="col-md-8">
                                         <div
@@ -447,7 +440,7 @@
                                 </div>
                                 <div class="bd-highlight">
                                     <button type="button" class="d-flex btn p-0 m-0"
-                                        onclick="location.href='/see-others?page=spesials'">
+                                        onclick="clickOthers('spesial')">
                                         <small class="other">Lihat Lainnya</small>
                                         <div class="ms-2">
                                             <i class="fas fa-chevron-right"></i>
@@ -462,7 +455,7 @@
                                     <div class="col-md-4 p-2">
                                         <img src="<%= data.articles.specials[i].thumbnailPicture %>"
                                             class="img-fluid rounded min-height-100"
-                                            alt="<%= data.articles.specials[i].title %>">
+                                            alt="<%= data.articles.specials[i].title %>" style="object-fit: cover;">
                                     </div>
                                     <div class="col-md-8">
                                         <div
@@ -498,7 +491,7 @@
                                 </div>
                                 <div class="bd-highlight">
                                     <button type="button" class="d-flex btn p-0 m-0"
-                                        onclick="location.href='/see-others?page=kasus'">
+                                        onclick="clickOthers('kasus')">
                                         <small class="other">Lihat Lainnya</small>
                                         <div class="ms-2">
                                             <i class="fas fa-chevron-right"></i>
@@ -513,7 +506,7 @@
                                     <div class="col-md-4 p-2">
                                         <img src="<%= data.articles.cases[i].thumbnailPicture %>"
                                             class="img-fluid rounded min-height-100"
-                                            alt="<%= data.articles.cases[i].title %>">
+                                            alt="<%= data.articles.cases[i].title %>" style="object-fit: cover;">
                                     </div>
                                     <div class="col-md-8">
                                         <div
@@ -551,6 +544,6 @@
     </footer>
 </body>
 <script src="<%= appLink %>/public/js/user.logout.js"></script>
-
+<script src="<%= appLink %>/public/js/others.js"></script>
 
 </html>
