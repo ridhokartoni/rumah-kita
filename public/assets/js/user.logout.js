@@ -1,6 +1,6 @@
 let logoutButton = document.getElementById('logoutButton');
 
-logoutButton.addEventListener('submit', () => {
+logoutButton.addEventListener('click', () => {
     localStorage.removeItem('userToken');
-    window.location.href = '/';
+    window.location.href = '/home';
 })

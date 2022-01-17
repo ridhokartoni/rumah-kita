@@ -38,6 +38,18 @@ exports.createUsers = async (req,res) =>{
     }
 }
 
+exports.updateUser = async (req,res) => {
+    try {
+        let result = await UserServices.updateUser(req.body);
+        res.send(result);
+    } catch (error) {
+        res.status(500).send({
+            errorStatus : 500,
+            errorMessage : error.message
+        })
+    }
+}
+
 exports.deleteUsers = async (req,res) => {
     try {
         if(req.query.userId){

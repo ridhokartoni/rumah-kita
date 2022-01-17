@@ -498,7 +498,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 321px;
+    width: 400px;
     height: 278px;
     background: #fff;
     border: solid 0.5px #000;
@@ -508,7 +508,12 @@ body {
     justify-content: center;
 }
 
+#logoutButton:hover{
+    cursor: pointer;
+}
+
 .modal-change-avatar-head {
+    margin-top: 20px;
     width: 110px;
     height: 42.8px;
     font-size: 18px;

@@ -21,7 +21,7 @@ exports.login = async (user, role) => {
                 }, process.env.SECRET_KEY, { expiresIn: '7d' });
 
                 if ((role) && UserLogin.role.name != "admin") {
-                    throw new Error("User is'nt have auth to access the page")
+                    throw new Error("User doesn't have authorization to access the page")
                 }
                 return {
                     name: UserLogin.name,

@@ -7,9 +7,13 @@ const categoryAdminRouter = require('./admin/category.admin.route');
 const userAdminRouter = require('./admin/user.admin.route');
 const roleAdminRouter = require('./admin/role.admin.route');
 const ViewsRouter = require('./views.route');
+const SavedRouter = require('./savedArticles.route');
+const CommentRouter = require('./comment.route');
 
 
 router.use(ViewsRouter)
+router.use('/comment', CommentRouter);
+router.use('/saved-articles', SavedRouter);
 router.use('/user', UserRouter);
 router.use('/auth', AuthRouter);
 router.use('/admin/article', articleAdminRouter);

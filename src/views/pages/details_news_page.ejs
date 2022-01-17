@@ -24,8 +24,8 @@
                                         <% if(data.isLogged==false) { %>
                                             <h2>Selamat <%= data.timeNow %>,<br>Sayang</h2>
                                             <% } else { %>
-                                                <h2>Selamat <%= timeNow %>,<br>
-                                                    <%= data.user.name %>
+                                                <h2>Selamat <%= data.timeNow %>,<br>
+                                                        <%= data.user.name %>
                                                 </h2>
                                                 <% } %>
                                                     <p class="me-3"><small>“Kamu tidak harus mengendalikan pikiranmu.
@@ -50,66 +50,33 @@
                             <div class="row">
                                 <div class="col-12" style="border-right: 1px solid #908e8e;">
                                     <div class="container-fluid p-0 pe-4">
-                                        <img src="/assets/images/dummy_content.jpeg" alt="dummy"
+                                        <img src="<%= data.articles.articleDetails.thumbnailPicture %>" alt="dummy"
                                             class="img-fluid min-height-100" style="min-width: 100%">
+                                        <div class="saved-viewers">
+                                            <i class="far fa-eye"></i>
+                                            <label>
+                                                <%= data.articles.articleDetails.viewers %>
+                                            </label>
+                                            <% if(!data.isSaved) { %>
+                                                <i class="fas fa-bookmark"></i>
+                                                <% } else { %>
+                                                    <i class="far fa-bookmark"></i>
+                                                    <% } %>
+                                        </div>
                                         <div class="my-4">
                                             <h4 class="main-text">
-                                                Sehat Tak Cuma Fisik, Semua Juga Harus Sehat Baik Mental Maupun Fisik !
+                                                <%= data.articles.articleDetails.title %>
                                             </h4>
-                                            <p class="detail"><small>Jum’at, 24 Des 2021 15:00 WIB</small></p>
+                                            <p class="detail"><small>
+                                                    <%= data.articles.articleDetails.createdAt %>
+                                                </small></p>
                                         </div>
-                                        <h6 class="detail"><span>Jakarta, CNN Indonesia</span> -- Hari kesehatan jiwa
-                                            sedunia atau world mental health day dirayakan pada 10 Oktober setiap
-                                            tahunnya. Tahun ini Organisasi Kesehatan Dunia (WHO) mengambil tema Mental
-                                            health care for all: let's make it a reality. <br><br>
-
-                                            Kesehatan jiwa memang menjadi hal yang penting untuk diperhatikan, apalagi
-                                            di masa pandemi Covid-19. Faktanya tak hanya kesehatan secara fisik yang
-                                            terpapar, banyak orang yang merasa depresi akibat pandemi ini. <br><br>
-
-                                            Tak hanya itu, walau tanpapandemi Awareness Day menyebut, setiap tahun satu
-                                            dari empat orang dewasa serta satu dari sepuluh anak memiliki masalah
-                                            kesehatan jiwa. Kesehatan jiwa yang erganggu bisa berpengaruh terhadap
-                                            kehidupan, kemampuan untuk melewati hari, mempertahankan hubungan, bahkan
-                                            mempertahankan pekerjaan. <br><br>
-
-                                            Selain itu, stigma yang melekat pada kesehatan mental juga masih cenderung
-                                            negatif. Kurangnya informasi dan pengetahuan mempersulit mereka yang memang
-                                            memiliki masalah kesehatan jiwa untuk mendapatkan atau mencari bantuan.
-                                            Oleh karena itu, penting untuk meningkatkan kesadaran berkaitan dengan
-                                            kesehatan jiwa. Hal ini dilakukan untuk mengatasi stigma yang cenderung
-                                            negatif berkaitan dengan kesehatan mental. <br><br>
-
-                                            Sejarah kesehatan jiwa sedunia
-                                            Federasi kesehatan mental dunia pada 1992 melalui wakil sekretaris jenderal
-                                            saat itu, Richard Hunter, menciptakan Hari Kesehatan Jiwa Sedunia. Meski
-                                            begitu didirikannya hari kesehatan jiwa ini memang belum ada tujuan pasti
-                                            selain mengadvokasi kesehatan mental secara keseluruhan. <br><br>
-
-                                            Dilansir dari National Today, di hampir seluruh negara yang ada di dunia
-                                            masih banyak masalah kesehatan mental yang tidak ditangani dengan benar.
-                                            Selama tiga tahun pertama, dibuatlah siaran televisi selama dua jam di
-                                            seluruh dunia melalui satelit badan informasi AS. <br><br>
-
-                                            Studio tersebut berlokasi di Tallahassee, Florida. Siaran dilakukan untuk
-                                            menyampaikan pesan advokasi berkaitan dengan kesehatan mental. Mereka
-                                            memiliki partisipan dari Chili, Inggris, Australia, dan Zambia, sementara
-                                            Jenewa, Atlanta, dan Mexico City merekam segmen untuk siaran tersebut.Tema
-                                            Hari Kesehatan Jiwa Sedunia yang pertama adalah 'Meningkatkan Kualitas
-                                            Layanan Kesehatan Mental di Seluruh Dunia' yang dirayakan pada 1994. 27
-                                            negara mengirimkan laporan umpan balik setelah kampanye dan ada kampanye
-                                            nasional di Australia dan Inggris. <br><br>
-
-                                            Tema Hari Kesehatan Jiwa Sedunia berkembang seiring dengan perkembangan
-                                            zaman. Wanita, anak-anak, kesehatan, pekerjaan, trauma, bunuh diri, dan
-                                            banyak tema lainnya yang diangkat setiap tahunnya. <br><br><br><br>
-
-
-                                            <span class="source">
-                                                Sumber :
-                                                https://www.cnnindonesia.com/gaya-hidup/20211008175103-255-705357/tak-cuma-sehat-fisik-semua-juga-harus-sehat-mental
-                                            </span>
-                                        </h6>
+                                        <textarea class="scrollable details"
+                                            readonly><%= data.articles.articleDetails.content %></textarea>
+                                        <span class="source">
+                                            Sumber :
+                                            <%= data.articles.articleDetails.linkOrigin %>
+                                        </span>
                                     </div>
                                 </div>
                             </div>
@@ -122,42 +89,50 @@
                                         </h4>
                                         <div class="card border-0 mt-3">
                                             <div class="card-body">
-                                                <div class="container-fluid scrollable p-0">
-                                                    <% for(let i=0; i<5; i++) { %>
-                                                        <div class="d-flex mb-2">
-                                                            <div class="flex-shrink-0">
-                                                                <img class="rounded-pill"
-                                                                    src="/assets/images/dummy_content.jpeg" width="44px"
-                                                                    height="44px" alt="...">
-                                                            </div>
-                                                            <div class="flex-shrink-1 align-self-center pe-5">
-                                                                <div class="comment-section rounded px-2 ms-3">
-                                                                    <h5 class="name m-0 pt-1">
-                                                                        <%= data.user.name %>
-                                                                    </h5>
-                                                                    <p class="comment pb-1">Betul bangett tuh!
-                                                                        pandemi ini malah bikin aku anxiety.</p>
+                                                <div class="container-fluid mh-comment scrollable p-0">
+                                                    <% if(data.commentArticle.length <=0) { %>
+                                                        <p class="comment pb-1">Belum ada komentar untuk artikel ini</p>
+
+                                                        <% } else {%>
+                                                            <% data.commentArticle.forEach((data)=> { %>
+                                                                <div class="d-flex mb-2">
+                                                                    <div class="flex-shrink-0">
+                                                                        <img class="rounded-pill"
+                                                                            src="<%= appLink %>/public/images/Avatar <%= data.user.avatar %>"
+                                                                            width="44px" height="44px" alt="...">
+                                                                    </div>
+                                                                    <div class="flex-shrink-1 align-self-center pe-5">
+                                                                        <div class="comment-section rounded px-2 ms-3">
+                                                                            <h5 class="name m-0 pt-1">
+                                                                                <%= data.user.name %>
+                                                                            </h5>
+                                                                            <p class="comment pb-1">
+                                                                                <%= data.comment %>
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </div>
-                                                        <% } %>
+                                                                <% }) %>
+                                                                    <% } %>
                                                 </div>
                                                 <div class="dropdown-divider comment-divider my-3"></div>
                                                 <% if(data.isLogged==true) { %>
                                                     <div class="d-flex mb-2">
                                                         <div class="flex-shrink-0">
                                                             <img class="rounded-pill"
-                                                                src="/assets/images/dummy_content.jpeg" width="44px"
-                                                                height="44px" alt="...">
+                                                                src="<%= appLink %>/public/images/Avatar <%= data.user.avatar %>"
+                                                                width="44px" height="44px" alt="...">
                                                         </div>
                                                         <div class="flex-shrink-1 align-self-center pe-5">
                                                             <div class="d-flex px-2 ms-2">
-                                                                <form>
+                                                                <form id="form-comment">
                                                                     <div class="custom-comment">
-                                                                        <input type="text"
+                                                                        <input id="comment" type="text"
                                                                             class="form-control custom-comment-input border-0 pe-5 py-1"
                                                                             placeholder="Tulis komentar...">
-                                                                        <button class="custom-comment-bottom px-3"
+                                                                        <button
+                                                                            id="buttonAddComment" onclick="addComment('<%= appLink %>', '<%=data.user.id %>', '<%= data.articles.articleDetails.id %>')"
+                                                                            class="custom-comment-bottom px-3"
                                                                             type="submit">
                                                                             <i class="far fa-paper-plane"></i>
                                                                         </button>
@@ -202,7 +177,7 @@
                     </section>
 
                     <div class="d-flex justify-content-center mt-4 mb-5">
-                        <img src="/assets/images/Saly-39.svg" alt="saly">
+                        <img src="<%= appLink%>/public/images/Saly-39.svg" alt="saly">
                     </div>
 
                     <section>
@@ -230,15 +205,14 @@
                                             <div
                                                 class="card-body d-flex flex-column justify-content-between min-height-100 ps-2 py-2 pe-3">
                                                 <div class="side-content">
-                                                    <a href="#">
-                                                        <h5 class="card-title title-content side">Kamu Berhak
-                                                            Bahagia! 10 Cara
-                                                            Menjaga
-                                                            Kesehatan Mental</h5>
+                                                    <a href="/article/<%= data.articles.newest[i].id %>">
+                                                        <h5 class="card-title title-content side">
+                                                            <%= data.articles.newest[i].title %>
+                                                        </h5>
                                                     </a>
                                                 </div>
-                                                <p class="card-text side text-start"><small>Senin, 20 Des
-                                                        2021 16:30 WIB
+                                                <p class="card-text side text-start"><small>
+                                                        <%= data.articles.newest[i].createdAt %>
                                                     </small></p>
                                             </div>
                                         </div>
@@ -249,7 +223,7 @@
 
                     <section>
                         <div class="d-flex flex-column justify-content-end" style="height: 100vh;">
-                            <img src="/assets/images/GugGug.gif" alt="guggug">
+                            <img src="<%= appLink %>/public/images/GugGug.gif" alt="guggug">
                         </div>
                     </section>
                 </div>
@@ -262,5 +236,7 @@
         <%- include('../partials/footer'); %>
     </footer>
 </body>
+<script src="<%= appLink %>/public/js/comment.js"></script>
+<script src="<%= appLink %>/public/js/startup.views.js"></script>
 
 </html>

@@ -68,3 +68,11 @@ p.date-category {
 .title-content.category {
   font-size: 14px;
 }
+
+.max-lines-5 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+}

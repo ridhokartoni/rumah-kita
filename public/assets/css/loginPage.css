@@ -26,6 +26,32 @@ body {
 .fa-chevron-left {
   color: #212429;
 }
+.modal-content-changes-saved {
+  width: 441px;
+  height: 126px;
+  border-radius: 5px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  background-color: #f3e2fc;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#modal-changes-saved {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#modal-changes-saved:target{
+  display: block;
+}
 
 button {
   width: 50%;
