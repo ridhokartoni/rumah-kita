@@ -50,13 +50,7 @@ exports.searchArticle = async (keyword, limit) => {
                         title: {
                             [Op.iLike]: `%${keyword}%`
                         }
-                    },
-                    {
-                        content: {
-                            [Op.iLike]: `%${keyword}%`
-                        }
-                    },
-
+                    }
                 ]
             },
             limit : limit
@@ -96,6 +90,7 @@ exports.articleByCategory = async (categoryName, limit) => {
         throw new Error(error.message)
     }
 }
+
 exports.newestOne = async (categoryName) => {
     try {
         let category = await Category.findOne({
@@ -153,6 +148,20 @@ exports.articlesBySomeDaysAgo = async (days, limit) => {
 
         console.log(result.length);
 
+
+        return result
+    } catch (error) {
+        throw new Error(error.message)
+    }
+}
+
+exports.newest = async () => {
+    try {
+        result = await Article.findAll({
+            order : [
+                ['createdAt', 'DESC']
+            ],
+        })
 
         return result
     } catch (error) {

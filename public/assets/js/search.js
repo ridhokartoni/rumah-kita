@@ -1,6 +1,12 @@
-let searchButton = document.getElementById('searchButton');
 let searchInput = document.getElementById('searchInput');
+let searchForm = document.getElementById('searchForm');
 
-searchButton.addEventListener('submit', () => {
-    window.location.href = `/search?s=${searchInput.value}`
+searchForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const token = localStorage.getItem('userToken');
+    if (token) {
+        location.href = `/search?find=${searchInput.value}&identify=${token}`
+    } else {
+        location.href = `/search?find=${searchInput.value}`
+    }
 })
