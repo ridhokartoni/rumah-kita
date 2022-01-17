@@ -55,31 +55,31 @@
                                     <div class="dropdown-divider me-5"></div>
 
                                     <div class="container-fluid p-0 mt-4">
-                                        <% data.articles.othersContent.forEach((content)=> { %>
+                                        <% for(let i=0; i<6; i++) { %>
                                             <div class="d-flex">
                                                 <div class="box-heliotrope me-2"
                                                     style="min-width: 11px; max-height: 30px"></div>
                                                 <div class="card border-0 bg-transparent pb-5">
                                                     <div class="row g-0">
                                                         <div class="col-4">
-                                                            <img src="<%= content.thumbnailPicture %>"
+                                                            <img src="<%= data.articles.othersContent[i].thumbnailPicture %>"
                                                                 class="img-fluid min-height-100"
-                                                                alt="<%= content.title %>">
+                                                                alt="<%= data.articles.othersContent[i].title %>">
                                                         </div>
                                                         <div class="col-8">
                                                             <div class="card-body py-0">
                                                                 <a
-                                                                    href="/article/<%= content.id %>">
+                                                                    href="/article/<%= data.articles.othersContent[i].id %>">
                                                                     <h5 class="card-title saved m-0">
-                                                                        <%= content.title %>
+                                                                        <%= data.articles.othersContent[i].title %>
                                                                     </h5>
                                                                 </a>
                                                                 <small class="saved">
-                                                                    <%= content.createdAt %>
+                                                                    <%= data.articles.othersContent[i].createdAt %>
                                                                 </small>
                                                                 <div class="max-lines-5">
                                                                     <p class="card-text saved mt-2">
-                                                                        <%= content.content %>
+                                                                        <%= data.articles.othersContent[i].content %>
                                                                     </p>
                                                                 </div>
                                                             </div>
@@ -87,7 +87,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <% }) %>
+                                            <% } %>
 
                                     </div>
                                 </div>
@@ -147,6 +147,9 @@
                                                         </h5>
                                                     </a>
                                                 </div>
+                                                <p class="card-text side text-start"><small>
+                                                        <%= data.articles.newest[i].createdAt %>
+                                                    </small></p>
                                             </div>
                                         </div>
 

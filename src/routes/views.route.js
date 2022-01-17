@@ -12,6 +12,7 @@ router.get('/forgotpassword/:success?', ViewsController.forgotpassword);
 router.get('/welcome', ViewsController.welcome);
 router.get('/resetpassword/success', ViewsController.resetpasswordSuccess);
 router.get('/resetpassword/:token', ViewsController.resetpassword);
+router.get('/see-others', ViewsController.others);
 
 router.use(authenticationUser);
 router.get('/', ViewsController.default);
