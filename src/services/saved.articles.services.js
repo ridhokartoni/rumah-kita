@@ -20,8 +20,6 @@ exports.findAllByUser = async (userId) => {
             },
             include : ['article']
         })
-
-
         return result;
     } catch (error) {
         throw new Error(error.message)
