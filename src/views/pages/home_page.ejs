@@ -149,7 +149,7 @@
                                         </div>
                                         <div class="bd-highlight">
                                             <button type="button" class="btn d-flex"
-                                                onclick="clickOthers('paling disukai')">
+                                                onclick="location.href='/see-others?page=paling disukai'">
                                                 <small class="other">Lihat Lainnya</small>
                                                 <div class="ms-2">
                                                     <i class="fas fa-chevron-right"></i>
@@ -166,8 +166,8 @@
                                                 <div class="d-flex react ms-2">
                                                     <i class="fas fa-eye"></i>
                                                     <small class="ms-1">
-                                                        <%= data.articles.mostPopular[data.articles.mostPopular.length -
-                                                            1].viewers %>
+                                                        <%= data.articles.mostPopular[data.articles.mostPopular.length - 1].viewers
+                                                            %>
                                                     </small>
                                                 </div>
                                                 <div class="d-flex react mx-2">
@@ -177,18 +177,17 @@
                                             </div>
                                             <div class="row">
                                                 <div class="col-10">
-                                                    <a href="/article/<%= data.articles.mostPopular[data.articles.mostPopular.length
-                                                    - 1].id %>">
+                                                    <a href="#">
                                                         <h5 class="card-title title-content px-3 pt-3 pb-2">
-                                                            <%= data.articles.mostPopular[data.articles.mostPopular.length
-                                                                - 1].title %>
+                                                            <%= data.articles.mostPopular[data.articles.mostPopular.length - 1].title
+                                                                %>
                                                         </h5>
                                                     </a>
                                                 </div>
                                             </div>
                                             <p class="card-text px-3 pb-3"><small class="main-content">
-                                                    <%= data.articles.mostPopular[data.articles.mostPopular.length -
-                                                        1].createdAt %>
+                                                    <%= data.articles.mostPopular[data.articles.mostPopular.length - 1].createdAt
+                                                        %>
                                                 </small>
                                             </p>
                                         </div>
@@ -204,7 +203,8 @@
                                             </div>
                                         </div>
                                         <div class="bd-highlight">
-                                            <button type="button" class="d-flex btn" onclick="clickOthers('terbaru')">
+                                            <button type="button" class="d-flex btn"
+                                                onclick="location.href='/see-others?page=terbaru'">
                                                 <small class="other">Lihat Lainnya</small>
                                                 <div class="ms-2">
                                                     <i class="fas fa-chevron-right"></i>
@@ -245,7 +245,7 @@
                                         </div>
                                         <div class="bd-highlight">
                                             <button type="button" class="d-flex btn"
-                                                onclick="clickOthers('paling populer')">
+                                                onclick="location.href='/see-others?page=paling disukai'">
                                                 <small class="other">Lihat Lainnya</small>
                                                 <div class="ms-2">
                                                     <i class="fas fa-chevron-right"></i>
@@ -310,7 +310,7 @@
                                 </div>
                                 <div class="bd-highlight">
                                     <button type="button" class="d-flex btn p-0 m-0"
-                                        onclick="clickOthers('paling disukai')">
+                                        onclick="location.href='/see-others?page=paling disukai'">
                                         <small class="other">Lihat Lainnya</small>
                                         <div class="ms-2">
                                             <i class="fas fa-chevron-right"></i>
@@ -321,11 +321,11 @@
                         </div>
                         <% for(let i=0; i<3; i++) { %>
                             <div class="card side-card border-0 mb-3">
-                                <div class="row g-0">
+                                <div class="row g-0 min-height-100">
                                     <div class="col-md-4 p-2">
                                         <img src="<%= data.articles.mostSaved[i].thumbnailPicture %>"
-                                            class="img-fluid rounded min-height-100"
-                                            alt="<%= data.articles.mostSaved[i].title %>" style="object-fit: cover;">
+                                            class="img-fluid rounded thumbnail-rightsection"
+                                            alt="<%= data.articles.mostSaved[i].title %>">
                                     </div>
                                     <div class="col-md-8">
                                         <div
@@ -360,7 +360,8 @@
                                     </div>
                                 </div>
                                 <div class="bd-highlight">
-                                    <button type="button" class="d-flex btn p-0 m-0" onclick="clickOthers('spesial')">
+                                    <button type="button" class="d-flex btn p-0 m-0"
+                                        onclick="location.href='/see-others?page=spesial'">
                                         <small class="other">Lihat Lainnya</small>
                                         <div class="ms-2">
                                             <i class="fas fa-chevron-right"></i>
@@ -374,8 +375,8 @@
                                 <div class="row g-0 min-height-100">
                                     <div class="col-md-4 p-2">
                                         <img src="<%= data.articles.specials[i].thumbnailPicture %>"
-                                            class="img-fluid rounded min-height-100"
-                                            alt="<%= data.articles.specials[i].title %>" style="object-fit: cover;">
+                                            class="img-fluid rounded  thumbnail-rightsection"
+                                            alt="<%= data.articles.specials[i].title %>">
                                     </div>
                                     <div class="col-md-8">
                                         <div
@@ -410,7 +411,8 @@
                                     </div>
                                 </div>
                                 <div class="bd-highlight">
-                                    <button type="button" class="d-flex btn p-0 m-0" onclick="clickOthers('kasus')">
+                                    <button type="button" class="d-flex btn p-0 m-0"
+                                        onclick="location.href='/see-others?page=kasus'">
                                         <small class="other">Lihat Lainnya</small>
                                         <div class="ms-2">
                                             <i class="fas fa-chevron-right"></i>
@@ -424,8 +426,8 @@
                                 <div class="row g-0 min-height-100">
                                     <div class="col-md-4 p-2">
                                         <img src="<%= data.articles.cases[i].thumbnailPicture %>"
-                                            class="img-fluid rounded min-height-100"
-                                            alt="<%= data.articles.cases[i].title %>" style="object-fit: cover;">
+                                            class="img-fluid rounded thumbnail-rightsection"
+                                            alt="<%= data.articles.cases[i].title %>">
                                     </div>
                                     <div class="col-md-8">
                                         <div
@@ -462,5 +464,7 @@
         <%- include('../partials/footer.ejs'); %>
     </footer>
 </body>
+<script src="<% appLink %>/public/js/startup.views.js"></script>
+<script src="<%= appLink %>/public/js/user.logout.js"></script>
 
 </html>

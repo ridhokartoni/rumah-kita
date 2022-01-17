@@ -1,9 +1,12 @@
 exports.letterFormatter = (title) => {
-    var splitTitle = title.toLowerCase().split(' ');
+    var splitTitle = letter.toLowerCase().split(' ');
 
     for (let i = 0; i < splitTitle.length; i++) {
-        splitTitle[i] = splitTitle[i].charAt(0).toUpperCase() + splitTitle[i].substring(1);
+        if (splitTitle.length[i] > splitTitle.length) {
+            splitTitle[i].charAt(0).toUpperCase();
+        }
+        var title = splitTitle.join(' ');
     }
-
-    return splitTitle.join(' ');
+    
+    return title;
 }

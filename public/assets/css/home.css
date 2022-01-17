@@ -356,8 +356,8 @@ button.button-logout.cancel:focus {
 }
 
 .thumbnail-rightsection{
-  width: 86px;
-  height: 89px;
+  max-width: 86px;
+  max-height: 82px;;
 }
 
 .card.content {
@@ -456,7 +456,7 @@ small.sec-content {
 }
 
 .side-card {
-  object-fit: cover;
+  height: 91px;
   border-radius: 5px 5px 5px 5px;
   -moz-border-radius: 5px 5px 5px 5px;
   -webkit-border-radius: 5px 5px 5px 5px;
