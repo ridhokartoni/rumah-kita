@@ -11,4 +11,14 @@ function startUp(){
     }
 }
 
+function isNeedToken(path){
+    const token = localStorage.getItem('userToken');
+    if(token){
+        location.href = `${path}?identify=${token}`
+    }else{
+        return
+    }
+    
+}
+
 startUp();

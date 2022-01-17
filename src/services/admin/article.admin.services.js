@@ -7,7 +7,10 @@ exports.getAllArticle = async (page) => {
         let result = await Article.findAndCountAll({
             limit : 10,
             offset: (page - 1) * 10,
-            include : ['category', 'user']
+            include : ['category', 'user'],
+            order : [
+                ['createdAt', 'DESC']
+            ]
         });
         
         return result;

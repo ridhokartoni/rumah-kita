@@ -82,7 +82,7 @@
                                                         <div class="d-flex bd-highlight">
                                                             <div class="flex-shrink-0">
                                                                 <img class="rounded-pill"
-                                                                    src="<%= appLink %>/public/images/dummy_content.jpeg"
+                                                                    src="<%= appLink %>/public/images/Avatar <%= data.user.avatar%>"
                                                                     width="34px" height="34px" alt="...">
                                                             </div>
                                                             <div class="flex-shrink-1 ms-2" style="max-width: 81%;">
@@ -97,7 +97,7 @@
                                                         <div class="dropdown-divider home-divider"></div>
                                                         <div class="d-flex bd-highlight pb-2">
                                                             <button type="button" class="btn d-flex"
-                                                                onclick="location.href='/profile/<%= data.user.id %>'">
+                                                                onclick="isNeedToken('/profile')">
                                                                 <div class="me-2">
                                                                     <i class="far fa-cog"></i>
                                                                 </div>

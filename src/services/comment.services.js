@@ -18,7 +18,10 @@ exports.findByArticleId = async (articleId) => {
             where : {
                 articleId : articleId
             },
-            include : ['user']
+            include : ['user'],
+            order : [
+                ['createdAt', 'desc']
+            ],
         });
         return result
     } catch (error) {

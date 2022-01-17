@@ -56,16 +56,19 @@ exports.deleteUser = async (user) => {
 exports.updateUser = async (user) => {
     let result;
     try {
-        result = await User.update({
+        if(user.password){
+            user.password = bcrypt.hashSync(user.password, 10)
+        }
+        result = await User.update(user, {
             where: {
                 id: user.id
             }
         })
     } catch (error) {
+        throw new Error(error.message)        
         
     }
 }
-
 
 exports.resetPassword = async (password, id) => {
     let result;
