@@ -1,0 +1,23 @@
+<nav class="mt-4" aria-label="Page navigation example">
+    <ul class="pagination">
+        <% if(data.page != 1) { %>
+            <li class="page-item"><a class="page-link" href="/admin/<%= data.namePage %>/<%= data.beforePage %>">Previous</a></li>
+            <li class="page-item"><a class="page-link" href="/admin/<%= data.namePage %>/<%= data.beforePage %>">
+                    <%= data.beforePage %>
+                </a></li>
+            <% } %>
+
+            <li class="page-item active" aria-current="page">
+                <a class="page-link" "><%= data.page %> <span class="sr-only">(current)</span></a>
+              </li>
+          
+              <% if(data.page != data.totalPage) { %>
+                <li class="page-item"><a class="page-link" href="/admin/<%= data.namePage %>/<%= data.nextPage %>">
+                        <%= data.nextPage %>
+                </a></li>   
+                
+            <li class="page-item"><a class="page-link" href="/admin/<%= data.namePage %>/<%= data.nextPage %>">Next</a></li>
+    <% } %>
+    
+    </ul>
+</nav>

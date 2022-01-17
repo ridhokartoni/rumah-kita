@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="<%= appLink %>/public/css/cssTermCondition.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
+  <title>Hello, world!</title>
+  <link rel="icon" type="image/x-icon" href="<%= appLink %>/public/images/favicon.svg">
+</head>
+
+<body>
+
+  <img src="<%= appLink %>/public/images/logo.svg" alt="logo" class="logo">
+
+  <div class="container">
+
+    <button class="btn1">
+      <div class="input-group">
+        <div class="input-group-text">
+
+          <div class="input-group-style">
+            <a class="input-group-link" href="/register">
+              <i class="fas fa-chevron-left"></i>
+            </a>
+          </div>
+        </div>
+
+        <label>
+          <h3>
+            <b>Tentang "Rumah Kita"</b>
+          </h3>
+          <div class="our">
+            <h5>Our Home. A safe place we built to hear their stressful story without blasphemy</h5>
+          </div>
+        </label>
+      </div>
+    </button>
+
+    <p>
+    <h6> Pandemi covid-19 yang sedang diderita oleh seluruh umat manusia membawa banyak
+      sekali perubahan, khususnya di Indonesia ini. Salah satunya adalah kenaikan angka
+      kesadaran masyarakat akan penyakit yang menyerang mental atau psikis yang biasa Kita
+      kenal sebagai Mental Health. Covid-19 yang membatasi seluruh gerak umat manusia, dan
+      pergi ke kantor ataupun ke sekolah. Semua kegiatan itu terpaksa dialihkan ke dalam
+      system daring dimana semua duduk di depan laptopnya, menyambungkannya ke
+      internet dan memulai kegiatan harian mereka melalui situs-situs temu daring yang
+      dalam sekejap menjadi sangat beragam. Rasa bosan, takut, stress, yang berujung pada
+      penyakit-penyakit yang menyerang secara psikis, perlahan-lahan menyerang banyak
+      masyarakat Indonesia. Segala acara diupayakan agar masyarakat lebih paham
+      pemilihan emosi serta cara untuk menanggulanginya.</h6>
+    </p>
+
+    <p>
+    <h6>Oleh karena itu, hadirlah portal berita bernama "Rumah Kita" dimana kami menuliskan
+      segala artikel terkait penyakit mental, sampai ke berita terkait dengan penyakit mental
+      yang menerapkan prinsip 1. Tidak menyalahkan korban, 2. Berusaha mengerti
+      penderitaan korban, 3. Tidak menghujat apapun yang dialami oleh korban. Harapan
+      kami, agar "Rumah Kita" dapat menjadi tempat dimana orang-orang awam dapat
+      belajar apa itu penyakit mental, serta kasus-kasus yang sudah terjadi sehingga bisa
+      dijadikan pembelajaran untuk kedepannya.</h6>
+    </p>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="flexRadioDefault" id="termsandconditionRadio">
+      <label class="form-check-label" for="flexRadioDefault1">
+        Saya telah membaca dan memahami pernyataan di atas
+      </label>
+    </div>
+
+
+    <button id="termsNext" onclick="onNextRegister('<%= appLink %>')" disabled type="submit" class="btn py-0">
+      <div class="btn-text gradient-color m-0 py-2">
+        <b>Selanjutnya</b>
+      </div>
+    </button>
+
+
+  </div>
+</body>
+<script src="<%= appLink %>/public/js/termsandcondition.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+
+</html>

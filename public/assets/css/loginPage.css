@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Source+Sans+Pro:wght@400;700&display=swap');
+
+body {
+  background: url('../images/Wallpaper\ login\ page\ dan\ register\ page.png')
+    no-repeat center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.container {
+  width: 40%;
+  height: 30%;
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.3);
+  padding: 40px;
+  background-color: white;
+  border: none;
+  border-radius: 25px;
+  padding-right: 25px;
+  padding-left: 25px;
+  margin-left: 50%;
+}
+
+.fa-chevron-left {
+  color: #212429;
+}
+.modal-content-changes-saved {
+  width: 441px;
+  height: 126px;
+  border-radius: 5px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  background-color: #f3e2fc;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#modal-changes-saved {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#modal-changes-saved:target{
+  display: block;
+}
+
+button {
+  width: 50%;
+  margin-top: 10%;
+  border: none;
+  border-radius: 25px;
+  padding-right: 25px;
+}
+
+.form-group {
+  border: none;
+  border-radius: 25px;
+  padding-right: 25px;
+  padding-left: 25px;
+  margin: 0px;
+  margin-bottom: 25px;
+}
+
+.btn {
+  background-color: #d67eff;
+  border: none;
+  border-radius: 25px;
+  padding-right: 25px;
+  padding-left: 25px;
+  width: 70%;
+  margin-top: 4%;
+  margin-left: 15%;
+}
+
+.gradient-color {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  line-height: 1.25;
+  background: #ffffff;
+  background: -webkit-linear-gradient(
+    to right,
+    #ffffff 48%,
+    #ffd215 60%,
+    #ffd215 100%
+  );
+  background: -moz-linear-gradient(
+    to right,
+    #ffffff 48%,
+    #ffd215 60%,
+    #ffd215 100%
+  );
+  background: linear-gradient(to right, #ffffff 48%, #ffd215 60%, #ffd215 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.link {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}
+.link:hover {
+  cursor: pointer;
+}
+
+.want-signup {
+  margin-left: 25%;
+}
+
+.inputWithIcon input[type='email'] {
+  padding-left: 45px;
+}
+
+.inputWithIcon input[type='password'] {
+  padding-left: 45px;
+}
+
+.inputWithIcon {
+  position: relative;
+}
+
+.inputWithIcon i {
+  position: absolute;
+  left: 0;
+  top: 10px;
+  padding: 25px 12px;
+  color: black;
+  transition: 0.3s;
+}
+
+.btn1 {
+  background-color: transparent;
+  border: none;
+  color: grey;
+  margin-top: 0px;
+  margin-bottom: 15px;
+}
+
+.say {
+  margin-bottom: 25px;
+  margin-left: 25px;
+}
+
+.input-group-text {
+  background-color: transparent;
+  border: none;
+  color: grey;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.form-control {
+  border-radius: 25px;
+  padding-right: 25px;
+  padding-left: 25px;
+}
+
+.sandi {
+  margin-left: 6%;
+  margin-top: -5%;
+}
+
+.lock {
+  background-image: url(../images/lock.png);
+  background-repeat: no-repeat;
+  margin-top: 3%;
+  margin-left: 3%;
+  background-size: 85%;
+  background-position-y: 29%;
+}
+
+.email {
+  background-image: url(../images/mail.png);
+  background-repeat: no-repeat;
+  margin-top: 3%;
+  margin-left: 3%;
+  background-size: 85%;
+  background-position-y: 34%;
+}
+
+#forgot-pass {
+  color: black;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 12%;
+}

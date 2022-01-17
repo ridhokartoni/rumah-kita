@@ -1,0 +1,66 @@
+<!-- Logout Modal-->
+<div class="modal fade" id="editModal-<%= article.id %>" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Edit Artikel</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">
+                            Judul
+                        </label>
+                        <input type="text" value="<%= article.title %>" class="form-control" id="title-<%=article.id %>" placeholder="">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">
+                            Sumber
+                        </label>
+                        <input type="text" value="<%= article.linkOrigin %>" class="form-control" id="linkOrigin-<%=article.id %>" placeholder="">
+                    </div>
+
+                    
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">
+                            Link Gambar Thumbnail
+                        </label>
+                        <input readonly type="text" class="form-control" value="<%= article.thumbnailPicture %>" id="thumbnail" placeholder="">
+                    </div>
+
+
+                    
+                    <div class="form-group pb-4">
+                        <label for="exampleFormControlTextarea1">Content</label>
+                        <textarea  class="form-control" id="content-<%= article.id %>" rows="15"><%= article.content %></textarea>
+                    </div>
+
+                    <div class="form-group ">
+                        <label">Kategori</label>
+                        <select id="category-<%=article.id%>" class="form-control">
+                            <% for(let i = 0; i < category.length; i++) { %>
+                                <% if(category[i].id === article.categoryId){ %>
+                                    <option value="<%= category[i].id %>" selected><%= category[i].name %></option>
+
+                                <% } else { %>
+                                <option value="<%= category[i].id %>"><%= category[i].name %></option>
+                                <% } %> 
+                           <% } %>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                <button class="btn btn-primary" id="editButton-<%= article.id %>" onclick="editData('<%= article.id %>', '<%= appLink %>')">Edit</button>
+                <div class="spinner-border text-primary" role="status" id="loading-edit-<%= article.id %>" hidden>
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

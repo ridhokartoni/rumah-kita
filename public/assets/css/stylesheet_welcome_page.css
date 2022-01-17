@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Source+Sans+Pro:wght@400;700&display=swap');
+
+body {
+    background-image: url(../images/Wallpaper_Welcome_Page_PNG.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.logo {
+    align-content: left;
+    padding-left: 30px;
+    padding-top: 15px;
+}
+
+.flex-container {
+    display: flex;
+    height: 10px;
+    flex-wrap: wrap;
+    
+}
+
+.mt-10{
+   margin-top: 200px; 
+}
+
+.flex-konten {
+    width: 96%;
+    padding-left: 2%;
+    margin-top: 40px;
+    flex-wrap: wrap;
+    padding-left: 60px;
+    padding-top: 180px;
+}
+
+.flex-tombol {
+    width: 96%;
+    padding-left: 2%;
+    margin: 0;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.text-header {
+    color: #1b105b;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: bold;
+    font-size: 34px;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 50px;
+    text-align: left;
+    letter-spacing: 1.8px;
+    margin-bottom: 0px;
+}
+
+.text-body {
+    font-size: 17px;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #1b105b;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 25px;
+    text-align: left;
+    letter-spacing: normal;
+    margin-top: 10px;
+}
+
+.tombol {
+    width: 177px;
+    height: 38px;
+    margin: 0px 20px 0 0;
+    padding: 5px 13px 0px;
+    border-radius: 16px;
+}
+
+.background-membaca{
+    background-color: #7b62c1;
+}
+
+.background-masuk{
+    background-color: #ff817d;
+}
+
+.background-membaca:hover {
+    cursor: pointer;
+    background-color: #381b89;
+}
+
+.background-masuk:hover {
+    cursor: pointer;
+    background-color: #bb6461;
+}
+
+.tanpa-dekorasi{
+    text-decoration: none;
+}
+
+.text-inside-tombol {
+    width: 161px;
+    height: 28px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.9px;
+    text-align: center;
+    color: #fff;
+}
+

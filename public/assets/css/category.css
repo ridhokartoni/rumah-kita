@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&family=Oswald&family=Poppins&family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+
+.img-stack {
+  position: relative;
+  display: block;
+}
+
+.img-stack:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-image: linear-gradient(
+    125deg,
+    #ae4aec 5%,
+    rgba(174, 74, 236, 0) 102%
+  );
+  border-radius: 5px 5px 5px 5px;
+  -moz-border-radius: 5px 5px 5px 5px;
+  -webkit-border-radius: 5px 5px 5px 5px;
+}
+
+h4.category {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: bold;
+  line-height: 1.23;
+  letter-spacing: 0.54px;
+}
+
+p.date-category {
+  font-size: 12px;
+  color: #dfc1c1;
+  font-family: 'Source Sans Pro', sans-serif;
+  letter-spacing: 0.35px;
+}
+
+.button-white {
+  font-family: 'Source Sans Pro', sans-serif;
+  letter-spacing: 0.5px;
+  background-color: white;
+  color: #1b105b;
+  font-weight: bold;
+  box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.card-text.main {
+  color: #9a9a9a;
+  font-size: 10px;
+  letter-spacing: 0.5px;
+}
+
+.card-text.sub {
+  font-size: 14px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: normal;
+  letter-spacing: 0.45px;
+}
+
+.card-text.sub span {
+  font-weight: bold;
+}
+
+.title-content.category {
+  font-size: 14px;
+}
+
+.max-lines-5 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+}

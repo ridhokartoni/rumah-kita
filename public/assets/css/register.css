@@ -1,0 +1,256 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Source+Sans+Pro:wght@400;700&display=swap");
+
+body {
+  background: url("../images/Wallpaper\ login\ page\ dan\ register\ page.png")
+    no-repeat center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.container {
+  width: 40%;
+  height: 30%;
+  margin-top: 3.5%;
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.3);
+  padding: 40px;
+  background-color: white;
+  border: none;
+  border-radius: 25px;
+  padding-right: 25px;
+  padding-left: 25px;
+  padding-bottom: 0;
+  margin-right: 29%;
+}
+
+.container-fluid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 15px;
+}
+
+.fa-chevron-left {
+  color: #212429;
+}
+
+button {
+  width: 50%;
+  margin-top: 10%;
+  border: none;
+  border-radius: 25px;
+}
+
+form div.form-group {
+  margin-left: 3%;
+  margin-right: 3%;
+}
+
+.form-group {
+  border: none;
+  border-radius: 25px;
+  margin: 0px;
+  margin-bottom: 0.4em;
+}
+
+.form-group input {
+  border-radius: 25px;
+  padding-left: 25px;
+  margin: 0px;
+  margin-bottom: 0.4em;
+}
+
+.row {
+  padding-left: 25px;
+  margin: 0px;
+}
+
+.btn {
+  background-color: #d67eff;
+  display: table;
+  text-align: center;
+  padding-top: 10px;
+  border-radius: 25px;
+  padding-left: 20px;
+  width: 100%;
+}
+
+.gradient-color {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  line-height: 1.25;
+  background: #ffffff;
+  background: -webkit-linear-gradient(
+    to right,
+    #ffffff 48%,
+    #ffd215 60%,
+    #ffd215 100%
+  );
+  background: -moz-linear-gradient(
+    to right,
+    #ffffff 48%,
+    #ffd215 60%,
+    #ffd215 100%
+  );
+  background: linear-gradient(to right, #ffffff 48%, #ffd215 60%, #ffd215 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.link {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}
+.link:hover {
+  cursor: pointer;
+}
+
+.inputWithIcon input[type="email"] {
+  padding-left: 45px;
+}
+
+.inputWithIcon input[type="password"] {
+  padding-left: 45px;
+}
+
+.inputWithIcon {
+  position: relative;
+}
+
+.inputWithIcon i {
+  position: absolute;
+  left: 0;
+  top: 10px;
+  padding: 25px 12px;
+  color: black;
+  transition: 0.3s;
+}
+
+.col {
+  display: flex;
+  justify-content: space-between;
+  height: 16px;
+  vertical-align: middle;
+}
+
+.say {
+  color: grey;
+  position: relative;
+  margin-top: -10px;
+  width: 100%;
+  font-size: 16px;
+
+  font-family: Source Sans Pro;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  display: inline;
+  align-items: center;
+  text-align: center;
+}
+
+.input-group-text {
+  background-color: transparent;
+  border: none;
+  border-style: none;
+  color: black;
+  width: 100%;
+  margin-top: 0;
+  padding-top: 0;
+  text-align: center;
+  line-height: 24px;
+  display: flex;
+  font-size: 24px;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+
+.input-group-title {
+  margin-bottom: -10px;
+  font-weight: bold;
+  margin-top: -20px;
+  line-height: 32px;
+}
+
+.input-group-link {
+  display: flex;
+  text-decoration: none;
+}
+
+.nav-text {
+  vertical-align: 10px;
+  justify-self: center;
+}
+
+.input-group-text p {
+  text-align: center;
+}
+
+.form-control {
+  border-radius: 25px;
+  padding-left: 15px;
+  margin-left: -13px;
+  height: 40px;
+  align-items: center;
+}
+
+.form-control-button {
+  position: relative;
+  line-height: 1.5;
+  padding-left: -15px;
+  margin-left: 15px;
+}
+
+.noline {
+  border-style: none;
+  width: 70%;
+  margin-left: -10px;
+}
+
+.noline:disabled,
+.noline[readonly] {
+  background-color: white;
+  padding-left: 10px;
+}
+
+.sandi {
+  margin-left: 6%;
+  margin-top: -5%;
+}
+
+.btn-register {
+  padding-left: -8px;
+}
+
+.lock {
+  background-image: url(../images/lock.png);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position-y: 93%;
+  margin-left: 1em;
+}
+
+.email {
+  background-image: url(../images/mail.png);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position-y: 93%;
+  margin-left: 1em;
+}
+
+#forgot-pass {
+  color: black;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 12%;
+}
+
+.input-group-style {
+  flex-grow: 0.47;
+  justify-items: center;
+}
