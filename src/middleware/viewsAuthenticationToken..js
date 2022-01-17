@@ -6,7 +6,6 @@ const authenticationUser = async (req, res, next) => {
     if(req.query.identify) {
         jwt.verify(req.query.identify, process.env.SECRET_KEY, async function (err, decode){
             if(err){
-                req.query.isLogged = false;
                 next();
             } else {
                 const userAuth = await User.findOne({
@@ -16,17 +15,14 @@ const authenticationUser = async (req, res, next) => {
                 })   
 
                 if(!userAuth){
-                    req.query.isLogged = false;
                     next();
                 }else {
-                    req.query.isLogged = true;
                     req.query.userAuth = userAuth
                     next();
                 }
             }
         })
     } else {
-        req.query.isLogged = false;
         next();
     }
 }

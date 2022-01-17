@@ -2,6 +2,7 @@ const Article = require('../model/article.model');
 const { Op } = require('sequelize');
 const Category = require('../model/category.model');
 const moment = require('moment');
+const SavedArticle = require('../model/savedArticles.model');
 
 exports.getSomeArticle = async (limit) => {
     let result;
@@ -18,6 +19,27 @@ exports.getSomeArticle = async (limit) => {
         throw new Error(error.message)
     }
 }
+
+exports.isArticleSaved = async (id, userId) => {
+    try {
+        let savedArticle = await SavedArticle.findOne({
+            where : {
+                articleId : id,
+                userId : userId
+            }
+        })
+
+        if(savedArticle){
+            return true
+        }else {
+            return false
+        }
+    } catch (error) {
+        
+    }
+}
+
+
 
 exports.mostPopular = async (limit) => {
     let result;
@@ -161,14 +183,35 @@ exports.newest = async () => {
             order : [
                 ['createdAt', 'DESC']
             ],
+        });
+
+        return result
+    } catch (error) {
+        throw new Error(error.message)
+        
+    }
+}
+
+exports.updateViewers = async (id) => {
+    let result;
+    try {
+        let findArticle = await Article.findOne({
+            where: {
+                id : id
+            }
+        });
+        
+        result = await Article.update({
+            viewers : findArticle.viewers + 1
+        }, {
+            where :{
+                id : id
+            }
         })
 
         return result
     } catch (error) {
         throw new Error(error.message)
+        
     }
 }
-
-exports.articleRandom = async (limit) => {
-    
-} 

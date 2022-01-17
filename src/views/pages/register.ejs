@@ -36,7 +36,7 @@
       <div class="input-group-text">
 
         <div class="input-group-style">
-          <a class="input-group-link" href="/welcome">
+          <a class="input-group-link" href="/login">
             <i class="fas fa-chevron-left"></i>
           </a>
         </div>
@@ -49,11 +49,11 @@
 
     </div>
 
-    <form>
+    <form id="form-register">
       <div class="form-group mt-2">
         <div class="inputWithIcon">
           <label class="mb-1">Nama</label>
-          <input id="registerName" type="text" class="form-control" name="name" id="name"
+          <input id="registerName" type="text" class="form-control" name="name" id="registerName"
             placeholder="Masukkan nama lengkap">
         </div>
       </div>
@@ -79,7 +79,7 @@
       <div class="row">
         <div class="col form-control form-check form-check-inline">
           <input type="text" class="noline" placeholder="Wanita" disabled>
-          <input type="radio" class="form-control-button" name="inlineRadioOptions" id="inlineRadio1" value="Wanita">
+          <input type="radio" class="form-control-button" name="inlineRadioOptions"  id="inlineRadio1" value="Wanita" checked="true">
           <label class="form-check-label" for="inlineRadio1"></label>
         </div>
         <div class="col form-control form-check form-check-inline">
@@ -96,7 +96,7 @@
 
       <div class="pt-3 pb-4 mx-5">
         <button id="registerButton" type="button" class="btn py-0">
-          <h6 class="gradient-color m-0 py-2" onclick="location.href='/register/termsandcondition'">Daftar</h6>
+          <h6 class="gradient-color m-0 py-2" onclick="onRegister()">Daftar</h6>
         </button>
       </div>
 

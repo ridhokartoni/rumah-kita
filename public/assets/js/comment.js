@@ -1,25 +1,33 @@
-let commentButton = document.getElementById('commentButton');
-let commentInput = document.getElementById('commentInput');
+let comment = document.getElementById('comment');
+let formComment = document.getElementById('form-comment');
+let buttonComment = document.getElementById('buttonAddComment');
 
-commentButton.addEventListener('submit', () => {
+formComment.addEventListener('submit', (event) => {
+    event.preventDefault();
+})
+
+
+function addComment(appLink, userId, articleId){
+    const token = localStorage.getItem('userToken');
+    
+    buttonComment.setAttribute('disabled', true)
     $.ajax({
-        url: `${appLink}/comment/create`,
-        type: 'POST',
-        dataType: 'json',
-        data: {
-            articleId: loginEmail.value,
-            userId: loginPassword.value,
-            comment: commentInput.value
+        type : 'POST',
+        url : `${appLink}/comment/create`,
+        headers : {
+            'Authorization' : token
         },
-        success: (data) => {
-            // localStorage.setItem('userToken', data.token);
-            // window.location.href = `/home?identify=${data.token}`;
+        data : {
+            userId : userId,
+            articleId : articleId,
+            comment : comment.value
         },
-        error: (XMLHttpRequest, textStatus, errorThrown) => {
+        success : function(data){
+            location.reload();
+        },
+        error : function(XMLHttpRequest, textStatus, errorThrown){
             let responseError = JSON.parse(XMLHttpRequest.responseText);
             alert(responseError.errorMessage);
-            loginButton.removeAttribute('disabled');
-
         }
-    });
-})
+    })
+}

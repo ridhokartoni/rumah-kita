@@ -2,6 +2,7 @@ const {
     DataTypes
 } = require('sequelize');
 const connection = require('../databases/connection');
+const moment = require('moment');
 
 
 const article = connection.define('article', {
@@ -55,6 +56,15 @@ const article = connection.define('article', {
         references : {
             model : 'user',
             key : 'id'
+        }
+    },
+
+    createdAt :{
+        type : DataTypes.DATE,
+        get(){
+            let values = this.getDataValue('createdAt');
+            moment.locale('id')
+            return moment(values).format('llll');
         }
     }
 }, {

@@ -49,6 +49,10 @@ body {
     transform: translate(-50%, -50%);
 }
 
+#modal-changes-saved:target{
+  display: block;
+}
+
 button {
   width: 50%;
   margin-top: 10%;

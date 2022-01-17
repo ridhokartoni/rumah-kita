@@ -78,8 +78,8 @@
                     Edit
                     Profile</div>
                 <div class="flex-center">
-                    <div class="exit-box-button">
-                        <a href="" class="no-line">
+                    <div id="logoutButton" class="exit-box-button">
+                        <a  class="no-line">
                             <div class="exit-button">Keluar</div>
                         </a>
                     </div>
@@ -90,10 +90,12 @@
         <div class="flex-kanan">
             <div class="account-details-box">
                 <div class="upper-account-details-box">
-                    <div class="profile-pic">A</div>
+                    <div >
+                        <img class="profile-pic" src="<%= appLink %>/public/images/Avatar <%= data.user.avatar %>">
+                    </div>
                     <div class="upper-account-details">
-                        <div class="account-name">Alma Lawson</div>
-                        <div class="account-email">alma.lawson@example.com</div>
+                        <div class="account-name"><%= data.user.name %></div>
+                        <div class="account-email"><%= data.user.email %></div>
                         <div class="change-avatar-box">
                             <a href="#modal-change-avatar" class="no-line">
                                 <div class="change-avatar">
@@ -107,28 +109,20 @@
                             <div class="modal-content-change-avatar">
                                 <p class="modal-change-avatar-head">Pilih Avatarmu</p>
                                 <div class="flex-row-avatar-1">
-                                    <label>
-                                        <input type="radio" name="test" value="1.png">
-                                        <img class="avatar-style" src="<%= appLink %>/public/images/Avatar 1.png">
-                                    </label>
-                                    <label>
-                                        <input type="radio" name="test" value="2.png">
-                                        <img class="avatar-style" src="<%= appLink %>/public/images/Avatar 2.png">
-                                    </label>
-                                    <label>
-                                        <input type="radio" name="test" value="3.png">
-                                        <img class="avatar-style" src="<%= appLink %>/public/images/Avatar 3.png">
-                                    </label>
+                                    <% for(let i=1;i<= 3;i++) { %>
+                                        <label>
+                                            <input type="radio" name="test" value="<%= i %>.png">
+                                            <img class="avatar-style" src="<%= appLink %>/public/images/Avatar <%= i %>.png">
+                                        </label>
+                                    <% } %> 
                                 </div>
                                 <div class="flex-row-avatar-2">
-                                    <label>
-                                        <input type="radio" name="test" value="4.png">
-                                        <img class="avatar-style" src="<%= appLink %>/public/images/Avatar 4.png">
-                                    </label>
-                                    <label>
-                                        <input type="radio" name="test" value="5.png">
-                                        <img class="avatar-style" src="<%= appLink %>/public/images/Avatar 5.png">
-                                    </label>
+                                    <% for(let i=4;i<= 5;i++) { %>
+                                        <label>
+                                            <input type="radio" name="test" value="<%= i %>.png">
+                                            <img class="avatar-style" src="<%= appLink %>/public/images/Avatar <%= i %>.png">
+                                        </label>
+                                    <% } %> 
                                 </div>
                                 <div class="change-avatar-wrapper">
                                 </div>
@@ -139,27 +133,27 @@
                         </div>
                     </div>
                 </div>
-                <form class="account-data">
+                <form id="form-edit-metadata" class="account-data">
                     <div class="text-bold">Personal</div>
                     <div class="divider-line"></div>
                     <div class="data-type">Nama Lengkap</div>
                     <div class="data-box-wrapper">
-                        <input readonly class="data-box" value="Alma Lawson">
-                        <a href="" class="edit-icon">
+                        <input id="name-edit" readonly class="data-box" value="<%= data.user.name %>">
+                        <a onclick="openTheLock('name-edit')" class="edit-icon">
                             <img class="edit" src="<%= appLink %>/public/images/Edit.png" alt="">
                         </a>
                     </div>
                     <div class="data-type">Email</div>
                     <div class="data-box-wrapper">
-                        <input readonly class="data-box" value="alma.lawson@example.com" type="email">
-                        <a href="" class="edit-icon">
+                        <input id="email-edit" readonly class="data-box" value="<%= data.user.email %>" type="email">
+                        <a class="edit-icon">
                             <img class="edit" src="<%= appLink %>/public/images/Edit.png" alt="">
                         </a>
                     </div>
                     <div class="data-type">Kata Sandi</div>
                     <div class="data-box-wrapper">
-                        <input readonly class="data-box" value="*************" type="password">
-                        <a href="#modal" class="edit-icon">
+                        <input readonly class="data-box" value="<%= data.user.password %>" type="password">
+                        <a class="edit-icon">
                             <img class="edit" src="<%= appLink %>/public/images/Edit.png" alt="">
                         </a>
                     </div>
@@ -203,8 +197,8 @@
                             </a>
                         </div>
                     </div> -->
-                    <div class="save-button">
-                        <a href="#modal-changes-saved" class="no-line">
+                    <div id="buttonSaved" onclick="saved('<%= data.user.id %>', '<%= appLink %>')" class="save-button">
+                        <a class="no-line">
                             <div class="save">Simpan</div>
                         </a>
                     </div>
@@ -230,5 +224,6 @@
         <%- include('../partials/footer.ejs'); %>
     </footer>
 </body>
-
+<script src="<%= appLink %>/public/js/setting-profile.js"></script>
+<script src="<%= appLink %>/public/js/user.logout.js"></script>
 </html>

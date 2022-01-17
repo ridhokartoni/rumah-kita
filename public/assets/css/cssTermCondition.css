@@ -11,8 +11,7 @@ body {
 }
 
 .container {
-  width: 50%;
-  height: 5%;
+  width: 60%;
   margin-top: 3%;
   box-shadow: 0 3px 20px rgba(0, 0, 0, 0.3);
   padding: 40px;
@@ -21,6 +20,7 @@ body {
   border-radius: 25px;
   padding-right: 25px;
   padding-left: 25px;
+  margin-bottom: 200px;
 }
 
 .btn1 {

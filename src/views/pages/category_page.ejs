@@ -61,7 +61,7 @@
                                                     dapatkan
                                                     keuntungan lebih...</h6>
                                                 <div class="d-flex justify-content-center pt-3">
-                                                    <button type="button"
+                                                    <button type="button" onclick="location.href='/login'"
                                                         class="btn rounded-pill button-congo-pink btn-sm p-0 px-4">Masuk/Daftar</button>
                                                 </div>
                                             </div>
@@ -82,7 +82,7 @@
                                                         <div class="d-flex bd-highlight">
                                                             <div class="flex-shrink-0">
                                                                 <img class="rounded-pill"
-                                                                    src="<%= appLink %>/public/images/dummy_content.jpeg"
+                                                                    src="<%= appLink %>/public/images/Avatar <%= data.user.avatar%>"
                                                                     width="34px" height="34px" alt="...">
                                                             </div>
                                                             <div class="flex-shrink-1 ms-2" style="max-width: 81%;">
@@ -96,7 +96,7 @@
                                                         </div>
                                                         <div class="dropdown-divider home-divider"></div>
                                                         <div class="d-flex bd-highlight pb-2">
-                                                            <button type="button" class="btn d-flex">
+                                                            <button onclick="isNeedToken('/profile')" type="button" class="btn d-flex">
                                                                 <div class="me-2">
                                                                     <i class="far fa-cog"></i>
                                                                 </div>

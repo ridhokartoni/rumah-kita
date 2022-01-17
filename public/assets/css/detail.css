@@ -20,6 +20,14 @@ h6.details span.source {
   color: #545454;
 }
 
+.saved-viewers{
+  text-align: right;
+}
+
+.saved-viewers > label {
+  margin: 5px 10px 5px 10px;
+}
+
 .details {
   width: 100%;
   height: 1000px;
